@@ -84,7 +84,7 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
     }}
     onKeyDown={event => {
       if (event.key !== 'Tab') return;
-      const focusable = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled), input:not(:disabled), [tabindex="0"]'))
+      const focusable = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled), input:not(:disabled), a[href], [tabindex="0"]'))
         .filter(element => element.getClientRects().length > 0);
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -103,7 +103,7 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
         <h2 id={`${dialogId}-title`}>选择调查员职业</h2>
         <p id={`${dialogId}-description`}>{forNew ? '从职业简介寻找角色的起点，选定后确认。' : '选定后确认更换；已分配点数会保留，职业可选技能需重新选择。'}</p>
       </div>
-      <button type="button" className="icon-button" aria-label="关闭职业选择" onClick={onClose}><X size={21} aria-hidden="true" /></button>
+      <div className="feedback-modal-actions"><button type="button" className="icon-button" aria-label="关闭职业选择" onClick={onClose}><X size={21} aria-hidden="true" /></button><a className="feedback-inline-link" href="./feedback.html" target="_blank" rel="noopener">反馈 / 吐槽<span className="visually-hidden">（新标签页）</span></a></div>
     </header>
     <div className="occupation-picker-toolbar">
       <label className="occupation-search">

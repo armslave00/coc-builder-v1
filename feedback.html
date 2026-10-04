@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#213c32" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="stylesheet" href="/src/components/feedback.css" />
+  <title>反馈 / 吐槽 · 阿卡姆档案馆</title>
+  <style>
+    body{margin:0;background:#efeee7;color:#243b30;font:14px/1.8 'PingFang SC','Microsoft YaHei',sans-serif}
+    .feedback-page-shell{max-width:640px;margin:40px auto;padding:24px;background:#faf9f3;border:1px solid #dedfd4;border-radius:12px}
+    .feedback-static-form label{display:block;margin-top:20px}.feedback-static-form textarea,.feedback-static-form input{box-sizing:border-box;display:block;width:100%;margin-top:8px;padding:12px;border:1px solid #c6ccbf;border-radius:5px;font:inherit;background:#fff}
+    .feedback-static-form button{min-height:44px;margin-top:24px;padding:10px 22px;border:0;border-radius:6px;background:#294b3d;color:#fff;font:inherit;cursor:pointer}
+    .feedback-static-form[hidden]{display:none}.feedback-page-shell a{color:#294b3d}.feedback-static-form small{display:block;color:#5b685d}
+    @media(max-width:680px){.feedback-page-shell{margin:16px;padding:20px}}
+  </style>
+</head>
+<body>
+  <main class="feedback-page-shell">
+    <form id="feedback-static-form" class="feedback-static-form" action="https://formspree.io/f/xgaowdoa" method="POST">
+      <p>阿卡姆档案馆 · 反馈 / 吐槽</p>
+      <h1>哪里不好用？直接说。</h1>
+      <p>不需要登录，一句话也可以。反馈只发送给维护者。</p>
+      <input type="hidden" name="subject" value="阿卡姆档案馆 · 用户反馈" />
+      <label>问题描述（必填）<textarea name="message" required maxlength="5000" rows="7" placeholder="卡在哪一步？哪里算错了、找不到，或者不好用？"></textarea></label>
+      <label>邮箱（选填）<input type="email" name="email" maxlength="254" autocomplete="email" placeholder="方便我们回复，不填也能提交" /></label>
+      <small>不会自动发送人物卡或档案。请自行决定是否在描述中包含私人信息。</small>
+      <button type="submit">提交反馈</button>
+      <p>提交后将由反馈服务显示结果；如未成功，请先复制描述再重试。</p>
+      <a href="./index.html">返回档案馆</a>
+    </form>
+    <div id="feedback-page-root"></div>
+  </main>
+  <script type="module" src="/src/feedback-page.tsx"></script>
+</body>
+</html>

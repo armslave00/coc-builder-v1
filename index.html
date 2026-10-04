@@ -1,2 +1,22 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#213c32"/><meta name="description" content="基于克苏鲁的呼唤第7版的调查员角色卡工具。自动计算、多个角色、本地存储及 JSON、HTML、PDF 导出。"/><link rel="icon" type="image/svg+xml" href="./favicon.svg"/><title>阿卡姆档案馆 · COC 7th 调查员档案</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#213c32"/><meta name="description" content="基于克苏鲁的呼唤第7版的调查员角色卡工具。自动计算、多个角色、本地存储及 JSON、HTML、PDF 导出。"/><link rel="icon" type="image/svg+xml" href="./favicon.svg"/><title>阿卡姆档案馆 · COC 7th 调查员档案</title>
+<style>
+  .feedback-fallback{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid #b79b51;border-radius:999px;background:#e5c56f;color:#243b30;font:600 14px 'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;box-shadow:0 5px 22px #203b3126}
+  .feedback-fallback[hidden],#app-startup-status[hidden]{display:none}
+  #app-startup-status{margin:60px auto;max-width:560px;padding:24px;font:16px/1.8 'PingFang SC','Microsoft YaHei',sans-serif;color:#243b30;background:#faf9f3;border:1px solid #dedfd4;border-radius:8px}
+  #app-startup-status a{color:#294b3d;text-decoration:underline}
+  @media print{.feedback-fallback,#app-startup-status{display:none}}
+</style>
+</head><body>
+<div id="root"></div>
+<a id="feedback-fallback" class="feedback-fallback" href="./feedback.html">反馈 / 吐槽</a>
+<div id="app-startup-status" hidden role="status"><strong>页面暂时无法显示</strong><p>可以尝试刷新，或从反馈入口告诉我们哪里出了问题。</p><a href="./feedback.html">反馈 / 吐槽</a></div>
+<noscript><p>编辑人物卡需要启用 JavaScript。你仍可以<a href="./feedback.html">提交反馈 / 吐槽</a>。</p></noscript>
+<script>
+  function showStartupProblem(){if(document.documentElement.dataset.appReady!=='true')document.getElementById('app-startup-status').hidden=false;}
+  setTimeout(showStartupProblem,10000);
+  window.addEventListener('error',function(event){if(event.target instanceof HTMLScriptElement)showStartupProblem();},true);
+  window.addEventListener('arkham-app-ready',function(){document.getElementById('app-startup-status').hidden=true;});
+</script>
+<script type="module" src="/src/main.tsx"></script>
+</body></html>
