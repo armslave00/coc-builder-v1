@@ -25,6 +25,19 @@ function mergeDefinitions<T extends { id: string; name?: string; title?: string 
         for (const field of legacyOptionalFields) {
           if (comparison[field] === undefined) comparison[field] = builtin[field];
         }
+        // The universal base catalog migration only removed era scopes containing
+        // core. Preserve exact workbook scopes and every other supplied field.
+        if (legacyOptionalFields.includes('eras') && builtin.eras === undefined
+          && Array.isArray(comparison.eras) && comparison.eras.includes('core')
+          && builtin.sourceId !== 'user-workbook-reference') {
+          delete comparison.eras;
+        }
+        const gaslightPrefix = '维多利亚时代的煤气灯设定，';
+        if (item.id === 'gaslight' && builtin.sourceId === 'gaslight-7e'
+          && typeof builtin.description === 'string' && builtin.description.startsWith(gaslightPrefix)
+          && comparison.description === builtin.description.slice(gaslightPrefix.length)) {
+          comparison.description = builtin.description;
+        }
       }
       if (definitionJSON(previous) !== definitionJSON(comparison)) {
         throw new Error(`${label}「${item.name ?? item.title ?? item.id}」的标识 ${item.id} 与已有定义冲突，请使用不同标识或相同定义。`);

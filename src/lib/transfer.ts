@@ -4,6 +4,7 @@ import { derive, getSkillTotal } from './rules';
 import { getAttributeDescription, getBuildDescription, getItems, getWeapons, getWealthGuidance, weaponSkillId } from './guidance';
 import { resolveSkillForEra } from './catalog';
 import { selectCardSkills } from './card-skills';
+import { rulesForExtensions } from './extensions';
 
 export const MAX_IMPORT_BYTES = 12 * 1024 * 1024;
 type RecordValue = Record<string, unknown>;
@@ -60,7 +61,11 @@ function scenarios(value: unknown, path: string): string[] | undefined {
   return value === undefined ? undefined : list(value, path, 8).map((entry, i) => string(entry, `${path}[${i}]`, 300));
 }
 function eras(value: unknown, path: string): string[] | undefined {
-  return value === undefined ? undefined : list(value, path, 20).map((item, i) => string(item, `${path}[${i}]`, 100));
+  if (value === undefined) return undefined;
+  return [...new Set(list(value, path, 20).map((item, i) => {
+    const era = string(item, `${path}[${i}]`, 100);
+    return era === 'victorian' ? 'gaslight' : era;
+  }))];
 }
 function unique<T extends { id: string }>(items: T[], path: string): T[] {
   if (new Set(items.map(item => item.id)).size !== items.length) fail(path, '存在重复标识');
@@ -146,9 +151,13 @@ function validateCharacter(value: unknown, path: string): Character {
   const createdAt = string(data.createdAt, `${path}.createdAt`, 50);
   const updatedAt = string(data.updatedAt, `${path}.updatedAt`, 50);
   if (!Number.isFinite(Date.parse(createdAt)) || !Number.isFinite(Date.parse(updatedAt))) fail(path, '创建和修改时间必须有效');
+  const rulesetId = id(data.rulesetId, `${path}.rulesetId`);
+  const enabledExtensionIds = data.enabledExtensionIds === undefined ? undefined : idList(data.enabledExtensionIds, `${path}.enabledExtensionIds`, 100);
+  if (enabledExtensionIds && new Set(enabledExtensionIds).size !== enabledExtensionIds.length) fail(`${path}.enabledExtensionIds`, '存在重复标识');
   return {
     id: id(data.id, `${path}.id`), name: string(data.name, `${path}.name`, 200), player: string(data.player, `${path}.player`, 200),
-    occupationId: id(data.occupationId, `${path}.occupationId`), rulesetId: id(data.rulesetId, `${path}.rulesetId`),
+    occupationId: id(data.occupationId, `${path}.occupationId`), rulesetId: rulesetId === 'victorian' ? 'gaslight' : rulesetId,
+    ...(enabledExtensionIds === undefined ? {} : { enabledExtensionIds }),
     age: number(data.age, `${path}.age`, 15, 89), gender: string(data.gender, `${path}.gender`, 100),
     birthplace: string(data.birthplace, `${path}.birthplace`), residence: string(data.residence, `${path}.residence`),
     portrait: portrait(data.portrait, `${path}.portrait`), attributes, luck: number(data.luck, `${path}.luck`, 0, 99),
@@ -246,6 +255,7 @@ const attributeNames: Record<string, string> = { STR: '力量', CON: '体质', S
 const backstoryNames: Record<typeof BACKSTORY_KEYS[number], string> = { appearance: '形象描述', ideology: '思想与信念', people: '重要之人', places: '意义非凡之地', possessions: '宝贵之物', traits: '特质', injuries: '伤口与疤痕', phobias: '恐惧与狂躁', notes: '调查笔记' };
 
 export function characterHTML(character: Character, rules: RuleData): string {
+  rules = rulesForExtensions(rules, character.enabledExtensionIds, character.rulesetId);
   const occupation = rules.occupations.find(item => item.id === character.occupationId);
   const ruleset = rules.rulesets.find(item => item.id === character.rulesetId);
   const values = derive(character, occupation);

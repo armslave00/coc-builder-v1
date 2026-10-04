@@ -49,7 +49,7 @@ test('wealth guidance respects every tier boundary and does not turn historical 
   assert.equal(getWealthGuidance(100, RULES).label, '待确认');
   assert.equal(getWealthGuidance(0, RULES, profile('dark-ages')).label, '社会地位');
   assert.deepEqual(getWealthGuidance(0, RULES, profile('dark-ages')), getWealthGuidance(99, RULES, profile('dark-ages')));
-  for (const id of ['gaslight', 'victorian', 'western']) assert.match(getWealthGuidance(50, RULES, profile(id)).description, /历史设定下的原创定性辅助/);
+  for (const id of ['gaslight', 'western']) assert.match(getWealthGuidance(50, RULES, profile(id)).description, /历史设定下的原创定性辅助/);
 });
 
 test('era help follows changed meanings and all bundled skills have usable original help', () => {
@@ -63,13 +63,13 @@ test('era help follows changed meanings and all bundled skills have usable origi
   assert.match(getSkillHelp(skill('language-own'), profile('dark-ages')).description, /口语/);
   assert.match(getSkillHelp(skill('mechanical-repair'), profile('dark-ages')).description, /维修与制作/);
   assert.match(getSkillHelp(skill('drive-auto'), profile('gaslight')).description, /马车/);
-  assert.deepEqual(getSkillHelp(skill('psychoanalysis'), profile('victorian')), getSkillHelp(skill('alienism')));
+  assert.deepEqual(getSkillHelp(skill('psychoanalysis'), profile('gaslight')), getSkillHelp(skill('alienism')));
   assert.match(getSkillHelp(skill('drive-carriage'), profile('western')).description, /篷车/);
   assert.deepEqual(getSkillHelp(skill('spot-hidden'), profile('dark-ages')), getSkillHelp(skill('spot-hidden')));
 });
 
-test('split catalogs retain counts, unique IDs and all rule references, including inherited profiles', () => {
-  assert.deepEqual(RULES.rulesets.map(item => item.id), ['core', 'gaslight', 'japan', 'victorian', 'dark-ages', 'western']);
+test('split catalogs retain counts, unique IDs and all rule references after merging duplicate profiles', () => {
+  assert.deepEqual(RULES.rulesets.map(item => item.id), ['core', 'gaslight', 'japan', 'dark-ages', 'western']);
   assert.equal(RULES.skills.length, 120);
   assert.equal(RULES.occupations.length, 191);
   assert.equal(RULES.equipment.length, 481);
@@ -98,8 +98,8 @@ test('split catalogs retain counts, unique IDs and all rule references, includin
     assert.ok(sourceIds.has(ruleset.sourceId));
     for (const id of [...Object.keys(ruleset.skillAliases ?? {}), ...Object.keys(ruleset.skillBaseOverrides ?? {}), ...Object.keys(ruleset.skillDescriptions ?? {})]) assert.ok(skillIds.has(id), id);
   }
-  assert.deepEqual(profile('victorian').skillBaseOverrides, profile('gaslight').skillBaseOverrides);
-  assert.deepEqual(profile('victorian').skillDescriptions, profile('gaslight').skillDescriptions);
+  assert.match(profile('gaslight').description, /维多利亚时代/);
+  assert.equal(RULES.rulesets.some(item => item.id === 'victorian'), false);
   assert.equal(profile('dark-ages').skillBaseOverrides?.psychology, 5);
   assert.equal(profile('western').skillBaseOverrides?.ride, 15);
 });

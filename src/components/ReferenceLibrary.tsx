@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { ArrowUpRight, BookOpen, Search } from 'lucide-react';
 import type { RuleData, RuleSource } from '../types';
-import { availableInEra, resolveSkillForEra, sourceCoverage } from '../lib/catalog';
+import { availableInContext, resolveSkillForEra, sourceCoverage } from '../lib/catalog';
+import { availableWithExtensions } from '../lib/extensions';
+import { ExtensionPicker } from './ExtensionPicker';
 import './reference.css';
 
 const SOURCE_KINDS: Record<string, string> = {
@@ -9,7 +11,11 @@ const SOURCE_KINDS: Record<string, string> = {
   'character-sheet': '官方人物卡', original: '项目原创', 'user-reference': '用户提供参考',
 };
 
-export function ReferenceLibrary({ rules }: { rules: RuleData }) {
+export function ReferenceLibrary({ rules, enabledExtensionIds = [], onExtensionsChange }: {
+  rules: RuleData;
+  enabledExtensionIds?: readonly string[];
+  onExtensionsChange?: (ids: string[]) => void;
+}) {
   const [kind, setKind] = useState<'occupations' | 'skills' | 'equipment' | 'spells' | 'sources'>('occupations');
   const [search, setSearch] = useState('');
   const [era, setEra] = useState('all');
@@ -20,6 +26,18 @@ export function ReferenceLibrary({ rules }: { rules: RuleData }) {
   };
   const query = search.trim().toLocaleLowerCase();
   const matches = (...values: (string | undefined)[]) => values.join(' ').toLocaleLowerCase().includes(query);
+  const isAvailable = (item: { eras?: string[]; sourceId?: string }) => availableWithExtensions(item, enabledExtensionIds)
+    && (era === 'all' || availableInContext(item, era, enabledExtensionIds));
+  const availableChoice = (id: string) => {
+    const skill = rules.skills.find(entry => entry.id === id);
+    return !!skill && isAvailable(skill) && isAvailable(resolveSkillForEra(skill, rules, profile));
+  };
+  const availableCatalogSkill = (skill: RuleData['skills'][number]) => {
+    if (!availableChoice(skill.id)) return false;
+    const aliasId = profile?.skillAliases?.[skill.id];
+    const alias = aliasId && aliasId !== skill.id ? rules.skills.find(entry => entry.id === aliasId) : undefined;
+    return !alias || !isAvailable(alias);
+  };
   const sourceLink = (id?: string, verification = false) => {
     const source = rules.sources.find(entry => entry.id === id);
     if (!source) return id === 'original' ? <small>项目原创</small> : id ? <small className="entry-source">旧资料来源：{id}（待补充出处）</small> : null;
@@ -32,21 +50,24 @@ export function ReferenceLibrary({ rules }: { rules: RuleData }) {
     <p>{source.note}</p><small className="publication-coverage">{sourceCoverage(source)}</small>
   </article>;
   const tabs = [
-    { id: 'occupations', name: '职业', count: rules.occupations.length },
-    { id: 'skills', name: '技能', count: rules.skills.length },
-    { id: 'equipment', name: '装备', count: rules.equipment.length },
-    { id: 'spells', name: '法术', count: rules.spells.length },
+    { id: 'occupations', name: '职业', count: rules.occupations.filter(isAvailable).length },
+    { id: 'skills', name: '技能', count: rules.skills.filter(availableCatalogSkill).length },
+    { id: 'equipment', name: '装备', count: rules.equipment.filter(isAvailable).length },
+    { id: 'spells', name: '法术', count: rules.spells.filter(isAvailable).length },
     { id: 'sources', name: '书目与来源', count: rules.sources.length },
   ] as const;
   const content = kind === 'sources' ? [] : rules[kind];
-  const entries = content.filter(item => era === 'all' || availableInEra('eras' in item ? item.eras : undefined, era))
+  const entries = content.filter(isAvailable)
+    .filter(item => !('base' in item) || availableCatalogSkill(item))
     .map(item => 'base' in item ? resolveSkillForEra(item, rules, profile) : item)
+    .filter(isAvailable)
     .filter(item => matches(item.name, 'english' in item ? item.english : '', item.description));
   const sources = rules.sources.filter(source => matches(source.title, source.publisher, source.note, source.edition));
 
   return <>
     <div className="page-heading"><div><div className="eyebrow">THE REFERENCE LIBRARY</div><h1>规则资料库</h1>
       <p>查阅已收录条目、官方书目和各类资料的覆盖范围。</p></div><span className="outlined-badge">COC · 7TH EDITION</span></div>
+    {onExtensionsChange && <ExtensionPicker enabledIds={enabledExtensionIds} onChange={onExtensionsChange} />}
     <div className="ruleset-grid reference-profiles">{rules.rulesets.map(profile => <article className="paper-panel ruleset-card" key={profile.id}>
       <span className="eyebrow">{profile.english}</span><h2>{profile.name}</h2><span className="rule-badge">{profile.era}</span>
       <p>{profile.description}</p><small>{({ 'official-core': '官方核心规则', 'official-setting-adaptation': '官方设定 · 部分资料适配',
@@ -74,10 +95,7 @@ export function ReferenceLibrary({ rules }: { rules: RuleData }) {
           <div className="library-entry-body"><p>{item.description}</p>
             {'formula' in item && <><p>职业点：EDU × {item.formula.edu}{item.formula.other ? ` + (${item.formula.other.join(' 或 ')}) × ${item.formula.factor}` : ''}；信用范围：{item.credit.join('–')}</p>
               <p>固定技能：{item.skills.map(skillName).join('、') || '无'}。</p>
-              {item.choiceGroups?.map((group, index) => <p key={index}>{group.name}（选 {group.count}）：{group.options.filter(id => {
-                const skill = rules.skills.find(entry => entry.id === id);
-                return !profile || !!skill && availableInEra(resolveSkillForEra(skill, rules, profile).eras, era);
-              }).map(skillName).join('、')}</p>)}
+              {item.choiceGroups?.map((group, index) => <p key={index}>{group.name}（选 {group.count}）：{group.options.filter(availableChoice).map(skillName).join('、')}</p>)}
               {!!item.choiceCount && <p>另选 {item.choiceCount} 项符合职业背景的技能。</p>}{item.skillNotes && <small>{item.skillNotes}</small>}
               {item.eraNote && <small>{item.eraNote}</small>}</>}
             {'base' in item && <><p>基础值：{item.base}{typeof item.base === 'number' ? '%' : ''}</p>

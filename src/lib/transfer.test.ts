@@ -3,6 +3,8 @@ import { test } from 'node:test';
 import type { Character, CustomContent, RuleData } from '../types';
 import { characterHTML, MAX_IMPORT_BYTES, parseImport, validateCustom } from './transfer';
 import { RULES } from '../data/rules';
+import { blankCharacter, createArchive } from '../data/samples';
+import { WORKBOOK_EXTENSION_ID } from './extensions';
 
 function investigator(): Character {
   return { id: 'test', name: 'Alice', player: '', occupationId: 'professor', rulesetId: 'classic', age: 30, gender: '', birthplace: '', residence: '', portrait: '', attributes: { STR: 50, CON: 55, SIZ: 60, DEX: 61, APP: 55, INT: 70, POW: 65, EDU: 80 }, luck: 40, current: { hp: null, mp: null, san: null }, skills: { spot: { occupation: 25, personal: 5, growth: 0 } }, occupationChoices: [], inventory: [], spellIds: [], backstory: { appearance: '', ideology: '', people: '', places: '', possessions: '', traits: '', injuries: '', phobias: '', notes: '' }, money: { cash: '', assets: '', spending: '' }, createdAt: '2026-01-01T00:00:00Z', updatedAt: '2026-01-01T00:00:00Z' };
@@ -18,6 +20,61 @@ test('accepts single-character, multicharacter and archive JSON', () => {
     assert.equal(JSON.stringify(data), input);
   }
   assert.deepEqual(parseImport(JSON.stringify({ schemaVersion: 1, character })).custom, custom);
+});
+
+test('migrates Victorian cards to Gaslight while preserving allocations, choices and inventory', () => {
+  const character = investigator();
+  character.rulesetId = 'victorian';
+  character.skills['drive-carriage'] = { occupation: 0, personal: 20, growth: 5 };
+  character.occupationChoices = ['spot', 'drive-carriage'];
+  character.inventory = [{ id: 'watch', definitionId: 'pocket-watch', name: '怀表', quantity: 1, notes: '家族遗物' }];
+  const before = JSON.stringify(character);
+  for (const data of [
+    { schemaVersion: 1, character },
+    { schemaVersion: 1, characters: [character] },
+    { schemaVersion: 1, activeId: character.id, characters: [character], custom },
+  ]) {
+    const migrated = parseImport(JSON.stringify(data)).characters[0];
+    assert.equal(migrated.rulesetId, 'gaslight');
+    assert.deepEqual(migrated.skills, Object.assign(Object.create(null), character.skills));
+    assert.deepEqual(migrated.occupationChoices, character.occupationChoices);
+    assert.deepEqual(JSON.parse(JSON.stringify(migrated.inventory)), character.inventory);
+    assert.equal(Object.hasOwn(migrated, 'enabledExtensionIds'), false);
+  }
+  assert.equal(JSON.stringify(character), before);
+  character.rulesetId = 'custom-victorian';
+  assert.equal(parseImport(JSON.stringify({ schemaVersion: 1, character })).characters[0].rulesetId, 'custom-victorian');
+});
+
+test('extension choices survive JSON round trips and remain optional for legacy cards', () => {
+  const character = investigator();
+  assert.equal(Object.hasOwn(parseImport(JSON.stringify({ schemaVersion: 1, character })).characters[0], 'enabledExtensionIds'), false);
+  for (const enabledExtensionIds of [[], ['workbook'], ['workbook', 'future-extension']]) {
+    character.enabledExtensionIds = enabledExtensionIds;
+    const first = parseImport(JSON.stringify({ schemaVersion: 1, character, custom }));
+    const second = parseImport(JSON.stringify({ schemaVersion: 1, characters: first.characters, custom: first.custom }));
+    assert.deepEqual(first.characters[0].enabledExtensionIds, enabledExtensionIds);
+    assert.deepEqual(first, second);
+  }
+});
+
+test('rejects malformed, duplicate and oversized extension lists', () => {
+  for (const enabledExtensionIds of [
+    null, 'workbook', {}, [1], ['bad id'], ['constructor'], ['workbook', 'workbook'],
+    ['x'.repeat(101)], Array.from({ length: 101 }, (_, i) => `extension-${i}`),
+  ]) {
+    assert.throws(() => parseImport(JSON.stringify({ schemaVersion: 1, character: { ...investigator(), enabledExtensionIds } })), /enabledExtensionIds/);
+  }
+  const enabledExtensionIds = Array.from({ length: 100 }, (_, i) => `extension-${i}`);
+  assert.deepEqual(parseImport(JSON.stringify({ schemaVersion: 1, character: { ...investigator(), enabledExtensionIds } })).characters[0].enabledExtensionIds, enabledExtensionIds);
+});
+
+test('new and sample investigators default to no extensions and use the merged Gaslight era', () => {
+  assert.deepEqual(blankCharacter().enabledExtensionIds, []);
+  const samples = createArchive().characters;
+  assert.ok(samples.every(character => character.rulesetId !== 'victorian'));
+  assert.equal(samples.find(character => character.id === 'sample-arthur')?.rulesetId, 'gaslight');
+  assert.ok(samples.every(character => character.enabledExtensionIds?.length === 0));
 });
 
 test('rejects unsupported versions, missing fields and invalid numbers', () => {
@@ -77,6 +134,24 @@ test('validates original content, formula attributes and preserves optional rule
   assert.throws(() => validateCustom({ skills: [normalized.skills[0], normalized.skills[0]] }), /重复/);
 });
 
+test('migrates and deduplicates Victorian era scopes in imported custom definitions', () => {
+  const content: CustomContent = {
+    ...structuredClone(custom),
+    skills: [{ ...rules.skills[0], id: 'custom-skill', eras: ['victorian', 'gaslight', 'custom-victorian', 'japan'] }],
+    occupations: [{ ...rules.occupations[0], id: 'custom-occupation', eras: ['core', 'victorian', 'gaslight'] }],
+    equipment: [{ id: 'custom-watch', name: '怀表', category: '物品', description: '', price: '', sourceId: 'custom', eras: ['victorian', 'victorian'] }],
+  };
+  const before = JSON.stringify(content);
+  const imported = parseImport(JSON.stringify({ schemaVersion: 1, character: investigator(), custom: content })).custom;
+  assert.deepEqual(imported.skills[0].eras, ['gaslight', 'custom-victorian', 'japan']);
+  assert.deepEqual(imported.occupations[0].eras, ['core', 'gaslight']);
+  assert.deepEqual(imported.equipment[0].eras, ['gaslight']);
+  assert.equal(imported.skills[0].id, 'custom-skill');
+  assert.equal(imported.occupations[0].id, 'custom-occupation');
+  assert.equal(imported.equipment[0].id, 'custom-watch');
+  assert.equal(JSON.stringify(content), before);
+});
+
 test('HTML exports two print pages, all skills and numerical half and fifth values', () => {
   const html = characterHTML(investigator(), rules);
   assert.equal((html.match(/<section class="page">/g) ?? []).length, 2);
@@ -116,6 +191,27 @@ test('HTML only exports the selected era, retaining unrestricted custom skills a
   character.rulesetId = 'japan';
   assert.match(characterHTML(character, scoped), /<td>计算机使用<\/td>/);
   assert.doesNotMatch(characterHTML(character, scoped), /<td>安抚<\/td>/);
+});
+
+test('HTML gates implicit Excel weapon skills while retaining explicitly saved skill links', () => {
+  const scoped = structuredClone(rules);
+  scoped.skills.push({ id: 'workbook-blade', name: 'Excel 刀剑专长', english: '', base: 10, category: '战斗', sourceId: 'user-workbook-reference', specialization: true });
+  scoped.equipment.push({ id: 'public-blade', name: '公开短剑', category: '武器', description: '', price: '', sourceId: 'core', kind: 'weapon', skillId: 'workbook-blade', damage: '1D6' });
+  const character = investigator();
+  character.inventory = [{ id: 'saved-blade', definitionId: 'public-blade', name: '公开短剑', quantity: 1, notes: '', kind: 'weapon' }];
+  const before = JSON.stringify(scoped);
+  const disabled = characterHTML(character, scoped);
+  assert.match(disabled, /<td>公开短剑<\/td><td>1<\/td><td>—<\/td>/);
+  assert.doesNotMatch(disabled, /Excel 刀剑专长/);
+  character.enabledExtensionIds = [WORKBOOK_EXTENSION_ID];
+  assert.match(characterHTML(character, scoped), /<td>公开短剑<\/td><td>1<\/td><td>Excel 刀剑专长 10%<\/td>/);
+  character.enabledExtensionIds = [];
+  character.inventory[0].skillId = 'workbook-blade';
+  const explicit = characterHTML(character, scoped);
+  assert.match(explicit, /<td>公开短剑<\/td><td>1<\/td><td>Excel 刀剑专长 10%<\/td>/);
+  assert.match(explicit, /<td>Excel 刀剑专长<\/td><td>10<\/td>/);
+  assert.equal(JSON.stringify(scoped), before);
+  assert.equal(character.inventory[0].skillId, 'workbook-blade');
 });
 
 test('HTML treats all user text as inert text, and never emits executable or remote portrait URLs', () => {

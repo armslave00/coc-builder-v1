@@ -5,7 +5,8 @@ import generalSupplement from '../data/general-supplement.json';
 import workbookOccupations from '../data/workbook-occupations.json';
 import workbookEquipment from '../data/workbook-equipment.json';
 import { blankCharacter } from '../data/samples';
-import { availableInEra, occupationChoicesForEra, resolveSkillForEra, sourceCoverage, validateCatalog } from './catalog';
+import { availableInContext, availableInEra, occupationChoicesForEra, resolveSkillForEra, sourceCoverage, validateCatalog } from './catalog';
+import { WORKBOOK_EXTENSION_ID } from './extensions';
 import { characterHTML } from './transfer';
 import { getWeapons } from './guidance';
 
@@ -16,7 +17,7 @@ test('verified additions load with traceable sources and valid references', () =
     assert.ok(occupation);
     assert.deepEqual(occupation.verificationSourceIds, ['roll20-basic-7e']);
     assert.ok(availableInEra(occupation.eras, 'core'));
-    assert.equal(availableInEra(occupation.eras, 'dark-ages'), false);
+    assert.equal(availableInEra(occupation.eras, 'dark-ages'), true);
   }
   const automatic = RULES.equipment.find(item => item.id === 'automatic-32')!;
   assert.equal(automatic.ammo, '8');
@@ -26,7 +27,45 @@ test('verified additions load with traceable sources and valid references', () =
   const shotgun = RULES.equipment.find(item => item.id === 'shotgun-12-semi-auto')!;
   assert.equal(shotgun.ammo, '5');
   assert.equal(shotgun.range, '10 / 20 / 50 码');
-  assert.equal(availableInEra(shotgun.eras, 'japan'), false);
+  assert.equal(availableInEra(shotgun.eras, 'japan'), true);
+});
+
+test('base catalogs are reusable in every era while setting skills retain their own scope', () => {
+  assert.deepEqual(RULES.rulesets.map(profile => profile.id), ['core', 'gaslight', 'japan', 'dark-ages', 'western']);
+  const baseEntries = [
+    RULES.skills.find(item => item.id === 'science-astronomy')!,
+    RULES.skills.find(item => item.id === 'anthropology')!,
+    RULES.occupations.find(item => item.id === 'archaeologist')!,
+    RULES.equipment.find(item => item.id === 'automatic-32')!,
+    RULES.equipment.find(item => item.id === 'bow-and-arrows')!,
+  ];
+  for (const item of baseEntries) {
+    assert.equal(item.eras, undefined, item.id);
+    for (const profile of RULES.rulesets) assert.ok(availableInContext(item, profile.id), `${item.id}:${profile.id}`);
+  }
+  const religion = RULES.skills.find(item => item.id === 'religion')!;
+  assert.deepEqual(religion.eras, ['gaslight', 'dark-ages']);
+  assert.equal(availableInContext(religion, 'core'), false);
+  assert.equal(availableInContext(RULES.skills.find(item => item.id === 'computer-use')!, 'gaslight'), false);
+  for (const item of [...RULES.skills, ...RULES.occupations, ...RULES.equipment]) {
+    assert.equal(item.eras?.includes('victorian') ?? false, false, item.id);
+    assert.equal(new Set(item.eras).size, item.eras?.length ?? 0, item.id);
+  }
+});
+
+test('workbook choices require both the extension and their declared era without changing definitions', () => {
+  const skills = RULES.skills.filter(item => item.sourceId === 'user-workbook-reference');
+  const occupations = RULES.occupations.filter(item => item.sourceId === 'user-workbook-reference');
+  const equipment = RULES.equipment.filter(item => item.sourceId === 'user-workbook-reference');
+  for (const item of [...skills, ...occupations, ...equipment]) {
+    for (const profile of RULES.rulesets) {
+      assert.equal(availableInContext(item, profile.id), false, `${item.id}:${profile.id}`);
+      assert.equal(availableInContext(item, profile.id, [WORKBOOK_EXTENSION_ID]), availableInEra(item.eras, profile.id));
+    }
+  }
+  assert.deepEqual(RULES.skills.find(item => item.id === 'workbook-fighting-chainsaw')!.eras, ['japan']);
+  assert.equal(availableInContext({ sourceId: 'user-workbook-reference' }, 'gaslight'), false);
+  assert.equal(availableInContext({ sourceId: 'user-workbook-reference' }, 'gaslight', [WORKBOOK_EXTENSION_ID]), true);
 });
 
 test('the public equipment audit covers every physical price row with traceable definitions', () => {
@@ -67,8 +106,9 @@ test('changing eras ignores incompatible saved choices without destroying them',
   const occupation = RULES.occupations.find(item => item.id === 'workbook-lone-criminal')!;
   const choices = ['workbook-fighting-chainsaw', 'art-acting', 'charm', 'locksmith'];
   const original = [...choices];
-  assert.deepEqual(occupationChoicesForEra(occupation, choices, RULES, 'japan'), choices);
-  assert.deepEqual(occupationChoicesForEra(occupation, choices, RULES, 'core'), ['art-acting', 'charm', 'locksmith']);
+  assert.deepEqual(occupationChoicesForEra(occupation, choices, RULES, 'japan', [WORKBOOK_EXTENSION_ID]), choices);
+  assert.deepEqual(occupationChoicesForEra(occupation, choices, RULES, 'core', [WORKBOOK_EXTENSION_ID]), ['art-acting', 'charm', 'locksmith']);
+  assert.deepEqual(occupationChoicesForEra(occupation, choices, RULES, 'japan'), ['art-acting', 'charm', 'locksmith']);
   assert.deepEqual(choices, original);
 });
 

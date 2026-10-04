@@ -1,4 +1,8 @@
 import type { Occupation, RuleData, RuleSource, Ruleset, SkillDefinition } from '../types';
+import { availableWithExtensions } from './extensions';
+import { availableInEra } from './eras';
+
+export { availableInEra } from './eras';
 
 export const COVERAGE_LABELS = {
   complete: '完整收录',
@@ -7,17 +11,17 @@ export const COVERAGE_LABELS = {
   'not-applicable': '不涉及',
 } as const;
 
-export function availableInEra(eras: string[] | undefined, eraId: string): boolean {
-  return !eras?.length || eras.includes(eraId) || (eraId.startsWith('custom-') && eras.includes('core'));
+export function availableInContext(item: { eras?: string[]; sourceId?: string }, eraId: string, enabledExtensionIds: readonly string[] = []): boolean {
+  return availableInEra(item.eras, eraId) && availableWithExtensions(item, enabledExtensionIds);
 }
 
 /** Ignore unavailable saved choices for eligibility, without deleting archived data. */
-export function occupationChoicesForEra(occupation: Occupation | undefined, choices: string[], rules: RuleData, eraId: string): string[] {
+export function occupationChoicesForEra(occupation: Occupation | undefined, choices: string[], rules: RuleData, eraId: string, enabledExtensionIds: readonly string[] = []): string[] {
   if (!occupation) return [];
   const grouped = new Set(occupation.choiceGroups?.flatMap(group => group.options));
   return choices.filter(id => {
     const skill = rules.skills.find(entry => entry.id === id);
-    return skill && availableInEra(skill.eras, eraId) && id !== 'cthulhu-mythos' && id !== 'credit-rating'
+    return skill && availableInContext(skill, eraId, enabledExtensionIds) && id !== 'cthulhu-mythos' && id !== 'credit-rating'
       && !occupation.skills.includes(id) && (grouped.has(id) || !!occupation.choiceCount);
   });
 }

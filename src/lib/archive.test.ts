@@ -4,6 +4,8 @@ import type { Character, CustomContent, RuleData } from '../types';
 import { mergeCustom, validateCharacterReferences } from './archive';
 import { parseImport, validateCustom } from './transfer';
 import { RULES } from '../data/rules';
+import corePack from '../data/core.json';
+import supplementPack from '../data/supplement.json';
 
 const emptyCustom = (): CustomContent => ({ rulesets: [], skills: [], occupations: [], equipment: [], spells: [] });
 const rules: RuleData = {
@@ -75,6 +77,68 @@ test('legacy builtin duplicates may omit only new metadata and never replace bui
   const existing = emptyCustom(); existing.skills.push({ ...scoped.skills[0], id: 'custom-spot' });
   const olderCustom = emptyCustom(); olderCustom.skills.push({ ...rules.skills[0], id: 'custom-spot' });
   assert.throws(() => mergeCustom(existing, olderCustom, scoped), /custom-spot.*冲突/);
+});
+
+test('legacy core and supplement copies retain compatibility after base catalogs become universal', () => {
+  const incoming = validateCustom({
+    ...emptyCustom(),
+    skills: [corePack.skills.find(item => item.id === 'anthropology'), supplementPack.skills.find(item => item.id === 'science-astronomy')],
+    occupations: [supplementPack.occupations.find(item => item.id === 'archaeologist')],
+    equipment: [corePack.equipment.find(item => item.id === 'camera'), supplementPack.equipment.find(item => item.id === 'brass-knuckles')],
+  });
+  assert.ok([...incoming.skills, ...incoming.occupations, ...incoming.equipment].every(item => item.eras?.includes('core')));
+  assert.ok([...incoming.skills, ...incoming.occupations, ...incoming.equipment].every(item => {
+    const builtin = [...RULES.skills, ...RULES.occupations, ...RULES.equipment].find(entry => entry.id === item.id);
+    return builtin && builtin.eras === undefined;
+  }));
+  const before = JSON.stringify([incoming, RULES]);
+  assert.deepEqual(mergeCustom(emptyCustom(), incoming, RULES), emptyCustom());
+  assert.deepEqual(mergeCustom(incoming, emptyCustom(), RULES), emptyCustom());
+  assert.equal(JSON.stringify([incoming, RULES]), before);
+  for (const edit of [
+    (content: CustomContent) => { content.skills[0].base = 99; },
+    (content: CustomContent) => { content.skills[0].name = '改名的技能'; },
+    (content: CustomContent) => { content.occupations[0].formula.edu = 9; },
+    (content: CustomContent) => { content.equipment[0].name = '改名的装备'; },
+    (content: CustomContent) => { content.skills[0].eras = ['gaslight']; },
+  ]) {
+    const changed = structuredClone(incoming); edit(changed);
+    assert.throws(() => mergeCustom(emptyCustom(), changed, RULES), /冲突/);
+  }
+});
+
+test('builtin workbook copies keep strict era scopes when legacy base scopes are removed', () => {
+  const incoming = emptyCustom();
+  incoming.skills.push(structuredClone(RULES.skills.find(item => item.id === 'workbook-art-fine-art')!));
+  incoming.occupations.push(structuredClone(RULES.occupations.find(item => item.id === 'workbook-accountant')!));
+  incoming.equipment.push(structuredClone(RULES.equipment.find(item => item.id === 'workbook-tear-gas')!));
+  assert.deepEqual(mergeCustom(emptyCustom(), validateCustom(incoming), RULES), emptyCustom());
+  for (const kind of ['skills', 'occupations', 'equipment'] as const) {
+    const changed = structuredClone(incoming); changed[kind][0].eras = ['core'];
+    assert.throws(() => mergeCustom(emptyCustom(), changed, RULES), /冲突/);
+  }
+  const scoped = structuredClone(RULES);
+  delete scoped.skills.find(item => item.id === 'workbook-art-fine-art')!.eras;
+  const changed = emptyCustom(); changed.skills.push({ ...scoped.skills.find(item => item.id === 'workbook-art-fine-art')!, eras: ['core'] });
+  assert.throws(() => mergeCustom(emptyCustom(), changed, scoped), /冲突/);
+});
+
+test('complete old Gaslight copies accept only the exact merged-era description change', () => {
+  const incoming = emptyCustom();
+  const gaslight = structuredClone(RULES.rulesets.find(item => item.id === 'gaslight')!);
+  const prefix = '维多利亚时代的煤气灯设定，';
+  assert.ok(gaslight.description.startsWith(prefix));
+  gaslight.description = gaslight.description.slice(prefix.length);
+  incoming.rulesets.push(gaslight);
+  assert.deepEqual(mergeCustom(emptyCustom(), validateCustom(incoming), RULES), emptyCustom());
+  for (const edit of [
+    (content: CustomContent) => { content.rulesets[0].description = '另一份时代说明'; },
+    (content: CustomContent) => { content.rulesets[0].name = '另一个煤气灯'; },
+    (content: CustomContent) => { content.rulesets[0].skillBaseOverrides = { accounting: 99 }; },
+  ]) {
+    const changed = structuredClone(incoming); edit(changed);
+    assert.throws(() => mergeCustom(emptyCustom(), changed, RULES), /冲突/);
+  }
 });
 
 test('resolves references between incoming custom entries and preserves eras and free alias labels', () => {

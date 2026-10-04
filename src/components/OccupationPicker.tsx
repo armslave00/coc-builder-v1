@@ -1,13 +1,15 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Check, ChevronDown, Search, X } from 'lucide-react';
 import type { Occupation, Ruleset, SkillDefinition } from '../types';
-import { availableInEra } from '../lib/catalog';
+import { availableInContext } from '../lib/catalog';
+import { availableWithExtensions } from '../lib/extensions';
 import './guidance.css';
 
 interface OccupationPickerProps {
   occupations: Occupation[];
   skills: SkillDefinition[];
   ruleset?: Ruleset;
+  enabledExtensionIds?: readonly string[];
   selectedId: string;
   onSelect: (id: string) => void;
   onClose: () => void;
@@ -27,7 +29,7 @@ function pointFormula(occupation: Occupation): string {
   return `${education} ＋ ${labels.join(' / ')}${others.length > 1 ? '中较高者' : ''} × ${occupation.formula.factor}`;
 }
 
-export function OccupationPicker({ occupations, skills, ruleset, selectedId, onSelect, onClose, forNew = false }: OccupationPickerProps) {
+export function OccupationPicker({ occupations, skills, ruleset, enabledExtensionIds = [], selectedId, onSelect, onClose, forNew = false }: OccupationPickerProps) {
   const dialogId = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -43,7 +45,7 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
   };
   const availableChoice = (id: string) => {
     const skill = skillsById.get(ruleset?.skillAliases?.[id] ?? '') ?? skillsById.get(id);
-    return !!skill && (!ruleset || availableInEra(skill.eras, ruleset.id));
+    return !!skill && (ruleset ? availableInContext(skill, ruleset.id, enabledExtensionIds) : availableWithExtensions(skill, enabledExtensionIds));
   };
   const filtered = occupations.filter(occupation => [
     occupation.name, occupation.english, occupation.description,
@@ -122,12 +124,8 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
           const choiceGroups = occupation.choiceGroups?.map(group => ({ ...group, options: group.options.filter(availableChoice) }));
           const allSkillIds = [...occupation.skills, ...(choiceGroups ?? []).flatMap(group => group.options)];
           const adaptations = [...new Set(allSkillIds)].filter(id => ruleset?.skillAliases?.[id] && skillName(id) !== (skillsById.get(id)?.name ?? id));
-          const era = ruleset?.id.startsWith('custom-') ? 'core' : ruleset?.id;
-          const unavailable = [...new Set(allSkillIds)].filter(id => {
-            const alias = ruleset?.skillAliases?.[id];
-            const skill = skillsById.get(alias ?? '') ?? skillsById.get(id);
-            return era && skill?.eras?.length && !skill.eras.includes(era);
-          });
+          const unavailable = [...new Set([...occupation.skills, ...(occupation.choiceGroups ?? []).flatMap(group => group.options)])]
+            .filter(id => !availableChoice(id));
           return <article key={occupation.id} className={`occupation-card${isSelected ? ' is-selected' : ''}`} onClick={() => setPendingId(occupation.id)}>
             <label className="occupation-card-select">
               <input type="radio" name={`${dialogId}-occupation`} value={occupation.id} checked={isSelected} onChange={() => setPendingId(occupation.id)} />
@@ -154,7 +152,7 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
               {(occupation.choiceCount ?? 0) > 0 && <p><strong>额外可选技能</strong>另选 {occupation.choiceCount} 项适合职业或角色经历的技能。</p>}
               {occupation.skillNotes && <p><strong>专长与选择说明</strong>{occupation.skillNotes}</p>}
               {adaptations.length > 0 && <p className="occupation-era-note"><strong>当前时代的技能名称</strong>{adaptations.map(id => `${skillsById.get(id)?.name ?? id} → ${skillName(id)}`).join('；')}</p>}
-              {unavailable.length > 0 && <p className="occupation-era-note"><strong>时代适配提示</strong>{unavailable.map(skillName).join('、')}不适用于当前时代，请与守秘人确认替代专长。</p>}
+              {unavailable.length > 0 && <p className="occupation-era-note"><strong>当前资料适配提示</strong>{unavailable.map(skillName).join('、')}未在当前时代或已启用的扩展包中开放，请与守秘人确认替代专长。</p>}
             </div>}
           </article>;
         })}

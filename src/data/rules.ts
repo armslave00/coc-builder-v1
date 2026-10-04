@@ -1,7 +1,6 @@
 import coreData from './core.json';
 import gaslightData from './gaslight.json';
 import japanData from './japan.json';
-import victorianData from './victorian.json';
 import darkAgesData from './dark-ages.json';
 import westernData from './western.json';
 import publicationsData from './publications.json';
@@ -91,11 +90,29 @@ export function assembleRulePacks(packs: RulePack[]): RuleData {
   };
 }
 
-export const RULES = assembleRulePacks([
-  coreData, gaslightData, japanData, victorianData, darkAgesData, westernData, publicationsData, supplementData,
+const builtinRules = assembleRulePacks([
+  coreData, gaslightData, japanData, darkAgesData, westernData, publicationsData, supplementData,
   weaponsSupplementData, { occupations: generalOccupations, equipment: generalEquipment },
   workbookSkillsData,
   workbookOccupationsData, workbookEquipmentData,
 ] as unknown as RulePack[]);
+
+function normalizeBuiltinEntry<Item extends { eras?: string[]; sourceId?: string }>(item: Item): Item {
+  if (!item.eras) return item;
+  const eras = [...new Set(item.eras.map(era => era === 'victorian' ? 'gaslight' : era))];
+  // Base catalogs are reusable in every era; optional workbook entries keep their declared scope.
+  if (eras.includes('core') && item.sourceId !== 'user-workbook-reference') {
+    const { eras: _eras, ...universal } = item;
+    return universal as Item;
+  }
+  return { ...item, eras };
+}
+
+export const RULES: RuleData = {
+  ...builtinRules,
+  skills: builtinRules.skills.map(normalizeBuiltinEntry),
+  occupations: builtinRules.occupations.map(normalizeBuiltinEntry),
+  equipment: builtinRules.equipment.map(normalizeBuiltinEntry),
+};
 
 validateCatalog(RULES);

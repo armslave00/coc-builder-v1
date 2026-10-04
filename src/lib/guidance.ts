@@ -25,7 +25,7 @@ export function getWealthGuidance(value: number, rules: RuleData, ruleset?: Rule
   }
   const band = rules.guidance?.wealth.find(item => value >= item.min && value <= item.max);
   if (!band) return { label: '待确认', description: '此值暂无生活水平参考，请结合所用规则与人物背景记录财产。' };
-  const historical = ['gaslight', 'victorian', 'western'].includes(ruleset?.id ?? '');
+  const historical = ['gaslight', 'western'].includes(ruleset?.id ?? '');
   return {
     label: band.label,
     description: `${band.description}${historical ? '这是该历史设定下的原创定性辅助；金额、币种和财产条件须按当地时代资料确认。' : '这是原创定性辅助；现金与资产金额须按所用时代和规则资料确认。'}`,

@@ -15,7 +15,12 @@ import { ATTRIBUTE_KEYS } from '../types';
 import type { Character } from '../types';
 
 const rules = RULES;
-const normalize = (text: string) => text.normalize('NFKC').replace(/\s/g, '');
+// Noto CJK can extract 见, 车 and 马 as simplified radicals that NFKC leaves intact.
+const normalize = (text: string) => text.normalize('NFKC')
+  .replace(/\u2ec5/g, '见')
+  .replace(/\u2ecb/g, '车')
+  .replace(/\u2ee2/g, '马')
+  .replace(/\s/g, '');
 let browser: Browser;
 before(async () => { browser = await chromium.launch(); });
 after(async () => { await browser?.close(); });
@@ -176,4 +181,12 @@ test('long backstory and equipment lists paginate with every entry and the final
   for (let index = 0; index < 120; index++) assert.ok(back.includes(`NOTE${index.toString().padStart(3, '0')}`), `missing note ${index}`);
   for (const item of character.inventory) assert.ok(back.includes(normalize(item.name)), `missing equipment ${item.name}`);
   assert.match(pages.at(-1)!, /档案编号:long-backstory.*规则资料版本:/);
+});
+
+test('PDF text normalization handles Noto CJK radical aliases without hiding missing or incorrect characters', () => {
+  const printed = '具备普通⼈的⼒量，能应付常⻅的⽇常体⼒活动。\n汽⻋驾驶 ⺟语 骑⻢';
+  const expected = `${getAttributeDescription('STR', 50, rules)}汽车驾驶 母语 骑马`;
+  assert.equal(normalize(printed), normalize(expected));
+  assert.notEqual(normalize(printed.replace('⻅', '')), normalize(expected));
+  assert.notEqual(normalize(printed.replace('⻅', '现')), normalize(expected));
 });
