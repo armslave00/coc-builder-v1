@@ -7,6 +7,8 @@ import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
 import { RULES } from '../data/rules';
 import { blankCharacter, createArchive } from '../data/samples';
 import { characterHTML } from './transfer';
+import { selectCardSkills } from './card-skills';
+import { resolveSkillForEra } from './catalog';
 import { getAttributeDescription, getBuildDescription, getWealthGuidance } from './guidance';
 import { derive, getSkillTotal } from './rules';
 import { ATTRIBUTE_KEYS } from '../types';
@@ -24,6 +26,10 @@ async function exportPDF(character: Character, definitions = rules, width = 1280
     await page.setContent(characterHTML(character, definitions));
     await page.emulateMedia({ media: 'print' });
     await page.evaluate(() => document.fonts.ready);
+    const profile = definitions.rulesets.find(era => era.id === character.rulesetId);
+    const printedSkills = await page.locator('.skill-columns tbody tr td:first-child').allTextContents();
+    assert.deepEqual(printedSkills.map(normalize), selectCardSkills(character, definitions)
+      .map(skill => normalize(resolveSkillForEra(skill, definitions, profile).name)), 'PDF must use exactly the shared card skill selection');
     const wrappedNumbers = await page.evaluate(() =>
       [...document.querySelectorAll('.skill-columns td:nth-child(n+2), .skill-columns th:nth-child(n+2)')]
         .filter(cell => {
@@ -79,11 +85,32 @@ for (const era of rules.rulesets) {
     const wealth = getWealthGuidance(credit, rules, era);
     assert.ok(pages[1].includes(normalize(wealth.description)), 'missing living standard guidance');
     assert.ok(pages[1].includes('武器') && pages[1].includes('物品'), 'weapon and item sections must remain on the back');
-    for (const skill of rules.skills.filter(skill => !skill.eras?.length || skill.eras.includes(era.id))) {
-      const alias = era.skillAliases?.[skill.id];
-      const label = alias ? rules.skills.find(target => target.id === alias)?.name ?? alias : skill.name;
+    for (const skill of selectCardSkills(character, rules)) {
+      const label = resolveSkillForEra(skill, rules, era).name;
       assert.ok(pages[0].includes(normalize(label)), `missing front-page skill: ${label}`);
     }
+  });
+}
+
+for (const eraId of ['core', 'japan']) {
+  test(`selected workbook specializations remain on the first A4 page: ${eraId}`, async () => {
+    const character = { ...blankCharacter(eraId), id: 'selected-specializations', portrait: '' };
+    const selected = ['workbook-art-fine-art', 'workbook-science-forensics', 'workbook-firearms-machine-gun'];
+    character.skills = {
+      [selected[0]]: { occupation: 0, personal: 15, growth: 0 },
+      [selected[1]]: { occupation: 0, personal: 0, growth: 4 },
+    };
+    character.inventory.push({ id: 'recorded-weapon', definitionId: 'custom', name: '调查装备', quantity: 1, notes: '', skillId: selected[2] });
+    const before = structuredClone(character);
+    const pages = await exportPDF(character);
+    assertFront(pages);
+    assert.equal(pages.length, 2);
+    for (const id of selected) {
+      const definition = rules.skills.find(skill => skill.id === id)!;
+      assert.ok(pages[0].includes(normalize(definition.name)), `missing selected specialization: ${id}`);
+    }
+    assert.ok(!pages[0].includes(normalize(rules.skills.find(skill => skill.id === 'workbook-art-forgery')!.name)), 'unused workbook specialization must not consume front-page space');
+    assert.deepEqual(character, before);
   });
 }
 
@@ -115,21 +142,25 @@ test('filled armor notes remain readable on the front of a two-page investigator
   assert.ok(pages[0].includes(normalize(character.armor.notes)), 'filled armor notes must not be clipped or moved to the back');
 });
 
-test('many custom skills may add pages without dropping any skill or the front footer', async () => {
-  const definitions = structuredClone(rules);
-  const skills = Array.from({ length: 90 }, (_, index) => ({
-    id: `custom-${index}`, name: `原创技能 CUSTOM${index.toString().padStart(3, '0')}`,
-    english: '', category: '原创', base: 5,
-  }));
-  definitions.skills.push(...skills);
-  const pages = await exportPDF({ ...blankCharacter(), id: 'custom-skills' }, definitions);
-  assert.ok(pages.length > 2, 'large custom skill lists must paginate instead of clipping');
-  const back = pages.findIndex(text => text.includes('第二面·背景与装备'));
-  assert.ok(back > 0);
-  const front = pages.slice(0, back).join('');
-  for (const skill of skills) assert.ok(front.includes(normalize(skill.name)), `missing custom skill: ${skill.name}`);
-  assert.match(front, /此为个人使用的非官方人物卡。/);
-});
+for (const specialization of [false, true]) {
+  test(`many ${specialization ? 'selected specializations' : 'ordinary custom skills'} paginate without dropping skills or the front footer`, async () => {
+    const definitions = structuredClone(rules);
+    const skills = Array.from({ length: 90 }, (_, index) => ({
+      id: `custom-${index}`, name: `原创技能 CUSTOM${index.toString().padStart(3, '0')}`,
+      english: '', category: '原创', base: 5, specialization,
+    }));
+    definitions.skills.push(...skills);
+    const character = { ...blankCharacter(), id: specialization ? 'custom-specializations' : 'custom-skills' };
+    if (specialization) character.skills = Object.fromEntries(skills.map(skill => [skill.id, { occupation: 0, personal: 1, growth: 0 }]));
+    const pages = await exportPDF(character, definitions);
+    assert.ok(pages.length > 2, 'large custom skill lists must paginate instead of clipping');
+    const back = pages.findIndex(text => text.includes('第二面·背景与装备'));
+    assert.ok(back > 0);
+    const front = pages.slice(0, back).join('');
+    for (const skill of skills) assert.ok(front.includes(normalize(skill.name)), `missing custom skill: ${skill.name}`);
+    assert.match(front, /此为个人使用的非官方人物卡。/);
+  });
+}
 
 test('long backstory and equipment lists paginate with every entry and the final footer intact', async () => {
   const character = { ...blankCharacter(), id: 'long-backstory' };

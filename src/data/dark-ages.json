@@ -153,13 +153,31 @@
       "id": "dark-ages-3e",
       "title": "Cthulhu Dark Ages, 3rd Edition (2020) — for Call of Cthulhu 7th Edition",
       "url": "https://www.chaosium.com/cthulhu-dark-ages-3rd-edition-hardcover/",
-      "note": "官方出版页明确第三版为 CoC 第 7 版更新，主设定为约 950—1054 年。此工具仅适配公开人物卡，不完整实现宗教理智、口述传统、骑乘战斗和民俗魔法。"
+      "note": "官方出版页明确第三版为 CoC 第 7 版更新，主设定为约 950—1054 年。此工具仅适配公开人物卡，不完整实现宗教理智、口述传统、骑乘战斗和民俗魔法。",
+      "publisher": "Chaosium",
+      "edition": "资料书第3版 / Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2020
     },
     {
       "id": "dark-ages-sheet-7e",
       "title": "Official Cthulhu Dark Ages Standard Investigator Sheet (2021)",
       "url": "https://www.chaosium.com/content/FreePDFs/CoC/Character%20Sheets/V2/CoC7%20PC%20Sheet%20-%20Auto-Fill%20-%20Dark%20Ages%20-%20Standard%20-%20Greyscale.pdf",
-      "note": "官方 40 周年标准卡，非 Pulp 卡。直接核对时代技能及其基础值；社会地位、洞察、维修 / 制作复用目录 ID 并更换时代标签。"
+      "note": "官方 40 周年标准卡，非 Pulp 卡。直接核对时代技能及其基础值；社会地位、洞察、维修 / 制作复用目录 ID 并更换时代标签。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "character-sheet",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "partial",
+        "equipment": "not-applicable"
+      },
+      "year": 2021
     }
   ]
 }

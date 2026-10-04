@@ -43,7 +43,8 @@ export function weaponSkillId(item: InventoryItem, rules: RuleData): string | un
 function standardUnarmed(item: InventoryItem, definition: RuleData['equipment'][number]): boolean {
   return item.definitionId === definition.id && item.name === definition.name && item.quantity === 1 && item.notes === ''
     && item.damage === definition.damage && item.range === definition.range && item.attacks === definition.attacks
-    && (item.kind === undefined || item.kind === 'weapon') && (item.skillId === undefined || item.skillId === definition.skillId);
+    && (item.kind === undefined || item.kind === 'weapon') && (item.skillId === undefined || item.skillId === definition.skillId)
+    && (['ammo', 'malfunction', 'armor'] as const).every(key => item[key] === undefined || item[key] === definition[key]);
 }
 
 export function getWeapons(character: Character, rules: RuleData): InventoryItem[] {

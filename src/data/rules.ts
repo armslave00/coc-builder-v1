@@ -4,6 +4,14 @@ import japanData from './japan.json';
 import victorianData from './victorian.json';
 import darkAgesData from './dark-ages.json';
 import westernData from './western.json';
+import publicationsData from './publications.json';
+import supplementData from './supplement.json';
+import weaponsSupplementData from './weapons-supplement.json';
+import { occupations as generalOccupations, equipment as generalEquipment } from './general-supplement.json';
+import workbookSkillsData from './workbook-skills.json';
+import workbookOccupationsData from './workbook-occupations.json';
+import workbookEquipmentData from './workbook-equipment.json';
+import { validateCatalog } from '../lib/catalog';
 import type { RuleData, RuleGuidance, Ruleset } from '../types';
 
 export interface RulePack {
@@ -84,5 +92,10 @@ export function assembleRulePacks(packs: RulePack[]): RuleData {
 }
 
 export const RULES = assembleRulePacks([
-  coreData, gaslightData, japanData, victorianData, darkAgesData, westernData,
+  coreData, gaslightData, japanData, victorianData, darkAgesData, westernData, publicationsData, supplementData,
+  weaponsSupplementData, { occupations: generalOccupations, equipment: generalEquipment },
+  workbookSkillsData,
+  workbookOccupationsData, workbookEquipmentData,
 ] as unknown as RulePack[]);
+
+validateCatalog(RULES);

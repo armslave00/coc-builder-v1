@@ -1,0 +1,3827 @@
+{
+  "occupations": [
+    {
+      "id": "investigative-journalist",
+      "name": "调查记者",
+      "english": "Investigative Journalist",
+      "description": "以持续调查、采访和资料核对追查事件的新闻工作者，可结合艺术专长记录和呈现调查结果。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "history",
+        "library-use",
+        "language-own",
+        "psychology"
+      ],
+      "choiceCount": 2,
+      "choiceGroups": [
+        {
+          "name": "艺术专长或摄影",
+          "count": 1,
+          "options": [
+            "art-craft",
+            "art-photography"
+          ]
+        },
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "skillNotes": "来源允许Art/Craft（Art或Photography）。选择通用艺术/工艺行时须记录艺术专长，不能自行把所有工艺专长纳入此限定；另有两个个人或时代专长任选槽。",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-basic-7e",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ],
+      "version": "7e-core",
+      "eraNote": "共同职业模板核对Roll20授权公开的Pulp职业章节，只采用职业公式、信用范围与技能条件，未引入Pulp额外HP、天赋或幸运机制。"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "catalog-1920s-mens-worsted-wool-dress-suit",
+      "name": "精纺羊毛礼服套装",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$17.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-cashmere-dress-suit",
+      "name": "开司米礼服套装",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$18.50",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-suit-mohair",
+      "name": "马海毛套装",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$13.85",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-union-suit-forest-mills",
+      "name": "Forest Mills 连体内衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：69¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-outdoor-coat",
+      "name": "户外大衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$9.95-$35.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-chesterfield-overcoat",
+      "name": "切斯特菲尔德大衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$19.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-oxford-dress-shoes",
+      "name": "牛津礼服鞋",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$6.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-leather-work-shoes",
+      "name": "皮革工作鞋",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-slacks-white-flannel",
+      "name": "白色法兰绒长裤",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$8.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-shirt-percale",
+      "name": "棉织布衬衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：79¢-$1.25",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-broadcloth-dress-shirt",
+      "name": "细棉布礼服衬衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-shaker-sweater",
+      "name": "Shaker 毛衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$7.69",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-felt-fedora",
+      "name": "毡质软呢帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-wool-golf-cap",
+      "name": "羊毛高尔夫帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：79¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-straw-hat",
+      "name": "草帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-leather-football-helmet",
+      "name": "皮革橄榄球头盔",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.65",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-sweatshirt",
+      "name": "运动衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-necktie-silk",
+      "name": "丝绸领带",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：50¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-batwing-bow-tie",
+      "name": "蝙蝠翼领结",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：55¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-sock-garters",
+      "name": "袜吊带",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：39¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-cuff-links",
+      "name": "袖扣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：40¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-leather-belt",
+      "name": "皮带",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-suspenders",
+      "name": "裤吊带",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：79¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-hiking-boots",
+      "name": "徒步靴",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$7.25",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-mens-bathing-suit",
+      "name": "男式泳装",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-chic-designer-dress",
+      "name": "时髦设计师连衣裙",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$90.00+",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-silk-taffeta-frock",
+      "name": "丝绸塔夫绸连衣裙",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$10.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-satin-charmeuse",
+      "name": "查梅丝缎面织物",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$10.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-gingham-dress",
+      "name": "格纹棉布连衣裙",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-pleated-skirt-silk",
+      "name": "丝绸百褶裙",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$7.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-blouse-cotton",
+      "name": "棉质女式衬衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-worsted-wool-sweater",
+      "name": "精纺羊毛毛衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$9.48",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-cotton-crepe-negligee",
+      "name": "棉绉纱便服",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：88¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-spike-heeled-parisian-shoes",
+      "name": "巴黎式细高跟鞋",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-leather-one-strap-slippers",
+      "name": "单带皮拖鞋",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-snug-velour-hat",
+      "name": "贴身丝绒帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.44",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-satin-turban-style-hat",
+      "name": "缎面包头帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.69",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-rayon-elastic-corset",
+      "name": "人造丝弹性束身衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-embroidered-costume-slip",
+      "name": "刺绣衬裙",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-silk-hose-3-pairs",
+      "name": "丝袜（3双）",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.25",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-bloomers-silk",
+      "name": "丝绸灯笼裤",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.98-$4.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-tweed-jacket-fully-lined",
+      "name": "全衬里粗花呢夹克",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-velour-coat-with-fur-trim",
+      "name": "毛皮镶边丝绒大衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$39.75",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-brown-fox-fur-coat",
+      "name": "棕狐皮大衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$198.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-belted-rain-coat-cotton",
+      "name": "束腰棉质雨衣",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$3.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-silk-handbag",
+      "name": "丝绸手提包",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-dress-hair-comb",
+      "name": "装饰发梳",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-outdoor-shirt-khaki-jean-material",
+      "name": "卡其粗棉布户外衬衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.79",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-outdoor-shirt-all-wool-tweed-or-linen",
+      "name": "全羊毛粗花呢或亚麻户外衬衫",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-outdoor-knee-length-knickers-khaki-jean-material",
+      "name": "卡其粗棉布及膝户外短裤",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.79",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-outdoor-knee-length-knickers-white-linen",
+      "name": "白亚麻及膝户外短裤",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-khaki-leggings",
+      "name": "卡其绑腿",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-outdoor-boots",
+      "name": "户外靴",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$2.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-bathing-suit",
+      "name": "女式泳装",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$4.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-bathing-cap",
+      "name": "泳帽",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：40¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-womens-shoes-pumps",
+      "name": "浅口女鞋",
+      "category": "服饰",
+      "description": "时代服饰，材质和款式可用于填写人物外观与生活背景。",
+      "price": "1920年代美元参考：$1.29",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-aspirin-12-pills",
+      "name": "阿司匹林（12片）",
+      "category": "医疗",
+      "description": "药用品，按所持包装或数量记录，实际使用结合医疗规则处理。",
+      "price": "1920年代美元参考：10¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-epsom-salts",
+      "name": "泻盐",
+      "category": "医疗",
+      "description": "药用品，按所持包装或数量记录，实际使用结合医疗规则处理。",
+      "price": "1920年代美元参考：9¢/lb.",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-indigestion-medicine",
+      "name": "消化不良药",
+      "category": "医疗",
+      "description": "药用品，按所持包装或数量记录，实际使用结合医疗规则处理。",
+      "price": "1920年代美元参考：25¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-laxative-nature-s-remedy",
+      "name": "Nature’s Remedy 泻药",
+      "category": "医疗",
+      "description": "药用品，按所持包装或数量记录，实际使用结合医疗规则处理。",
+      "price": "1920年代美元参考：25¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-medical-case",
+      "name": "医疗器材箱",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$10.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-forceps",
+      "name": "医用钳",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$3.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-scalpel-set",
+      "name": "手术刀套装",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$1.39",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-hypodermic-syringes",
+      "name": "皮下注射器",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$12.50",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-atomizer",
+      "name": "喷雾器",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$1.39",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-gauze-bandages-5-yards",
+      "name": "纱布绷带（5码）",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：69¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-alcohol-half-gallon",
+      "name": "酒精（半加仑）",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：20¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-hard-rubber-syringe",
+      "name": "硬橡胶注射器",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：69¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-bed-pan",
+      "name": "便盆",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$1.79",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-wheel-chair",
+      "name": "轮椅",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$39.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-maple-crutches",
+      "name": "枫木拐杖",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$1.59",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-adhesive-plaster",
+      "name": "胶布",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：29¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-metal-arch-supports",
+      "name": "金属足弓支撑",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：$1.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-medical-leather-ankle-supports",
+      "name": "皮革护踝",
+      "category": "医疗",
+      "description": "医疗器材或用品，具体使用结合相关技能和现场条件判断。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-cooking-kit",
+      "name": "炊具套装",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$8.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-camp-stove",
+      "name": "野营炉",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$6.10",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-vacuum-bottle",
+      "name": "保温瓶",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：89¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-folding-bathtub",
+      "name": "折叠浴盆",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$6.79",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-waterproof-blanket",
+      "name": "防水毯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$5.06",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-folding-camp-bed",
+      "name": "折叠行军床",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$3.65",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-carbide-lamp",
+      "name": "电石灯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$2.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-can-of-carbide-2-lbs",
+      "name": "电石罐（2磅）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：25¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-searchlight",
+      "name": "探照灯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$5.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-gasoline-lantern",
+      "name": "汽油提灯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$6.40",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-kerosene-lantern",
+      "name": "煤油提灯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.30",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-dark-lantern",
+      "name": "遮光提灯",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.68",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-batteries",
+      "name": "电池",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：60¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-pen-light",
+      "name": "笔式手电筒",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-telescope",
+      "name": "单筒望远镜",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$3.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-field-glasses-3x-to-6x",
+      "name": "野外望远镜（3至6倍）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$8.50-$23.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-jeweled-compass",
+      "name": "宝石轴承罗盘",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$3.25",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-compass-with-lid",
+      "name": "带盖罗盘",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$2.85",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-hunting-knife",
+      "name": "猎刀",
+      "category": "探索",
+      "description": "工作与户外使用的切削工具，具体用途结合器具规格和场景判断。",
+      "price": "1920年代美元参考：$2.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-2-blade-pocket-knife",
+      "name": "双刃折叠小刀",
+      "category": "探索",
+      "description": "工作与户外使用的切削工具，具体用途结合器具规格和场景判断。",
+      "price": "1920年代美元参考：$1.20",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-hand-axe",
+      "name": "手斧",
+      "category": "探索",
+      "description": "工作与户外使用的切削工具，具体用途结合器具规格和场景判断。",
+      "price": "1920年代美元参考：98¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-small-live-animal-trap",
+      "name": "小型活体动物陷阱",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$2.48",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-coil-spring-animal-trap",
+      "name": "螺旋弹簧捕兽夹",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$5.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-bear-trap",
+      "name": "捕熊夹",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$11.43",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-fishing-rod-and-tackle",
+      "name": "钓竿与钓具",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$9.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-hemp-twine",
+      "name": "麻线",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：27¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-pedometer",
+      "name": "计步器",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.70",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-heavy-canvas-shoulder-bag",
+      "name": "厚帆布肩包",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$3.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-fifteen-hour-candles-12",
+      "name": "十五小时蜡烛（12支）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：62¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-steel-row-boat-seats-4",
+      "name": "钢制划艇（4座）",
+      "category": "交通",
+      "description": "水上运输工具或配件，按所列座位、动力和结构记录，操作结合具体载具判断。",
+      "price": "1920年代美元参考：$35.20",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-2-hp-motor-for-row-boats",
+      "name": "划艇用2马力发动机",
+      "category": "交通",
+      "description": "水上运输工具或配件，按所列座位、动力和结构记录，操作结合具体载具判断。",
+      "price": "1920年代美元参考：$79.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-outdoor-canvas-and-wood-canoe",
+      "name": "帆布与木制独木舟",
+      "category": "交通",
+      "description": "水上运输工具或配件，按所列座位、动力和结构记录，操作结合具体载具判断。",
+      "price": "1920年代美元参考：$75.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-7-x-7-foot-tent",
+      "name": "7×7英尺帐篷",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$11.48",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-12-x-16-foot-tent",
+      "name": "12×16英尺帐篷",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$28.15",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-16-x-24-foot-tent",
+      "name": "16×24英尺帐篷",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$53.48",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-24-x-36-foot-tarpaulin",
+      "name": "24×36英尺防水布",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$39.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-7-x-7-foot-car-tent",
+      "name": "7×7英尺汽车帐篷",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$12.80",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-iron-tent-stakes-12",
+      "name": "铁帐篷钉（12枚）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.15",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-auto-bed",
+      "name": "汽车用床",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$8.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-canteen-1-quart",
+      "name": "水壶（1夸脱）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$1.69",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-insulated-tank-5-gallons",
+      "name": "保温水罐（5加仑）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$3.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-water-bag-1-gallon",
+      "name": "水袋（1加仑）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：80¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-camp-water-bag-5-gallon",
+      "name": "水袋（5加仑）",
+      "category": "探索",
+      "description": "野外与旅行用品，持有时可记录规格、数量和需要的耗材。",
+      "price": "1920年代美元参考：$2.06",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-tool-outfit-20-tools",
+      "name": "20件工具套装",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$14.90",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-hand-drill-plus-8-bits",
+      "name": "手摇钻（附8支钻头）",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$6.15",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-large-steel-pulley",
+      "name": "大型钢滑轮",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$1.75",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-padlock",
+      "name": "挂锁",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：95¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-rope-50-feet",
+      "name": "绳索（50英尺）",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$8.60",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-light-chain-per-foot",
+      "name": "轻型链条（每英尺）",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：10¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-watchmakers-tool-kit",
+      "name": "钟表匠工具套装",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$7.74",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-hand-saw",
+      "name": "手锯",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$1.65",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-gasoline-blowtorch",
+      "name": "汽油喷灯",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$4.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-electricians-gloves",
+      "name": "电工手套",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$1.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-tool-belt-safety-strap",
+      "name": "工具带与安全带",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$3.33",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-lineman-s-climbers",
+      "name": "电线工攀爬器",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$2.52",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-jewelers-48-piece-tool-set",
+      "name": "珠宝匠48件工具套装",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$15.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-rotary-tool-grinder",
+      "name": "旋转工具磨床",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$6.90",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-shovel",
+      "name": "铁锹",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：95¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-tool-home-tool-set-in-box",
+      "name": "盒装家用工具套装",
+      "category": "工具",
+      "description": "用于相应工种的工具，适用对象与操作条件由场景决定。",
+      "price": "1920年代美元参考：$14.90",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-extra-handcuff-key",
+      "name": "备用手铐钥匙",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：28¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-police-whistle",
+      "name": "警哨",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：30¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-wire-recorder",
+      "name": "钢丝录音机",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$129.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-wrist-watch",
+      "name": "腕表",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$5.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-gold-pocket-watch",
+      "name": "金怀表",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$35.10",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-self-filling-fountain-pen",
+      "name": "自动吸墨钢笔",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$1.80",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-mechanical-pencil",
+      "name": "自动铅笔",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：85¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-writing-tablet",
+      "name": "书写便笺",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：20¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-straightjacket",
+      "name": "束缚衣",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$9.50",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-sketch-pad",
+      "name": "素描本",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：25¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-complete-diving-suit",
+      "name": "完整潜水服",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$1,200.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-remington-typewriter",
+      "name": "Remington 打字机",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$40.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-harris-typewriter",
+      "name": "Harris 打字机",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$66.75",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-110x-desk-microscope",
+      "name": "110倍桌面显微镜",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$17.50",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-floor-safe-950-lbs",
+      "name": "地板保险箱（950磅）",
+      "category": "日用",
+      "description": "日常生活中的实体物品，保存地点与运输条件结合人物背景填写。",
+      "price": "1920年代美元参考：$62.50",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-turkish-water-pipe",
+      "name": "土耳其水烟管",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：99¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-cigarettes-per-pack",
+      "name": "香烟（每包）",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：10¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-box-of-cigars",
+      "name": "一盒雪茄",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$2.29",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-four-candles",
+      "name": "蜡烛（4支）",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：38¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-unabridged-dictionary",
+      "name": "完整版词典",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$6.75",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-10-volume-encyclopedia",
+      "name": "十卷百科全书",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$49.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-wet-sponge-respirator",
+      "name": "湿海绵呼吸器",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$1.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-pocket-magnifying-glass",
+      "name": "袖珍放大镜",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$1.68",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-bible",
+      "name": "圣经",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$3.98",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-briefcase",
+      "name": "公文包",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$1.48",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-globe-on-stand",
+      "name": "带支架地球仪",
+      "category": "日用",
+      "description": "日常生活中的实体物品，保存地点与运输条件结合人物背景填写。",
+      "price": "1920年代美元参考：$9.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-folding-writing-desk",
+      "name": "折叠书桌",
+      "category": "日用",
+      "description": "日常生活中的实体物品，保存地点与运输条件结合人物背景填写。",
+      "price": "1920年代美元参考：$16.65",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-glass-door-oak-bookcase",
+      "name": "玻璃门橡木书柜",
+      "category": "日用",
+      "description": "日常生活中的实体物品，保存地点与运输条件结合人物背景填写。",
+      "price": "1920年代美元参考：$24.65",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-baby-buggy",
+      "name": "婴儿车",
+      "category": "日用",
+      "description": "日常生活中的实体物品，保存地点与运输条件结合人物背景填写。",
+      "price": "1920年代美元参考：$34.45",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-chemical-fire-extinguisher",
+      "name": "化学灭火器",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：$13.85",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-investigation-watchmaker-s-eye-glass",
+      "name": "钟表匠目镜",
+      "category": "调查",
+      "description": "调查与日常用品，可用于记录、观察或组织人物的随身物品。",
+      "price": "1920年代美元参考：45¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-norton-motorcycle",
+      "name": "Norton 摩托车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$95.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-buick-model-d-45",
+      "name": "Buick D-45 型汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,020.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-cadillac-type-55",
+      "name": "Cadillac Type 55 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$2240.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-chevrolet-capitol",
+      "name": "Chevrolet Capitol 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$695.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-chevrolet-roadster",
+      "name": "Chevrolet Roadster 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$570.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-chrysler-model-f-58",
+      "name": "Chrysler F-58 型汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,045.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-dodge-model-s-1",
+      "name": "Dodge S/1 型汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$985.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-duesenberg-j",
+      "name": "Duesenberg J 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$20,000",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-ford-model-t",
+      "name": "Ford T 型汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$360.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-ford-model-a",
+      "name": "Ford A 型汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$450.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-hudson-coach-seat-8",
+      "name": "Hudson Coach 汽车（8座）",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,450.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-hudson-super-six-series-j",
+      "name": "Hudson Super Six Series J 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,750.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-oldsmobile-43-at",
+      "name": "Oldsmobile 43-AT 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,345.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-packard-twin-six-touring",
+      "name": "Packard Twin Six Touring 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$2,950.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-pierce-arrow",
+      "name": "Pierce-Arrow 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$6,000.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-pontiac-6-28-sedan",
+      "name": "Pontiac 6-28 Sedan 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$745.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-studebaker-stnd-dictator",
+      "name": "Studebaker Stnd./Dictator 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,165.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-studebaker-touring-seats-5",
+      "name": "Studebaker Touring 汽车（5座）",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$995.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-chevrolet-f-b-coupe-used",
+      "name": "二手 Chevrolet F.B. Coupe 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$300.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-1917-buick-used",
+      "name": "二手1917年 Buick 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$75.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-chevrolet-pickup-truck",
+      "name": "Chevrolet 皮卡",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$545.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-dodge-1-2-ton-truck",
+      "name": "Dodge 半吨卡车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,085",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-ford-model-tt-truck",
+      "name": "Ford TT 型卡车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$490",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-bentley-3-litre-england",
+      "name": "英国 Bentley 3-Litre 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$9,000.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-bmw-dixi-germany",
+      "name": "德国 BMW Dixi 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$1,225.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-citroen-c3-france",
+      "name": "法国 Citroën C3 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$800.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-hispano-suiza-alfonso-spain",
+      "name": "西班牙 Hispano-Suiza Alfonso 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$4,000.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-lancia-lambda-214-italy",
+      "name": "意大利 Lancia Lambda 214 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$4,050.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-mercedes-benz-ss-germany",
+      "name": "德国 Mercedes-Benz SS 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$7,750.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-renault-ax-france",
+      "name": "法国 Renault AX 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$500.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-silver-ghost",
+      "name": "英国 Rolls-Royce Silver Ghost 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$6,750.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-import-phantom-i",
+      "name": "英国 Rolls-Royce Phantom I 汽车",
+      "category": "交通",
+      "description": "时代运输工具，按所列型号和规格记录，驾驶与航行结合具体载具判断。",
+      "price": "1920年代美元参考：$10,800.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-tire",
+      "name": "轮胎",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$10.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-tire-repair-kit",
+      "name": "轮胎修理工具包",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：32¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-tire-snow-chains",
+      "name": "轮胎防滑链",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$4.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-jack",
+      "name": "千斤顶",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$1.00",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-auto-battery",
+      "name": "汽车蓄电池",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$14.15",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-radiator",
+      "name": "散热器",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$8.69",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-replacement-headlamp",
+      "name": "备用车灯",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：30¢",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-portable-air-pump",
+      "name": "便携气泵",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$3.25",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-auto-spot-light",
+      "name": "汽车探照灯",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$2.95",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "catalog-1920s-vehicle-part-auto-luggage-carrier",
+      "name": "汽车行李架",
+      "category": "车辆配件",
+      "description": "车辆用品或替换部件，适配型号与安装条件结合人物使用的车辆填写。",
+      "price": "1920年代美元参考：$1.35",
+      "sourceId": "roll20-equipment-1920s",
+      "eras": [
+        "core"
+      ],
+      "kind": "item"
+    }
+  ],
+  "dataNotes": [
+    "本包完成Roll20授权公开General Equipment页面中带价格的215个实体商品行的目录覆盖：206行新增，9行映射现有定义。此覆盖只针对该公开页面，不代表完整调查员手册或任何扩展正文。",
+    "完整保留美元价格字面值，包括美分、价格区间、起价、每磅、每包等单位；服装、医疗、户外、工具、调查用品、家具、车辆、车船配件均作为持有物条目。",
+    "不纳入Meals Out、Speakeasy Prices、Lodging与Real Estate四个表：它们属于餐饮、住宿服务或不动产，而非本角色卡的持有物目录。空价格的子分组标题不作条目。",
+    "车辆价格是源表的1920年代美元参考值，进口车型仍使用该表美元金额；不从型号或售价推导速度、装甲、油耗等未公开字段。衣物不从名称推导防护值。",
+    "公开职业样例包含的14个独立职业名称均已有对应目录定义，新增调查记者保留与通用记者不同的艺术或摄影选择。该结论不等于补齐规则书全部职业。"
+  ],
+  "sourceRowCoverage": [
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Worsted Wool Dress Suit",
+      "definitionId": "catalog-1920s-mens-worsted-wool-dress-suit",
+      "price": "$17.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Cashmere Dress Suit",
+      "definitionId": "catalog-1920s-mens-cashmere-dress-suit",
+      "price": "$18.50"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Suit, mohair",
+      "definitionId": "catalog-1920s-mens-suit-mohair",
+      "price": "$13.85"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Union suit, Forest Mills",
+      "definitionId": "catalog-1920s-mens-union-suit-forest-mills",
+      "price": "69¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Outdoor coat",
+      "definitionId": "catalog-1920s-mens-outdoor-coat",
+      "price": "$9.95-$35.00"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Chesterfield Overcoat",
+      "definitionId": "catalog-1920s-mens-chesterfield-overcoat",
+      "price": "$19.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Oxford Dress Shoes",
+      "definitionId": "catalog-1920s-mens-oxford-dress-shoes",
+      "price": "$6.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Leather Work Shoes",
+      "definitionId": "catalog-1920s-mens-leather-work-shoes",
+      "price": "$4.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Slacks, white flannel",
+      "definitionId": "catalog-1920s-mens-slacks-white-flannel",
+      "price": "$8.00"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Shirt, percale",
+      "definitionId": "catalog-1920s-mens-shirt-percale",
+      "price": "79¢-$1.25"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Broadcloth Dress Shirt",
+      "definitionId": "catalog-1920s-mens-broadcloth-dress-shirt",
+      "price": "$1.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Shaker Sweater",
+      "definitionId": "catalog-1920s-mens-shaker-sweater",
+      "price": "$7.69"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Felt Fedora",
+      "definitionId": "catalog-1920s-mens-felt-fedora",
+      "price": "$4.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Wool Golf Cap",
+      "definitionId": "catalog-1920s-mens-wool-golf-cap",
+      "price": "79¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Straw Hat",
+      "definitionId": "catalog-1920s-mens-straw-hat",
+      "price": "$1.95"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Leather Football Helmet",
+      "definitionId": "catalog-1920s-mens-leather-football-helmet",
+      "price": "$3.65"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Sweatshirt",
+      "definitionId": "catalog-1920s-mens-sweatshirt",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Necktie, silk",
+      "definitionId": "catalog-1920s-mens-necktie-silk",
+      "price": "50¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Batwing Bow Tie",
+      "definitionId": "catalog-1920s-mens-batwing-bow-tie",
+      "price": "55¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Sock Garters",
+      "definitionId": "catalog-1920s-mens-sock-garters",
+      "price": "39¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Cuff Links",
+      "definitionId": "catalog-1920s-mens-cuff-links",
+      "price": "40¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Leather Belt",
+      "definitionId": "catalog-1920s-mens-leather-belt",
+      "price": "$1.35"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Suspenders",
+      "definitionId": "catalog-1920s-mens-suspenders",
+      "price": "79¢"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Hiking Boots",
+      "definitionId": "catalog-1920s-mens-hiking-boots",
+      "price": "$7.25"
+    },
+    {
+      "sourceSection": "Men’s Clothing",
+      "sourceItem": "Bathing Suit",
+      "definitionId": "catalog-1920s-mens-bathing-suit",
+      "price": "$3.45"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Chic Designer Dress",
+      "definitionId": "catalog-1920s-womens-chic-designer-dress",
+      "price": "$90.00+"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Silk Taffeta Frock",
+      "definitionId": "catalog-1920s-womens-silk-taffeta-frock",
+      "price": "$10.95"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Satin Charmeuse",
+      "definitionId": "catalog-1920s-womens-satin-charmeuse",
+      "price": "$10.95"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Gingham Dress",
+      "definitionId": "catalog-1920s-womens-gingham-dress",
+      "price": "$2.59"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Pleated Skirt, Silk",
+      "definitionId": "catalog-1920s-womens-pleated-skirt-silk",
+      "price": "$7.95"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Blouse, Cotton",
+      "definitionId": "catalog-1920s-womens-blouse-cotton",
+      "price": "$1.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Worsted Wool Sweater",
+      "definitionId": "catalog-1920s-womens-worsted-wool-sweater",
+      "price": "$9.48"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Cotton Crepe Negligee",
+      "definitionId": "catalog-1920s-womens-cotton-crepe-negligee",
+      "price": "88¢"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Spike-heeled Parisian Shoes",
+      "definitionId": "catalog-1920s-womens-spike-heeled-parisian-shoes",
+      "price": "$4.45"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Leather One-Strap Slippers",
+      "definitionId": "catalog-1920s-womens-leather-one-strap-slippers",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Snug Velour Hat",
+      "definitionId": "catalog-1920s-womens-snug-velour-hat",
+      "price": "$4.44"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Satin Turban-style Hat",
+      "definitionId": "catalog-1920s-womens-satin-turban-style-hat",
+      "price": "$3.69"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Rayon Elastic Corset",
+      "definitionId": "catalog-1920s-womens-rayon-elastic-corset",
+      "price": "$2.59"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Embroidered Costume Slip",
+      "definitionId": "catalog-1920s-womens-embroidered-costume-slip",
+      "price": "$1.59"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Silk Hose (3 pairs)",
+      "definitionId": "catalog-1920s-womens-silk-hose-3-pairs",
+      "price": "$2.25"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Bloomers, Silk",
+      "definitionId": "catalog-1920s-womens-bloomers-silk",
+      "price": "$3.98-$4.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Tweed Jacket, fully lined",
+      "definitionId": "catalog-1920s-womens-tweed-jacket-fully-lined",
+      "price": "$3.95"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Velour Coat with Fur Trim",
+      "definitionId": "catalog-1920s-womens-velour-coat-with-fur-trim",
+      "price": "$39.75"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Brown Fox Fur Coat",
+      "definitionId": "catalog-1920s-womens-brown-fox-fur-coat",
+      "price": "$198.00"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Belted Rain Coat-Cotton",
+      "definitionId": "catalog-1920s-womens-belted-rain-coat-cotton",
+      "price": "$3.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Silk Handbag",
+      "definitionId": "catalog-1920s-womens-silk-handbag",
+      "price": "$4.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Dress Hair Comb",
+      "definitionId": "catalog-1920s-womens-dress-hair-comb",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Outdoor Shirt Khaki Jean Material",
+      "definitionId": "catalog-1920s-womens-outdoor-shirt-khaki-jean-material",
+      "price": "$1.79"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Outdoor Shirt All Wool Tweed or Linen",
+      "definitionId": "catalog-1920s-womens-outdoor-shirt-all-wool-tweed-or-linen",
+      "price": "$2.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Outdoor Knee-Length Knickers Khaki Jean Material",
+      "definitionId": "catalog-1920s-womens-outdoor-knee-length-knickers-khaki-jean-material",
+      "price": "$1.79"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Outdoor Knee-Length Knickers White Linen",
+      "definitionId": "catalog-1920s-womens-outdoor-knee-length-knickers-white-linen",
+      "price": "$2.98"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Khaki Leggings",
+      "definitionId": "catalog-1920s-womens-khaki-leggings",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Outdoor Boots",
+      "definitionId": "catalog-1920s-womens-outdoor-boots",
+      "price": "$2.59"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Bathing Suit",
+      "definitionId": "catalog-1920s-womens-bathing-suit",
+      "price": "$4.95"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Bathing Cap",
+      "definitionId": "catalog-1920s-womens-bathing-cap",
+      "price": "40¢"
+    },
+    {
+      "sourceSection": "Women’s Clothing",
+      "sourceItem": "Shoes, Pumps",
+      "definitionId": "catalog-1920s-womens-shoes-pumps",
+      "price": "$1.29"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Aspirin (12 pills)",
+      "definitionId": "catalog-1920s-medical-aspirin-12-pills",
+      "price": "10¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Epsom Salts",
+      "definitionId": "catalog-1920s-medical-epsom-salts",
+      "price": "9¢/lb."
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Indigestion Medicine",
+      "definitionId": "catalog-1920s-medical-indigestion-medicine",
+      "price": "25¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Laxative, Nature's Remedy",
+      "definitionId": "catalog-1920s-medical-laxative-nature-s-remedy",
+      "price": "25¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Medical Case",
+      "definitionId": "catalog-1920s-medical-medical-case",
+      "price": "$10.45"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Forceps",
+      "definitionId": "catalog-1920s-medical-forceps",
+      "price": "$3.59"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Scalpel Set",
+      "definitionId": "catalog-1920s-medical-scalpel-set",
+      "price": "$1.39"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Hypodermic Syringes",
+      "definitionId": "catalog-1920s-medical-hypodermic-syringes",
+      "price": "$12.50"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Atomizer",
+      "definitionId": "catalog-1920s-medical-atomizer",
+      "price": "$1.39"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Gauze Bandages (5 Yards)",
+      "definitionId": "catalog-1920s-medical-gauze-bandages-5-yards",
+      "price": "69¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Clinical Thermometer",
+      "definitionId": "clinical-thermometer",
+      "price": "69¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Alcohol (half gallon)",
+      "definitionId": "catalog-1920s-medical-alcohol-half-gallon",
+      "price": "20¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Hard Rubber Syringe",
+      "definitionId": "catalog-1920s-medical-hard-rubber-syringe",
+      "price": "69¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Bed Pan",
+      "definitionId": "catalog-1920s-medical-bed-pan",
+      "price": "$1.79"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Wheel Chair",
+      "definitionId": "catalog-1920s-medical-wheel-chair",
+      "price": "$39.95"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Maple Crutches",
+      "definitionId": "catalog-1920s-medical-maple-crutches",
+      "price": "$1.59"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Adhesive Plaster",
+      "definitionId": "catalog-1920s-medical-adhesive-plaster",
+      "price": "29¢"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Metal Arch Supports",
+      "definitionId": "catalog-1920s-medical-metal-arch-supports",
+      "price": "$1.98"
+    },
+    {
+      "sourceSection": "Medical Equipment",
+      "sourceItem": "Leather Ankle Supports",
+      "definitionId": "catalog-1920s-medical-leather-ankle-supports",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Cooking Kit",
+      "definitionId": "catalog-1920s-outdoor-cooking-kit",
+      "price": "$8.98"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Camp Stove",
+      "definitionId": "catalog-1920s-outdoor-camp-stove",
+      "price": "$6.10"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Vacuum bottle",
+      "definitionId": "catalog-1920s-outdoor-vacuum-bottle",
+      "price": "89¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Folding Bathtub",
+      "definitionId": "catalog-1920s-outdoor-folding-bathtub",
+      "price": "$6.79"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Waterproof Blanket",
+      "definitionId": "catalog-1920s-outdoor-waterproof-blanket",
+      "price": "$5.06"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Folding Camp Bed",
+      "definitionId": "catalog-1920s-outdoor-folding-camp-bed",
+      "price": "$3.65"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Carbide Lamp",
+      "definitionId": "catalog-1920s-outdoor-carbide-lamp",
+      "price": "$2.35"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Can of Carbide (2 lbs.)",
+      "definitionId": "catalog-1920s-outdoor-can-of-carbide-2-lbs",
+      "price": "25¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Searchlight",
+      "definitionId": "catalog-1920s-outdoor-searchlight",
+      "price": "$5.95"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Gasoline Lantern",
+      "definitionId": "catalog-1920s-outdoor-gasoline-lantern",
+      "price": "$6.40"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Kerosene Lantern",
+      "definitionId": "catalog-1920s-outdoor-kerosene-lantern",
+      "price": "$1.30"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Dark Lantern",
+      "definitionId": "catalog-1920s-outdoor-dark-lantern",
+      "price": "$1.68"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Electric Torch",
+      "definitionId": "flashlight",
+      "price": "$2.40"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Batteries",
+      "definitionId": "catalog-1920s-outdoor-batteries",
+      "price": "60¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Pen Light",
+      "definitionId": "catalog-1920s-outdoor-pen-light",
+      "price": "$1.00"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Telescope",
+      "definitionId": "catalog-1920s-outdoor-telescope",
+      "price": "$3.45"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Field Glasses (3x to 6x)",
+      "definitionId": "catalog-1920s-outdoor-field-glasses-3x-to-6x",
+      "price": "$8.50-$23.00"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Binoculars",
+      "definitionId": "binoculars",
+      "price": "$28.50"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Jeweled Compass",
+      "definitionId": "catalog-1920s-outdoor-jeweled-compass",
+      "price": "$3.25"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Compass with Lid",
+      "definitionId": "catalog-1920s-outdoor-compass-with-lid",
+      "price": "$2.85"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Hunting Knife",
+      "definitionId": "catalog-1920s-outdoor-hunting-knife",
+      "price": "$2.35"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "2-Blade Pocket Knife",
+      "definitionId": "catalog-1920s-outdoor-2-blade-pocket-knife",
+      "price": "$1.20"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Hand Axe",
+      "definitionId": "catalog-1920s-outdoor-hand-axe",
+      "price": "98¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Small Live Animal Trap",
+      "definitionId": "catalog-1920s-outdoor-small-live-animal-trap",
+      "price": "$2.48"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Coil Spring Animal Trap",
+      "definitionId": "catalog-1920s-outdoor-coil-spring-animal-trap",
+      "price": "$5.98"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Bear Trap",
+      "definitionId": "catalog-1920s-outdoor-bear-trap",
+      "price": "$11.43"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Fishing Rod and Tackle",
+      "definitionId": "catalog-1920s-outdoor-fishing-rod-and-tackle",
+      "price": "$9.35"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Hemp Twine",
+      "definitionId": "catalog-1920s-outdoor-hemp-twine",
+      "price": "27¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Pedometer",
+      "definitionId": "catalog-1920s-outdoor-pedometer",
+      "price": "$1.70"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Heavy Canvas Shoulder Bag",
+      "definitionId": "catalog-1920s-outdoor-heavy-canvas-shoulder-bag",
+      "price": "$3.45"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Fifteen Hour Candles (12)",
+      "definitionId": "catalog-1920s-outdoor-fifteen-hour-candles-12",
+      "price": "62¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Waterproof Match Case",
+      "definitionId": "waterproof-match-case",
+      "price": "48¢"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Steel Row Boat (seats 4)",
+      "definitionId": "catalog-1920s-outdoor-steel-row-boat-seats-4",
+      "price": "$35.20"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "2 HP Motor for Row Boats",
+      "definitionId": "catalog-1920s-outdoor-2-hp-motor-for-row-boats",
+      "price": "$79.95"
+    },
+    {
+      "sourceSection": "Outdoor & Travel Gear",
+      "sourceItem": "Canvas and Wood Canoe",
+      "definitionId": "catalog-1920s-outdoor-canvas-and-wood-canoe",
+      "price": "$75.00"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "7 x 7 foot Tent",
+      "definitionId": "catalog-1920s-camp-7-x-7-foot-tent",
+      "price": "$11.48"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "12 x 16 foot Tent",
+      "definitionId": "catalog-1920s-camp-12-x-16-foot-tent",
+      "price": "$28.15"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "16 x 24 foot Tent",
+      "definitionId": "catalog-1920s-camp-16-x-24-foot-tent",
+      "price": "$53.48"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "24 x 36 foot Tarpaulin",
+      "definitionId": "catalog-1920s-camp-24-x-36-foot-tarpaulin",
+      "price": "$39.35"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "7 x 7 foot Car Tent",
+      "definitionId": "catalog-1920s-camp-7-x-7-foot-car-tent",
+      "price": "$12.80"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Iron Tent Stakes (12)",
+      "definitionId": "catalog-1920s-camp-iron-tent-stakes-12",
+      "price": "$1.15"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Auto Bed",
+      "definitionId": "catalog-1920s-camp-auto-bed",
+      "price": "$8.95"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Canteen (1 quart)",
+      "definitionId": "catalog-1920s-camp-canteen-1-quart",
+      "price": "$1.69"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Insulated Tank (5 gallons)",
+      "definitionId": "catalog-1920s-camp-insulated-tank-5-gallons",
+      "price": "$3.98"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Water Bag (1 gallon)",
+      "definitionId": "catalog-1920s-camp-water-bag-1-gallon",
+      "price": "80¢"
+    },
+    {
+      "sourceSection": "Tents",
+      "sourceItem": "Water Bag (5 gallon)",
+      "definitionId": "catalog-1920s-camp-water-bag-5-gallon",
+      "price": "$2.06"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Tool Outfit (20 tools)",
+      "definitionId": "catalog-1920s-tool-tool-outfit-20-tools",
+      "price": "$14.90"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Hand Drill (plus 8 bits)",
+      "definitionId": "catalog-1920s-tool-hand-drill-plus-8-bits",
+      "price": "$6.15"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Large Steel Pulley",
+      "definitionId": "catalog-1920s-tool-large-steel-pulley",
+      "price": "$1.75"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Padlock",
+      "definitionId": "catalog-1920s-tool-padlock",
+      "price": "95¢"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Rope (50 feet)",
+      "definitionId": "catalog-1920s-tool-rope-50-feet",
+      "price": "$8.60"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Light Chain (per foot)",
+      "definitionId": "catalog-1920s-tool-light-chain-per-foot",
+      "price": "10¢"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Watchmaker’s Tool Kit",
+      "definitionId": "catalog-1920s-tool-watchmakers-tool-kit",
+      "price": "$7.74"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Crowbar",
+      "definitionId": "crowbar",
+      "price": "$2.25"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Hand Saw",
+      "definitionId": "catalog-1920s-tool-hand-saw",
+      "price": "$1.65"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Gasoline Blowtorch",
+      "definitionId": "catalog-1920s-tool-gasoline-blowtorch",
+      "price": "$4.45"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Electricians Gloves",
+      "definitionId": "catalog-1920s-tool-electricians-gloves",
+      "price": "$1.98"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Tool Belt & Safety Strap",
+      "definitionId": "catalog-1920s-tool-tool-belt-safety-strap",
+      "price": "$3.33"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Lineman's Climbers",
+      "definitionId": "catalog-1920s-tool-lineman-s-climbers",
+      "price": "$2.52"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Jewelers 48 Piece Tool Set",
+      "definitionId": "catalog-1920s-tool-jewelers-48-piece-tool-set",
+      "price": "$15.98"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Rotary Tool Grinder",
+      "definitionId": "catalog-1920s-tool-rotary-tool-grinder",
+      "price": "$6.90"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Shovel",
+      "definitionId": "catalog-1920s-tool-shovel",
+      "price": "95¢"
+    },
+    {
+      "sourceSection": "Tools",
+      "sourceItem": "Home Tool Set in Box",
+      "definitionId": "catalog-1920s-tool-home-tool-set-in-box",
+      "price": "$14.90"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Handcuffs",
+      "definitionId": "handcuffs",
+      "price": "$3.35"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Extra Handcuff Key",
+      "definitionId": "catalog-1920s-investigation-extra-handcuff-key",
+      "price": "28¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Police Whistle",
+      "definitionId": "catalog-1920s-investigation-police-whistle",
+      "price": "30¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Dictaphone",
+      "definitionId": "dictaphone",
+      "price": "$39.95"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Wire Recorder",
+      "definitionId": "catalog-1920s-investigation-wire-recorder",
+      "price": "$129.95"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Wrist Watch",
+      "definitionId": "catalog-1920s-investigation-wrist-watch",
+      "price": "$5.95"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Gold Pocket Watch",
+      "definitionId": "catalog-1920s-investigation-gold-pocket-watch",
+      "price": "$35.10"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Self-filling Fountain Pen",
+      "definitionId": "catalog-1920s-investigation-self-filling-fountain-pen",
+      "price": "$1.80"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Mechanical Pencil",
+      "definitionId": "catalog-1920s-investigation-mechanical-pencil",
+      "price": "85¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Writing Tablet",
+      "definitionId": "catalog-1920s-investigation-writing-tablet",
+      "price": "20¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Straightjacket",
+      "definitionId": "catalog-1920s-investigation-straightjacket",
+      "price": "$9.50"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Sketch Pad",
+      "definitionId": "catalog-1920s-investigation-sketch-pad",
+      "price": "25¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Complete Diving Suit",
+      "definitionId": "catalog-1920s-investigation-complete-diving-suit",
+      "price": "$1,200.00"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Remington Typewriter",
+      "definitionId": "catalog-1920s-investigation-remington-typewriter",
+      "price": "$40.00"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Harris Typewriter",
+      "definitionId": "catalog-1920s-investigation-harris-typewriter",
+      "price": "$66.75"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Pocket Microscope",
+      "definitionId": "pocket-microscope",
+      "price": "58¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "110x Desk Microscope",
+      "definitionId": "catalog-1920s-investigation-110x-desk-microscope",
+      "price": "$17.50"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Floor Safe (950 lbs.)",
+      "definitionId": "catalog-1920s-investigation-floor-safe-950-lbs",
+      "price": "$62.50"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Umbrella",
+      "definitionId": "umbrella",
+      "price": "$1.79"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Turkish Water Pipe",
+      "definitionId": "catalog-1920s-investigation-turkish-water-pipe",
+      "price": "99¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Cigarettes (per pack)",
+      "definitionId": "catalog-1920s-investigation-cigarettes-per-pack",
+      "price": "10¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Box of Cigars",
+      "definitionId": "catalog-1920s-investigation-box-of-cigars",
+      "price": "$2.29"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Four Candles",
+      "definitionId": "catalog-1920s-investigation-four-candles",
+      "price": "38¢"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Unabridged Dictionary",
+      "definitionId": "catalog-1920s-investigation-unabridged-dictionary",
+      "price": "$6.75"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "10-volume Encyclopedia",
+      "definitionId": "catalog-1920s-investigation-10-volume-encyclopedia",
+      "price": "$49.00"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Wet Sponge Respirator",
+      "definitionId": "catalog-1920s-investigation-wet-sponge-respirator",
+      "price": "$1.95"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Pocket Magnifying Glass",
+      "definitionId": "catalog-1920s-investigation-pocket-magnifying-glass",
+      "price": "$1.68"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Bible",
+      "definitionId": "catalog-1920s-investigation-bible",
+      "price": "$3.98"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Briefcase",
+      "definitionId": "catalog-1920s-investigation-briefcase",
+      "price": "$1.48"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Globe on Stand",
+      "definitionId": "catalog-1920s-investigation-globe-on-stand",
+      "price": "$9.95"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Folding Writing Desk",
+      "definitionId": "catalog-1920s-investigation-folding-writing-desk",
+      "price": "$16.65"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Glass-Door Oak Bookcase",
+      "definitionId": "catalog-1920s-investigation-glass-door-oak-bookcase",
+      "price": "$24.65"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Baby Buggy",
+      "definitionId": "catalog-1920s-investigation-baby-buggy",
+      "price": "$34.45"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Chemical Fire Extinguisher",
+      "definitionId": "catalog-1920s-investigation-chemical-fire-extinguisher",
+      "price": "$13.85"
+    },
+    {
+      "sourceSection": "Miscellaneous Investigator Tools",
+      "sourceItem": "Watchmaker's Eye Glass",
+      "definitionId": "catalog-1920s-investigation-watchmaker-s-eye-glass",
+      "price": "45¢"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Norton Motorcycle",
+      "definitionId": "catalog-1920s-vehicle-norton-motorcycle",
+      "price": "$95.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Buick Model D-45",
+      "definitionId": "catalog-1920s-vehicle-buick-model-d-45",
+      "price": "$1,020.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Cadillac Type 55",
+      "definitionId": "catalog-1920s-vehicle-cadillac-type-55",
+      "price": "$2240.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Chevrolet Capitol",
+      "definitionId": "catalog-1920s-vehicle-chevrolet-capitol",
+      "price": "$695.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Chevrolet, Roadster",
+      "definitionId": "catalog-1920s-vehicle-chevrolet-roadster",
+      "price": "$570.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Chrysler Model F-58",
+      "definitionId": "catalog-1920s-vehicle-chrysler-model-f-58",
+      "price": "$1,045.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Dodge Model S/1",
+      "definitionId": "catalog-1920s-vehicle-dodge-model-s-1",
+      "price": "$985.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Duesenberg J",
+      "definitionId": "catalog-1920s-vehicle-duesenberg-j",
+      "price": "$20,000"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Ford Model T",
+      "definitionId": "catalog-1920s-vehicle-ford-model-t",
+      "price": "$360.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Ford Model A",
+      "definitionId": "catalog-1920s-vehicle-ford-model-a",
+      "price": "$450.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Hudson, Coach, (seat 8)",
+      "definitionId": "catalog-1920s-vehicle-hudson-coach-seat-8",
+      "price": "$1,450.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Hudson Super Six Series J",
+      "definitionId": "catalog-1920s-vehicle-hudson-super-six-series-j",
+      "price": "$1,750.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Oldsmobile 43-AT",
+      "definitionId": "catalog-1920s-vehicle-oldsmobile-43-at",
+      "price": "$1,345.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Packard Twin Six Touring",
+      "definitionId": "catalog-1920s-vehicle-packard-twin-six-touring",
+      "price": "$2,950.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Pierce-Arrow",
+      "definitionId": "catalog-1920s-vehicle-pierce-arrow",
+      "price": "$6,000.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Pontiac 6-28 Sedan",
+      "definitionId": "catalog-1920s-vehicle-pontiac-6-28-sedan",
+      "price": "$745.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Studebaker Stnd./Dictator",
+      "definitionId": "catalog-1920s-vehicle-studebaker-stnd-dictator",
+      "price": "$1,165.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Studebaker, Touring (seats 5)",
+      "definitionId": "catalog-1920s-vehicle-studebaker-touring-seats-5",
+      "price": "$995.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Chevrolet, F.B. Coupe (used)",
+      "definitionId": "catalog-1920s-vehicle-chevrolet-f-b-coupe-used",
+      "price": "$300.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "1917 Buick (Used)",
+      "definitionId": "catalog-1920s-vehicle-1917-buick-used",
+      "price": "$75.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Chevrolet Pickup Truck",
+      "definitionId": "catalog-1920s-vehicle-chevrolet-pickup-truck",
+      "price": "$545.00"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Dodge 1/2 Ton Truck",
+      "definitionId": "catalog-1920s-vehicle-dodge-1-2-ton-truck",
+      "price": "$1,085"
+    },
+    {
+      "sourceSection": "Transport",
+      "sourceItem": "Ford Model TT Truck",
+      "definitionId": "catalog-1920s-vehicle-ford-model-tt-truck",
+      "price": "$490"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Bentley 3-Litre, England",
+      "definitionId": "catalog-1920s-vehicle-import-bentley-3-litre-england",
+      "price": "$9,000.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "BMW Dixi, Germany",
+      "definitionId": "catalog-1920s-vehicle-import-bmw-dixi-germany",
+      "price": "$1,225.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Citroen C3, France",
+      "definitionId": "catalog-1920s-vehicle-import-citroen-c3-france",
+      "price": "$800.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Hispano-Suiza Alfonso, Spain",
+      "definitionId": "catalog-1920s-vehicle-import-hispano-suiza-alfonso-spain",
+      "price": "$4,000.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Lancia Lambda 214, Italy",
+      "definitionId": "catalog-1920s-vehicle-import-lancia-lambda-214-italy",
+      "price": "$4,050.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Mercedes-Benz SS, Germany",
+      "definitionId": "catalog-1920s-vehicle-import-mercedes-benz-ss-germany",
+      "price": "$7,750.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Renault AX, France",
+      "definitionId": "catalog-1920s-vehicle-import-renault-ax-france",
+      "price": "$500.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Silver Ghost",
+      "definitionId": "catalog-1920s-vehicle-import-silver-ghost",
+      "price": "$6,750.00"
+    },
+    {
+      "sourceSection": "Non-U.S. Vehicles",
+      "sourceItem": "Phantom I",
+      "definitionId": "catalog-1920s-vehicle-import-phantom-i",
+      "price": "$10,800.00"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Tire",
+      "definitionId": "catalog-1920s-vehicle-part-tire",
+      "price": "$10.95"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Tire Repair Kit",
+      "definitionId": "catalog-1920s-vehicle-part-tire-repair-kit",
+      "price": "32¢"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Tire Snow Chains",
+      "definitionId": "catalog-1920s-vehicle-part-tire-snow-chains",
+      "price": "$4.95"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Jack",
+      "definitionId": "catalog-1920s-vehicle-part-jack",
+      "price": "$1.00"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Auto Battery",
+      "definitionId": "catalog-1920s-vehicle-part-auto-battery",
+      "price": "$14.15"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Radiator",
+      "definitionId": "catalog-1920s-vehicle-part-radiator",
+      "price": "$8.69"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Replacement Headlamp",
+      "definitionId": "catalog-1920s-vehicle-part-replacement-headlamp",
+      "price": "30¢"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Portable Air Pump",
+      "definitionId": "catalog-1920s-vehicle-part-portable-air-pump",
+      "price": "$3.25"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Auto Spot Light",
+      "definitionId": "catalog-1920s-vehicle-part-auto-spot-light",
+      "price": "$2.95"
+    },
+    {
+      "sourceSection": "Vehicle Accessories",
+      "sourceItem": "Auto Luggage Carrier",
+      "definitionId": "catalog-1920s-vehicle-part-auto-luggage-carrier",
+      "price": "$1.35"
+    }
+  ]
+}

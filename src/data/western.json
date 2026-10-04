@@ -86,13 +86,30 @@
       "id": "western-7e",
       "title": "Down Darker Trails (2017) — for Call of Cthulhu 7th Edition",
       "url": "https://www.chaosium.com/down-darker-trails-hardcover/",
-      "note": "官方荒野西部扩展，适用于 CoC 第 7 版，可另外使用 Pulp。此工具采用标准调查员人物卡，未引入 Pulp 天赋或额外 HP。"
+      "note": "官方荒野西部扩展，适用于 CoC 第 7 版，可另外使用 Pulp。此工具采用标准调查员人物卡，未引入 Pulp 天赋或额外 HP。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2017
     },
     {
       "id": "western-sheet-7e",
       "title": "Official Down Darker Trails Classic Investigator Sheet",
       "url": "https://www.chaosium.com/content/FreePDFs/CoC/Character%20Sheets/Down-Darker-Trails-CLASSIC%20INVESTIGATOR-sheet-FULL%20AUTOCALC.pdf",
-      "note": "出版页提供的官方标准调查员卡。XFA 文件含嵌入人物卡图像，已直接检查图像中的基础值：骑术 15、博物学 20、电气维修 0，并含动物驯养、赌博、绳索使用、陷阱和驾驶马车。"
+      "note": "出版页提供的官方标准调查员卡。XFA 文件含嵌入人物卡图像，已直接检查图像中的基础值：骑术 15、博物学 20、电气维修 0，并含动物驯养、赌博、绳索使用、陷阱和驾驶马车。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "character-sheet",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "partial",
+        "equipment": "not-applicable"
+      }
     }
   ]
 }

@@ -5,49 +5,115 @@
       "id": "quickstart-7e",
       "title": "Call of Cthulhu 7th Edition Quick-Start Rules (2021 revision)",
       "url": "https://www.chaosium.com/cthulhu-quickstart/",
-      "note": "官方免费快速入门。用于核对检定、属性和核心衍生值；快速建卡的固定数组与正式职业点规则应分别使用。"
+      "note": "官方免费快速入门。用于核对检定、属性和核心衍生值；快速建卡的固定数组与正式职业点规则应分别使用。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "core",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "partial",
+        "equipment": "partial"
+      },
+      "year": 2021
     },
     {
       "id": "keeper-7e",
       "title": "Call of Cthulhu Keeper Rulebook, 7th Edition",
       "url": "https://www.chaosium.com/call-of-cthulhu-keeper-rulebook-7th-ed-hardcover/",
-      "note": "第 7 版核心规则；职业、武器与法术条目的版本锚点。预置仅保留数值、名称与原创短注，不替代规则书。"
+      "note": "第 7 版核心规则；职业、武器与法术条目的版本锚点。预置仅保留数值、名称与原创短注，不替代规则书。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "core",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "partial"
+      }
     },
     {
       "id": "investigator-7e",
       "title": "Call of Cthulhu Investigator Handbook, 7th Edition",
       "url": "https://www.chaosium.com/call-of-cthulhu-investigator-handbook-pdf/",
-      "note": "第 7 版调查员手册；职业技能点、信用范围和专业技能的版本锚点。"
+      "note": "第 7 版调查员手册；职业技能点、信用范围和专业技能的版本锚点。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "core",
+      "coverage": {
+        "occupations": "partial",
+        "skills": "not-included",
+        "equipment": "partial"
+      }
     },
     {
       "id": "sheets-7e",
       "title": "Official 7th Edition Investigator Sheets (1920s / Modern)",
       "url": "https://www.chaosium.com/cthulhu-character-sheets/",
-      "note": "采用官方人物卡的技能基础值与版面字段组织；网页以自制设计实现，不嵌入原版 PDF。"
+      "note": "采用官方人物卡的技能基础值与版面字段组织；网页以自制设计实现，不嵌入原版 PDF。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "character-sheet",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "partial",
+        "equipment": "partial"
+      }
     },
     {
       "id": "through-ages-7e",
       "title": "Cthulhu Through the Ages (2014), 7th Edition",
       "url": "https://www.chaosium.com/cthulhu-through-the-ages-pdf/",
-      "note": "官方跨时代指南。收录 Gaslight；不包含独立的“日本现代”通用建卡规则，也不把 Victorian 与 Gaslight 当作两个不同官方扩展。"
+      "note": "官方跨时代指南。收录 Gaslight；不包含独立的“日本现代”通用建卡规则，也不把 Victorian 与 Gaslight 当作两个不同官方扩展。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2014
     },
     {
       "id": "wiki-occupations-7e",
       "title": "Chaosium RPG Wiki: Occupation and Skills",
       "url": "https://cthulhuwiki.chaosium.com/investigators/step-three-occupation-and-skills.html",
-      "note": "官方公开的八个示例职业与选择条件。"
+      "note": "官方公开的八个示例职业与选择条件。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "partial",
+        "skills": "partial",
+        "equipment": "not-applicable"
+      }
     },
     {
       "id": "project-original",
       "title": "本项目原创补充与时代适配",
       "url": "",
-      "note": "原创说明、现代物品短注及维多利亚风格 profile；明确不是规则书中的独立官方扩展。"
+      "note": "原创说明、现代物品短注及维多利亚风格 profile；明确不是规则书中的独立官方扩展。",
+      "publisher": "本项目",
+      "edition": "CoC 7版工具适配",
+      "kind": "original",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "partial"
+      }
     },
     {
       "id": "roll20-basic-7e",
       "title": "Call of Cthulhu Free Basic Rules: Determine Occupation (Roll20 licensed compendium)",
       "url": "https://roll20.net/compendium/coc/Step%20Four%20(Determine%20Occupation)",
-      "note": "授权平台公开的基础职业规则；页面使用 Pulp 语境，所采用的共同职业公式与技能选择仍为第 7 版通用职业。本工具未引入 Pulp 的额外 HP 等机制。"
+      "note": "授权平台公开的基础职业规则；页面使用 Pulp 语境，所采用的共同职业公式与技能选择仍为第 7 版通用职业。本工具未引入 Pulp 的额外 HP 等机制。",
+      "publisher": "Chaosium / Roll20 授权",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "partial",
+        "skills": "not-included",
+        "equipment": "not-included"
+      }
     }
   ],
   "occupations": [
@@ -979,13 +1045,16 @@
       "name": "手电筒",
       "category": "探索",
       "description": "便携照明，另记电池或燃料。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$2.40",
       "sourceId": "investigator-7e",
       "eras": [
         "core",
         "japan"
       ],
-      "kind": "item"
+      "kind": "item",
+      "verificationSourceIds": [
+        "roll20-equipment-1920s"
+      ]
     },
     {
       "id": "oil-lantern",
@@ -1016,7 +1085,7 @@
       "name": "双筒望远镜",
       "category": "探索",
       "description": "远距离观察时使用。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$28.50",
       "sourceId": "investigator-7e",
       "eras": [
         "core",
@@ -1025,7 +1094,10 @@
         "victorian",
         "western"
       ],
-      "kind": "item"
+      "kind": "item",
+      "verificationSourceIds": [
+        "roll20-equipment-1920s"
+      ]
     },
     {
       "id": "first-aid-kit",
@@ -1105,7 +1177,7 @@
       "name": "雨伞",
       "category": "日用",
       "description": "日常携带用品，使用方式由守秘人判断。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$1.79",
       "sourceId": "investigator-7e",
       "eras": [
         "core",
@@ -1114,7 +1186,10 @@
         "victorian",
         "western"
       ],
-      "kind": "item"
+      "kind": "item",
+      "verificationSourceIds": [
+        "roll20-equipment-1920s"
+      ]
     },
     {
       "id": "travel-case",
@@ -1174,52 +1249,64 @@
       "name": "小刀",
       "category": "近战",
       "description": "斗殴技能；对应小型刀具。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$2",
       "sourceId": "keeper-7e",
       "damage": "1D4 + DB",
       "range": "接触",
       "attacks": "1",
       "skillId": "fighting-brawl",
-      "kind": "weapon"
+      "kind": "weapon",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "large-knife",
       "name": "大刀",
       "category": "近战",
       "description": "斗殴技能；对应大型刀具。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$4",
       "sourceId": "keeper-7e",
       "damage": "1D8 + DB",
       "range": "接触",
       "attacks": "1",
       "skillId": "fighting-brawl",
-      "kind": "weapon"
+      "kind": "weapon",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "small-club",
       "name": "小型棍棒",
       "category": "近战",
       "description": "斗殴技能；如警棍。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$3",
       "sourceId": "keeper-7e",
       "damage": "1D6 + DB",
       "range": "接触",
       "attacks": "1",
       "skillId": "fighting-brawl",
-      "kind": "weapon"
+      "kind": "weapon",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "large-club",
       "name": "大型棍棒",
       "category": "近战",
       "description": "斗殴技能；如棒球棍。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$3",
       "sourceId": "keeper-7e",
       "damage": "1D8 + DB",
       "range": "接触",
       "attacks": "1",
       "skillId": "fighting-brawl",
-      "kind": "weapon"
+      "kind": "weapon",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "revolver-38",
@@ -1246,10 +1333,10 @@
       "name": ".32 自动手枪",
       "category": "枪械",
       "description": "手枪技能；具体型号以时代和武器表为准。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$20",
       "sourceId": "keeper-7e",
       "damage": "1D8",
-      "range": "15 米",
+      "range": "15 码",
       "attacks": "1（至多 3）",
       "skillId": "firearms-handgun",
       "eras": [
@@ -1259,34 +1346,44 @@
         "victorian",
         "western"
       ],
-      "kind": "weapon"
+      "kind": "weapon",
+      "ammo": "8",
+      "malfunction": "99",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "automatic-45",
       "name": ".45 自动手枪",
       "category": "枪械",
       "description": "手枪技能；具体型号以时代和武器表为准。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$40",
       "sourceId": "keeper-7e",
       "damage": "1D10 + 2",
-      "range": "15 米",
+      "range": "15 码",
       "attacks": "1（至多 3）",
       "skillId": "firearms-handgun",
       "eras": [
         "core",
         "japan"
       ],
-      "kind": "weapon"
+      "kind": "weapon",
+      "ammo": "7",
+      "malfunction": "100",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "shotgun-12",
       "name": "12 号霰弹枪",
       "category": "枪械",
-      "description": "步枪 / 霰弹枪技能；随射程使用不同伤害。",
+      "description": "步枪 / 霰弹枪技能；随射程使用不同伤害。此泛称条目不指定双管或半自动型号，装弹量和售价须按实际型号记录；距离单位依据公开授权表核实。",
       "price": "依时代、信用评级与守秘人裁定",
       "sourceId": "keeper-7e",
       "damage": "4D6 / 2D6 / 1D6",
-      "range": "10 / 20 / 50 米",
+      "range": "10 / 20 / 50 码",
       "attacks": "1（双管可 2）",
       "skillId": "firearms-rifle",
       "eras": [
@@ -1296,24 +1393,32 @@
         "victorian",
         "western"
       ],
-      "kind": "weapon"
+      "kind": "weapon",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     },
     {
       "id": "rifle-30-06",
       "name": ".30-06 栓动步枪",
       "category": "枪械",
       "description": "步枪 / 霰弹枪技能；型号与装弹量另行记录。",
-      "price": "依时代、信用评级与守秘人裁定",
+      "price": "1920年代美元参考：$75",
       "sourceId": "keeper-7e",
       "damage": "2D6 + 4",
-      "range": "110 米",
+      "range": "110 码",
       "attacks": "1",
       "skillId": "firearms-rifle",
       "eras": [
         "core",
         "japan"
       ],
-      "kind": "weapon"
+      "kind": "weapon",
+      "ammo": "5",
+      "malfunction": "100",
+      "verificationSourceIds": [
+        "roll20-weapons-7e"
+      ]
     }
   ],
   "spells": [
@@ -1377,10 +1482,11 @@
   "dataNotes": [
     "中文名称为本项目界面译名；如与所持规则书译名不同，以中英文 ID 和所持版本对照。",
     "标准职业目录为第 7 版通用职业，跨时代可用性是适配；Gaslight 专属职业和阶层收益未完整收录。",
-    "武器条目提供常用数值，不包含射击罚骰、故障值、弹药和完整战斗程序。",
+    "武器提供伤害、射程和攻击次数；已核实型号另含装弹量与故障值。射击罚骰、自动射击和完整战斗程序仍以对应规则书为准。",
     "法术为规则书索引与原创短注，未以未经核实的数值代替规则书完整条目。",
     "装备价格随时代和地区变化，预置不使用虚构统一售价。",
-    "黑暗时代与荒野西部均依据官方公开标准人物卡适配；未声称收录完整扩展机制。Dark Ages 的核心职业技能需要时代专长适配，且社会地位范围暂沿用通用职业参考范围。"
+    "黑暗时代与荒野西部均依据官方公开标准人物卡适配；未声称收录完整扩展机制。Dark Ages 的核心职业技能需要时代专长适配，且社会地位范围暂沿用通用职业参考范围。",
+    "属性和体格提示参考用户提供的Excel人物卡“属性和掷骰”B19:AS52、F77:S86并重新撰写；使用原表不同属性的参考锚点，保留1–99建卡范围，不将体重、学历、抛投比较或夸张能力描述当成自动规则效果。"
   ],
   "skills": [
     {
@@ -2296,10 +2402,13 @@
       "base": 5,
       "category": "行动",
       "eras": [
+        "core",
+        "japan",
         "dark-ages",
         "western"
       ],
       "sourceId": "western-sheet-7e",
+      "note": "核心1920s与现代范围另据用户提供的人物卡工作簿《人物卡》P41/R41：驯兽基础值5。保留既有ID与西部人物卡来源；黑暗时代仍使用该时代基础值15。",
       "description": "观察并引导动物行为，处理范围取决于动物与时代情境。",
       "scenarios": [
         "安抚受惊牲畜",
@@ -2323,242 +2432,252 @@
   "guidance": {
     "attributes": {
       "STR": {
-        "description": "力量反映肌肉力量与施力能力；分段文字仅供扮演参考。",
+        "description": "力量表示肌肉与施力能力；可参考搬举重物的表现来扮演。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "施力能力很弱，搬运重物通常很吃力。"
+            "max": 14,
+            "description": "力量很弱，提举日常物件也可能吃力，需要借助他人或工具。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "力量偏弱，更倾向借助工具或他人协助。"
+            "min": 15,
+            "max": 49,
+            "description": "力量偏弱，搬运重物和持续施力较吃力。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "力量处于常见成人水平，可承担日常体力活动。"
+            "min": 50,
+            "max": 89,
+            "description": "具备普通人的力量，能应付常见的日常体力活动。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "力量较强，搬运和施力时更有优势。"
+            "min": 90,
+            "max": 98,
+            "description": "力量异常出众，可能是你见过力气最大的人之一。"
           },
           {
-            "min": 85,
+            "min": 99,
             "max": 99,
-            "description": "力量很突出，常给人强健有力的印象。"
+            "description": "力量达到世界级举重选手般的水平，接近人类极限。"
           }
         ]
       },
       "CON": {
-        "description": "体质反映耐力、健康与身体承受能力；分段文字仅供扮演参考。",
+        "description": "体质表示健康、活力与身体承受能力；文字描述不额外授予免疫或恢复效果。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "身体承受能力很弱，容易显得疲惫。"
+            "max": 14,
+            "description": "身体承受能力很低，日常活动也容易疲惫，常需协助或休息。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "体质偏弱，持续活动后需要更多休息。"
+            "min": 15,
+            "max": 49,
+            "description": "体质偏弱，持续活动后需要较多休息。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "体质处于常见水平，能应付日常劳累。"
+            "min": 50,
+            "max": 89,
+            "description": "健康与耐力处于普通人的范围，能应付日常劳累。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "体质较强，持续活动时显得耐久。"
+            "min": 90,
+            "max": 98,
+            "description": "体质异常强健，面对劳累和身体压力仍显得精力充沛。"
           },
           {
-            "min": 85,
+            "min": 99,
             "max": 99,
-            "description": "体质很突出，给人精力充沛、恢复力好的印象。"
+            "description": "拥有接近人类极限的身体承受能力，耐力十分出众。"
           }
         ]
       },
       "SIZ": {
-        "description": "体型综合表示身高、体重与身体规模，不直接换算具体尺寸；分段文字仅供扮演参考。",
+        "description": "体型将身高与体重综合成一个数值；同一体型可以有不同身形，不固定对应公斤或厘米。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "体型很小，站在人群中显得纤小。"
+            "max": 14,
+            "description": "身形非常小，规模接近婴幼儿；具体年龄与外观另行设定。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "体型偏小，身形常显得轻巧。"
-          },
-          {
-            "min": 45,
+            "min": 15,
             "max": 64,
-            "description": "体型处于常见成人范围。"
+            "description": "身形从孩童般纤小到较小的成人不等，体重或身高较低。"
           },
           {
             "min": 65,
-            "max": 84,
-            "description": "体型较大，身形容易引人注意。"
+            "max": 79,
+            "description": "处于中等身高与体重的普通成人体型范围。"
           },
           {
-            "min": 85,
+            "min": 80,
+            "max": 98,
+            "description": "身形很大，可能非常高大、厚实，或具有较高的体重。"
+          },
+          {
+            "min": 99,
             "max": 99,
-            "description": "体型很突出，常给人高大或厚重的印象。"
+            "description": "身形极为高大或厚重，在人群中格外显眼。"
           }
         ]
       },
       "DEX": {
-        "description": "敏捷反映反应、协调与动作控制；分段文字仅供扮演参考。",
+        "description": "敏捷表示反应、柔韧、协调与动作控制；奔跑速度另由移动力规则计算。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "动作协调和反应较困难，容易显得笨拙。"
+            "max": 14,
+            "description": "动作控制很吃力，完成协调或精细动作常需要帮助。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "动作偏慢，细致动作可能更需要专注。"
+            "min": 15,
+            "max": 49,
+            "description": "动作缓慢或笨拙，协调身体时需要更多专注。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "反应与协调处于常见水平。"
+            "min": 50,
+            "max": 89,
+            "description": "反应与动作协调处于普通人水平。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "动作灵活，反应和协调较为出色。"
+            "min": 90,
+            "max": 98,
+            "description": "动作迅速而灵活，能展现杰出舞者般的身体控制。"
           },
           {
-            "min": 85,
+            "min": 99,
             "max": 99,
-            "description": "身手很突出，动作常显得迅速而精准。"
+            "description": "身手达到世界级运动员般的水平，接近人类极限。"
           }
         ]
       },
       "APP": {
-        "description": "外貌综合表示吸引力与外在印象，不决定他人的喜爱或人物价值；分段文字仅供扮演参考。",
+        "description": "外貌兼指肉体吸引力、仪态与人格魅力；具体审美和人物表现由背景决定。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "外在形象较难符合周围人的常见审美。"
+            "max": 14,
+            "description": "外表或气质十分独特，较难符合周围人的常见审美。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "外在形象较少成为吸引注意的优势。"
+            "min": 15,
+            "max": 49,
+            "description": "外表与个人魅力较少成为优势，第一印象可能比较平淡。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "外在形象处于常见范围，印象取决于情境。"
+            "min": 50,
+            "max": 89,
+            "description": "外表与气质处于常见水平，印象也取决于言行与情境。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "外在形象较有吸引力，容易留下良好第一印象。"
+            "min": 90,
+            "max": 98,
+            "description": "具有天然的吸引力，可能是你见过最有魅力的人之一。"
           },
           {
-            "min": 85,
+            "min": 99,
             "max": 99,
-            "description": "外在形象很有吸引力，容易成为众人注意的焦点。"
+            "description": "魅力达到顶尖名模或影星般的水平，极易引人注目。"
           }
         ]
       },
       "INT": {
-        "description": "智力反映理解、推理与解决问题的能力，不等于知识积累；分段文字仅供扮演参考。",
+        "description": "智力表示学习、理解、分析信息与推理的能力；掌握的具体知识和语言另用技能记录。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "理解复杂线索较吃力，可能更依赖具体经验。"
+            "max": 14,
+            "description": "理解新信息很吃力，更依赖熟悉的事物、具体示例与帮助。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "理解与推理偏慢，常需要时间整理线索。"
+            "min": 15,
+            "max": 49,
+            "description": "学习较慢，常需要反复练习与整理才能理解新概念。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "理解与推理处于常见水平。"
+            "min": 50,
+            "max": 89,
+            "description": "学习与理解处于普通人水平，能够分析日常信息。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "思路敏锐，较容易联系线索与发现规律。"
+            "min": 90,
+            "max": 98,
+            "description": "理解力异常出众，能较快掌握复杂概念与规律。"
           },
           {
-            "min": 85,
+            "min": 99,
             "max": 99,
-            "description": "推理能力很突出，善于快速理解复杂问题。"
+            "description": "具备天才般的理解与推理能力，接近人类极限。"
           }
         ]
       },
       "POW": {
-        "description": "意志反映精神力量与内在韧性，不决定人物是否勇敢；分段文字仅供扮演参考。",
+        "description": "意志表示精神力量、信念与内在韧性；初始理智和魔法值依现有规则计算。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "精神韧性偏低，内心容易被压力动摇。"
+            "max": 14,
+            "description": "内在韧性很低，面对精神压力时容易动摇。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "面对压力时常需要支持与缓冲。"
+            "min": 15,
+            "max": 49,
+            "description": "意志偏弱，容易受他人影响，面对压力常需要支持。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "精神力量处于常见水平。"
+            "min": 50,
+            "max": 89,
+            "description": "精神力量处于普通人水平，能够坚持熟悉的信念。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "内在韧性较强，面对压力时较能保持自我。"
-          },
-          {
-            "min": 85,
+            "min": 90,
             "max": 99,
-            "description": "精神力量很突出，执念或信念常显得格外坚定。"
+            "description": "意志极为坚强，信念坚定，面对精神压力较能保持自我。"
           }
         ]
       },
       "EDU": {
-        "description": "教育反映学习经历与积累的知识，也包括自学；分段文字不等同于具体学历。",
+        "description": "教育表示积累的学识和学习经历，也包括自学与实践；学历只是现代背景的水平参考。",
         "bands": [
           {
             "min": 1,
-            "max": 24,
-            "description": "知识积累较少，主要依靠有限的生活经验。"
+            "max": 14,
+            "description": "系统学习经历很少，知识主要来自有限的直接经验。"
           },
           {
-            "min": 25,
-            "max": 44,
-            "description": "知识面偏窄，在熟悉的领域更有把握。"
+            "min": 15,
+            "max": 59,
+            "description": "缺少系统教育或知识积累，可结合生活经历设定所知所长。"
           },
           {
-            "min": 45,
-            "max": 64,
-            "description": "有常见程度的学习与知识积累。"
+            "min": 60,
+            "max": 69,
+            "description": "知识积累可参考现代高中毕业程度，也可能来自自学。"
           },
           {
-            "min": 65,
-            "max": 84,
-            "description": "学习经历较丰富，能够联系较多知识。"
+            "min": 70,
+            "max": 79,
+            "description": "知识积累可参考现代大学毕业程度，有较系统的学习经历。"
           },
           {
-            "min": 85,
+            "min": 80,
+            "max": 89,
+            "description": "知识积累可参考研究生程度，在专门领域受过深入训练。"
+          },
+          {
+            "min": 90,
+            "max": 95,
+            "description": "学识可参考博士或教授的水平，在专业领域具有深厚积累。"
+          },
+          {
+            "min": 96,
+            "max": 98,
+            "description": "在某一研究领域具有世界级权威般的学识。"
+          },
+          {
+            "min": 99,
             "max": 99,
-            "description": "知识积累很深厚，常展现广博或精深的学识。"
+            "description": "学识达到极为卓越的水平，接近人类知识积累的极限。"
           }
         ]
       }
@@ -2566,23 +2685,23 @@
     "build": [
       {
         "value": -2,
-        "description": "身形与力量合计很小，近身对抗时常显得单薄。"
+        "description": "体格很小；与更大体格的对手进行擒抱、推搡等战技时较吃亏。"
       },
       {
         "value": -1,
-        "description": "身形与力量合计偏小，近身对抗更依赖技巧。"
+        "description": "体格偏小；近身战技需要留意与目标的体格差距。"
       },
       {
         "value": 0,
-        "description": "身形与力量合计处于常见范围。"
+        "description": "体格中等；能否推搡或擒抱目标仍需比较双方体格。"
       },
       {
         "value": 1,
-        "description": "身形与力量合计较大，近身对抗时显得有力。"
+        "description": "体格较大；对体格更小的目标使用近身战技时更有优势。"
       },
       {
         "value": 2,
-        "description": "身形与力量合计很突出，常给人强壮厚重的印象。"
+        "description": "体格很大；对较小目标的近身战技优势更明显，仍需按规则检定。"
       }
     ],
     "wealth": [

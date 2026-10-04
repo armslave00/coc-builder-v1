@@ -1,0 +1,2824 @@
+{
+  "equipment": [
+    {
+      "id": "workbook-chainsaw",
+      "name": "电锯",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B6:K6。表列技能：电锯；贯穿：√；常见时代：现代。原表另有电锯故障和使用风险说明（N2），未自动执行特殊效果。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/300",
+      "damage": "2D8",
+      "range": "接触",
+      "attacks": "1",
+      "malfunction": "95",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-fighting-chainsaw",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-live-wire-220v",
+      "name": "220v通电导线",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B16:K16。表列技能：斗殴；贯穿：×；常见时代：现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D8+眩晕",
+      "range": "接触",
+      "attacks": "1",
+      "malfunction": "95",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "fighting-brawl",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-tear-gas",
+      "name": "催泪瓦斯",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B17:K17。表列技能：斗殴；贯穿：×；常见时代：1920s,现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/10",
+      "damage": "眩晕",
+      "range": "6步",
+      "attacks": "1",
+      "ammo": "25次",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "fighting-brawl",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-large-sword",
+      "name": "大型剑(马刀)",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B23:K23。表列技能：剑；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/75",
+      "damage": "1D8+1+DB",
+      "range": "接触",
+      "attacks": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "workbook-fighting-sword",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-medium-sword",
+      "name": "中型剑(佩剑等)",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B24:K24。表列技能：剑；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：15/100",
+      "damage": "1D6+1+DB",
+      "range": "接触",
+      "attacks": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "workbook-fighting-sword",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-light-sword",
+      "name": "轻剑(击剑、剑杖等)",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B25:K25。表列技能：剑；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：25/100",
+      "damage": "1D6+DB",
+      "range": "接触",
+      "attacks": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "workbook-fighting-sword",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stun-gun-contact",
+      "name": "电棍、电击枪(接触)",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B26:K26。表列技能：斗殴；贯穿：×；常见时代：现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/200",
+      "damage": "1D3+眩晕",
+      "range": "接触",
+      "attacks": "1",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "fighting-brawl",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stun-gun-ranged",
+      "name": "电击枪(远程)",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B27:K27。表列技能：手枪；贯穿：×；常见时代：现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/400",
+      "damage": "1D3+眩晕",
+      "range": "15步",
+      "attacks": "1",
+      "ammo": "3",
+      "malfunction": "95",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-bladed-boomerang",
+      "name": "利刃回旋镖",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B28:K28。表列技能：投掷；贯穿：×；常见时代：罕见。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：2/4",
+      "damage": "1D8+半DB",
+      "range": "20码",
+      "attacks": "1",
+      "skillId": "throw",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-wood-axe",
+      "name": "伐木斧",
+      "category": "常规武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B29:K29。表列技能：斧；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/10",
+      "damage": "1D8+2+DB",
+      "range": "接触",
+      "attacks": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "workbook-fighting-axe",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-flintlock-handgun",
+      "name": "遂发枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B30:K30。表列技能：手枪；贯穿：√；常见时代：罕见。名称保留原表“遂发枪”写法，具体型号未标。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/300",
+      "damage": "1D6+1",
+      "range": "10 码",
+      "attacks": "1/4",
+      "ammo": "1",
+      "malfunction": "95",
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-revolver-357-magnum",
+      "name": ".357 Magnum 左轮手枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B35:K35。表列技能：手枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/425",
+      "damage": "1D8+1D4",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "6",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-automatic-38",
+      "name": ".38 自动手枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B37:K37。表列技能：手枪；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/375",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "8",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-beretta-m9",
+      "name": "贝雷塔M9",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B38:K38。表列技能：手枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/500",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "15",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-glock-17",
+      "name": "格洛克17 9mm 自动手枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B39:K39。表列技能：手枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/500",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "17",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-revolver-41",
+      "name": ".41 左轮手枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B41:K41。表列技能：手枪；贯穿：√；常见时代：1920s,罕见。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/——",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "8",
+      "malfunction": "100",
+      "eras": [
+        "core"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-revolver-44-magnum",
+      "name": ".44 马格南左轮手枪",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B42:K42。表列技能：手枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：475",
+      "damage": "1D10+1D4+2",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "6",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-desert-eagle",
+      "name": "沙漠之鹰",
+      "category": "手枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B45:K45。表列技能：手枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：650",
+      "damage": "1D10+1D6+3",
+      "range": "15 码",
+      "attacks": "1(3)",
+      "ammo": "7",
+      "malfunction": "94",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-springfield-58",
+      "name": ".58 斯普林菲尔德步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B46:K46。表列技能：步枪/霰弹枪；贯穿：√；常见时代：罕见。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：25/350",
+      "damage": "1D10+4",
+      "range": "60 码",
+      "attacks": "1/4",
+      "ammo": "1",
+      "malfunction": "95",
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rifle-22-lever",
+      "name": ".22 杠杆式枪机步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B47:K47。表列技能：步枪/霰弹枪；贯穿：√；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：13/70",
+      "damage": "1D6+1",
+      "range": "30 码",
+      "attacks": "1",
+      "ammo": "6",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-carbine-30-unspecified",
+      "name": ".30 卡宾枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B48:K48。表列技能：步枪/霰弹枪；贯穿：√；常见时代：1920s,现代。原表未说明枪机类型，未与已收录的 .30 杠杆卡宾枪合并。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：19/150",
+      "damage": "2D6",
+      "range": "50 码",
+      "attacks": "1",
+      "ammo": "6",
+      "malfunction": "98",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-garand-m1-m2",
+      "name": "加兰德M1、M2步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B51:K51。表列技能：步枪/霰弹枪；贯穿：√；常见时代：二战及以后。原表将 M1、M2 合列，未推导各型号独立参数。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：400",
+      "damage": "2D6+4",
+      "range": "110 码",
+      "attacks": "1",
+      "ammo": "8",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-sks-semi-auto",
+      "name": "SKS半自动步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B52:K52。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：500",
+      "damage": "2D6+1",
+      "range": "90 码",
+      "attacks": "1(2)",
+      "ammo": "10",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rifle-30-06-semi-auto",
+      "name": ".30——06 (7.62mm) 半自动步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B55:K55。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：275",
+      "damage": "2D6+4",
+      "range": "110 码",
+      "attacks": "1",
+      "ammo": "5",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-marlin-444",
+      "name": ".444 (11.28mm) 马林步枪",
+      "category": "步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B56:K56。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：400",
+      "damage": "2D8+4",
+      "range": "110 码",
+      "attacks": "1",
+      "ammo": "5",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-shotgun-12-pump",
+      "name": "12号泵动霰弹枪",
+      "category": "霰弹枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B61:K61。表列技能：步枪/霰弹枪；贯穿：×；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：45/100",
+      "damage": "4D6/2D6/1D6",
+      "range": "10/20/50 码",
+      "attacks": "1",
+      "ammo": "5",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-shotgun-10-double",
+      "name": "10号霰弹枪(双管)",
+      "category": "霰弹枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B64:K64。表列技能：步枪/霰弹枪；贯穿：×；常见时代：1920s，罕见。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：稀有",
+      "damage": "4D6+2/2D6+1/1D4",
+      "range": "10/20/50 码",
+      "attacks": "1 or 2",
+      "ammo": "2",
+      "malfunction": "100",
+      "eras": [
+        "core"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-benelli-m3-12",
+      "name": "12号贝里尼M3 (折叠式枪托)",
+      "category": "霰弹枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B65:K65。表列技能：步枪/霰弹枪；贯穿：×；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/895",
+      "damage": "4D6/2D6/1D6",
+      "range": "10/20/50 码",
+      "attacks": "1(2)",
+      "ammo": "7",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-spas-12",
+      "name": "12号SPAS (折叠式枪托)",
+      "category": "霰弹枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B66:K66。表列技能：步枪/霰弹枪；贯穿：×；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/600",
+      "damage": "4D6/2D6/1D6",
+      "range": "10/20/50 码",
+      "attacks": "1",
+      "ammo": "8",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-ak47-akm",
+      "name": "AK——47 or AKM",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B67:K67。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/200",
+      "damage": "2D6+1",
+      "range": "100 码",
+      "attacks": "1(2)or全自动",
+      "ammo": "30",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-ak74",
+      "name": "AK——74",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B68:K68。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/1000",
+      "damage": "2D6+1",
+      "range": "110 码",
+      "attacks": "1(2)or全自动",
+      "ammo": "30",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-barrett-m82",
+      "name": "巴雷特M82",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B69:K69。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/3000",
+      "damage": "2D10+1D8+6",
+      "range": "250 码",
+      "attacks": "1",
+      "ammo": "11",
+      "malfunction": "96",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-fn-fal",
+      "name": "FN FAL Light Automatic",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B70:K70。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/1500",
+      "damage": "2D6+4",
+      "range": "110 码",
+      "attacks": "1(2)or3连射",
+      "ammo": "20",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-galil",
+      "name": "Galil Assault Rifle",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B71:K71。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/2000",
+      "damage": "2D6",
+      "range": "110 码",
+      "attacks": "1(2)or连射",
+      "ammo": "20",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-m16a2",
+      "name": "M16A2",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B72:K72。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6",
+      "range": "110 码",
+      "attacks": "1(2)or3连射",
+      "ammo": "30",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-m4",
+      "name": "M4",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B73:K73。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6",
+      "range": "90 码",
+      "attacks": "1or3连射",
+      "ammo": "30",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-steyr-aug",
+      "name": "Steyr AUG",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B74:K74。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/1100",
+      "damage": "2D6",
+      "range": "110 码",
+      "attacks": "1(2)or全自动",
+      "ammo": "30",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-m70-90-workbook-label",
+      "name": "巴雷特M70/90",
+      "category": "突击步枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B75:K75。表列技能：步枪/霰弹枪；贯穿：√；常见时代：现代。原表 M67 区分单发步枪判定与全自动冲锋枪判定；切换射击方式时须手动确认技能。型号名称照录原表，品牌/型号组合待核对。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/2800",
+      "damage": "2D6",
+      "range": "110 码",
+      "attacks": "1or全自动",
+      "ammo": "30",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "firearms-rifle",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-hk-mp5",
+      "name": "黑克勒——科赫MP5",
+      "category": "冲锋枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B77:K77。表列技能：冲锋枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "1D10",
+      "range": "20 码",
+      "attacks": "1(2)or全自动",
+      "ammo": "15/30",
+      "malfunction": "97",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-smg",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-mac11",
+      "name": "MAC——11",
+      "category": "冲锋枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B78:K78。表列技能：冲锋枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/750",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1(3)or全自动",
+      "ammo": "32",
+      "malfunction": "96",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-smg",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-scorpion-smg",
+      "name": "蝎式冲锋枪",
+      "category": "冲锋枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B79:K79。表列技能：冲锋枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "1D8",
+      "range": "15 码",
+      "attacks": "1(3)or全自动",
+      "ammo": "20",
+      "malfunction": "96",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-smg",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-uzi-mini",
+      "name": "乌兹微型冲锋枪",
+      "category": "冲锋枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B81:K81。表列技能：冲锋枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/1000",
+      "damage": "1D10",
+      "range": "20 码",
+      "attacks": "1(2)or全自动",
+      "ammo": "32",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-smg",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-gatling-m1882",
+      "name": "M1882加特林机枪",
+      "category": "机枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B82:K82。表列技能：机枪；贯穿：√；常见时代：1920s，罕见。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：2000/14000",
+      "damage": "2D6+4",
+      "range": "100 码",
+      "attacks": "全自动",
+      "ammo": "200",
+      "malfunction": "96",
+      "eras": [
+        "core"
+      ],
+      "skillId": "workbook-firearms-machine-gun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-minigun",
+      "name": "Minigun",
+      "category": "机枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B87:K87。表列技能：机枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6+4",
+      "range": "200 码",
+      "attacks": "全自动",
+      "ammo": "4000",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-machine-gun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-fn-minimi-556",
+      "name": "FNMinimi5.56mm轻机枪",
+      "category": "机枪",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B88:K88。表列技能：机枪；贯穿：√；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6",
+      "range": "110 码",
+      "attacks": "全自动",
+      "ammo": "30/200",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-machine-gun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-molotov",
+      "name": "燃烧瓶",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B90:K90。表列技能：投掷；贯穿：√；常见时代：1920s,现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6+燃烧",
+      "range": "STR/5码",
+      "attacks": "1/2",
+      "ammo": "一次性",
+      "malfunction": "95",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "throw",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-flare-gun",
+      "name": "信号枪",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B91:K91。表列技能：手枪；贯穿：√；常见时代：1920s,现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：15/75",
+      "damage": "1D10+1D3+燃烧",
+      "range": "10 码",
+      "attacks": "1/2",
+      "ammo": "1",
+      "malfunction": "100",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "firearms-handgun",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-m79-40mm",
+      "name": "M79 40mm 榴弹发射器",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B92:K92。表列技能：重武器；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "3D10/2码",
+      "range": "20 码",
+      "attacks": "1/3",
+      "ammo": "1",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-heavy-weapons",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-dynamite-stick",
+      "name": "炸药棒",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B93:K93。表列技能：投掷；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：2/5",
+      "damage": "4D10/3码",
+      "range": "STR/5步",
+      "attacks": "1/2",
+      "ammo": "一次性",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "throw",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-blasting-cap",
+      "name": "雷管",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B94:K94。表列技能：电气维修；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：20/整盒",
+      "damage": "2D10/1码",
+      "range": "N/A",
+      "attacks": "N/A",
+      "ammo": "一次性",
+      "malfunction": "100",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "electrical-repair",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-pipe-bomb",
+      "name": "管状炸弹",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B95:K95。表列技能：爆破；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "1D10/3码",
+      "range": "布置",
+      "attacks": "一次使用",
+      "ammo": "一次性",
+      "malfunction": "95",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-demolitions"
+    },
+    {
+      "id": "workbook-c4-100g",
+      "name": "塑胶炸弹(C4) 100克",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B96:K96。表列技能：爆破；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "6D10/3码",
+      "range": "布置",
+      "attacks": "一次使用",
+      "ammo": "一次性",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-demolitions"
+    },
+    {
+      "id": "workbook-hand-grenade",
+      "name": "手榴弹",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B97:K97。表列技能：投掷；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "4D10/3码",
+      "range": "STR/5步",
+      "attacks": "1/2",
+      "ammo": "一次性",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "throw",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-mortar-81mm",
+      "name": "81mm迫击炮",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B98:K98。表列技能：炮术；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "6D10/6码",
+      "range": "500码",
+      "attacks": "2",
+      "ammo": "独立装弹",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-artillery"
+    },
+    {
+      "id": "workbook-field-gun-75mm",
+      "name": "75mm野战炮",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B99:K99。表列技能：炮术；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：1500/——",
+      "damage": "10D10/2码",
+      "range": "500码",
+      "attacks": "1/4",
+      "ammo": "独立装弹",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-artillery"
+    },
+    {
+      "id": "workbook-tank-gun-120mm",
+      "name": "120mm坦克炮(稳定)",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B100:K100。表列技能：炮术；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "10D10/2码",
+      "range": "2000码",
+      "attacks": "1",
+      "ammo": "独立装弹",
+      "malfunction": "100",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-artillery"
+    },
+    {
+      "id": "workbook-naval-gun-5in",
+      "name": "5英寸舰载炮(稳定)",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B101:K101。表列技能：炮术；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "15D10/4码",
+      "range": "3000码",
+      "attacks": "1",
+      "ammo": "自动上弹",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-artillery"
+    },
+    {
+      "id": "workbook-antipersonnel-mine",
+      "name": "反步兵地雷",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B102:K102。表列技能：爆破；贯穿：√；常见时代：1920s,现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "4D10/5码",
+      "range": "布置",
+      "attacks": "布置",
+      "ammo": "一次性",
+      "malfunction": "99",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-demolitions"
+    },
+    {
+      "id": "workbook-claymore-mine",
+      "name": "阔剑地雷",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B103:K103。表列技能：爆破；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "6D6/20码",
+      "range": "布置",
+      "attacks": "布置",
+      "ammo": "一次性",
+      "malfunction": "99",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "skillId": "workbook-demolitions"
+    },
+    {
+      "id": "workbook-flamethrower",
+      "name": "火焰喷射器",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B104:K104。表列技能：喷射器；贯穿：√；常见时代：1920s,现代。眩晕或燃烧效果按场景裁定，数值栏保留原表游戏标记。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "2D6+燃烧",
+      "range": "25码",
+      "attacks": "1",
+      "ammo": "至少10",
+      "malfunction": "93",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "skillId": "workbook-firearms-flamethrower",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-light-antitank-weapon",
+      "name": "轻型反坦克武器",
+      "category": "特殊武器",
+      "kind": "weapon",
+      "description": "用户人物卡游戏参考，需守秘人确认；出处：武器列表!B105:K105。表列技能：重武器；贯穿：√；常见时代：现代。伤害中的距离为原表爆炸/效力范围参考，未自动推导波及目标或伤害衰减。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "damage": "8d10/1码",
+      "range": "150码",
+      "attacks": "1",
+      "ammo": "1",
+      "malfunction": "98",
+      "eras": [
+        "japan"
+      ],
+      "skillId": "workbook-firearms-heavy-weapons",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-heavy-leather-jacket",
+      "name": "厚重皮夹克",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B2:J2。覆盖：躯干；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：每处1次/难以防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：10/55",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-ww1-steel-helmet",
+      "name": "一战标准钢盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B3:J3。覆盖：头部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：1920s。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "2",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-hardwood-one-inch",
+      "name": "1英寸（2.5厘米）硬木",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B4:J4。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/易击碎/无法防护；常见时代：——。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：0.5/10 m²",
+      "armor": "3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-modern-us-helmet",
+      "name": "现代美军头盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B5:J5。覆盖：头部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "5",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-heavy-kevlar-vest",
+      "name": "重型凯芙拉防弹背心",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B6:J6。覆盖：躯干；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "8",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-bulletproof-glass-1-5in",
+      "name": "1.5 （3.8厘米）英寸防弹玻璃",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B7:J7。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/1D4；常见时代：现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/100 m²",
+      "armor": "15",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-steel-plate-one-inch",
+      "name": "1 英寸钢板",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B8:J8。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/每处1次；常见时代：——。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：1/10 m²",
+      "armor": "19",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-large-sandbag",
+      "name": "大号沙包",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B9:J9。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/正常防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：0.01/3",
+      "armor": "20",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-biochemical-mesh-armor",
+      "name": "生化网状装甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B11:J11。覆盖：全身；MOV 惩罚：？；适用对象：米戈、人型生物；防利器穿刺：?；冷兵器/一般枪械/穿透爆炸参考：?/?/?；常见时代：——。网状装甲的护甲仅适用原表所述伤害类型，且有穿脱损伤及退化条件（L2）；按场景手动裁定。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "8",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-brick-wall",
+      "name": "砖墙",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B12:J12。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/正常防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/60 m²",
+      "armor": "10",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-wooden-table-surface",
+      "name": "桌面板凳等 普通木质平面",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B16:J16。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：每处1次/无法防护/无法防护；常见时代：新石器时代后。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：3/20 m²",
+      "armor": "2",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-spring-mattress",
+      "name": "弹簧床垫",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B17:J17。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/40",
+      "armor": "8",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-concrete-wall-half-meter",
+      "name": "半米厚水泥墙",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B18:J18。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/正常防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：7/45 m²",
+      "armor": "12",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-ordinary-glass",
+      "name": "普通玻璃",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B19:J19。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：一次性/无法防护/无法防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/10 m²",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stone-one-cubic-meter",
+      "name": "1立方米石块",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B20:J20。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/难以防护；常见时代：古埃及之后。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/20 m²",
+      "armor": "20",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rebar-mesh",
+      "name": "粗钢筋网",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B21:J21。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：?；冷兵器/一般枪械/穿透爆炸参考：∞/∞/∞；常见时代：现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/40m²",
+      "armor": "40 网状",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-soil-mound",
+      "name": "土堆",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B22:J22。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/正常防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：0.01/3",
+      "armor": "15",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-iron-rolling-door",
+      "name": "卷闸门（铁）",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B23:J23。覆盖：分隔整个空间；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：每处1次/难以防护/无法防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/70",
+      "armor": "4",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-paper-a4-500",
+      "name": "500张A4纸",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B24:J24。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：1920s,现代。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：1/9",
+      "armor": "3",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-book-cover",
+      "name": "书",
+      "category": "掩体参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B25:J25。覆盖：——；MOV 惩罚：——；适用对象：——；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：1500年前至今。用于场景掩护；装备条目中的护甲不自动算作人物全身护甲。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：10/15",
+      "armor": "3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-thick-leather-felt-hat",
+      "name": "厚皮毡帽",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B27:J27。覆盖：头部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：每处1次/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：10/35",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-iron-mask",
+      "name": "铁面具",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B28:J28。覆盖：面部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：罕见。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "1",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-fencing-mask",
+      "name": "击剑面具",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B29:J29。覆盖：头+面+颈；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：25/80",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-hockey-mask",
+      "name": "冰球面罩",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B30:J30。覆盖：头+眼部(网状)；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：30/110",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-industrial-safety-goggles",
+      "name": "工业防护眼镜",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B31:J31。覆盖：眼部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：无法防护/无法防护/无法防护；常见时代：现代。原表 L27 限定正面飞溅物的防护效果。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/15",
+      "armor": "2",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-welding-mask",
+      "name": "电焊面罩",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B32:J32。覆盖：面部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：一次性/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：1/10",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-full-gas-mask",
+      "name": "全防护级防毒面具",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B33:J33。覆盖：面部；MOV 惩罚：0；适用对象：人类、有明显口鼻的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：无法防护；常见时代：1920s,现代。耐毒性文字是原表条件标记，不换算为伤害吸收点数。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：35/150",
+      "armor": "耐毒性 2h",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-hard-hat",
+      "name": "工地安全帽",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B34:J34。覆盖：头顶；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：一次性/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：1/10",
+      "armor": "1 耐冲击",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-full-motorcycle-helmet",
+      "name": "全防护摩托车帽",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B35:J35。覆盖：头部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：25/90",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-viking-helmet",
+      "name": "维京头盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B36:J36。覆盖：头顶+眼部(网状)；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-roman-helmet",
+      "name": "古罗马头盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B37:J37。覆盖：头顶+面颊；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rattan-helmet",
+      "name": "藤条盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B38:J38。覆盖：头部；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "2",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-medieval-full-helmet",
+      "name": "中世纪全防护头盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B39:J39。覆盖：头+面+颈；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：中世纪。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-renaissance-helmet",
+      "name": "文艺复兴头盔",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B40:J40。覆盖：头+面+颈；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：文艺复兴。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "1D2+3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-diamond-gold-crown",
+      "name": "金质镶钻王冠",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B41:J41。覆盖：头顶；MOV 惩罚：0；适用对象：人类、有明显头颅的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：无法防护/无法防护/无法防护；常见时代：工业革命结束前。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：老鼻子贵了",
+      "armor": "1",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-fencing-fiber-suit",
+      "name": "击剑纤维服",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B42:J42。覆盖：四肢、躯干、颈；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：50/230",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-sparring-cotton-armor",
+      "name": "对练棉甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B43:J43。覆盖：躯干、双臂、颈；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/160",
+      "armor": "2",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-joint-protectors",
+      "name": "关节护具",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B44:J44。覆盖：肘、膝、四肢、头；MOV 惩罚：0；适用对象：人类、有明显关节的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/20",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-chest-plate",
+      "name": "护胸板",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B45:J45。覆盖：前胸；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/35",
+      "armor": "3",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-chain-mail",
+      "name": "锁子甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B46:J46。覆盖：双臂、大腿、躯干、颈；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-lamellar-armor",
+      "name": "扎甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B47:J47。覆盖：双臂、大腿、躯干、颈；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-scale-armor",
+      "name": "鳞甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B48:J48。覆盖：双臂、大腿、躯干、颈；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-milanese-armor",
+      "name": "米兰盔甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B49:J49。覆盖：除头部、全身；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "5",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rattan-armor",
+      "name": "藤甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B50:J50。覆盖：双臂、大腿、躯干、颈；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-plate-armor",
+      "name": "板甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B51:J51。覆盖：除头部、全身；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "5",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-domaru-armor",
+      "name": "胴丸",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B52:J52。覆盖：除头部、全身；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "4",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-paper-armor",
+      "name": "纸甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B53:J53。覆盖：双臂、大腿、躯干、颈；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "3",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stab-vest",
+      "name": "防刺服",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B54:J54。覆盖：躯干；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/40",
+      "armor": "4",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-standard-bulletproof-vest",
+      "name": "常规防弹衣",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B55:J55。覆盖：躯干；MOV 惩罚：0；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "6",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stab-resistant-suit",
+      "name": "防刺西服",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B56:J56。覆盖：除头部、除手脚、全身；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/120",
+      "armor": "5",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-chemical-protection-suit",
+      "name": "防化服",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B57:J57。覆盖：全身；MOV 惩罚：1；适用对象：人类、人型生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：无法防护；常见时代：1920s,现代。耐毒性文字是原表条件标记，不换算为伤害吸收点数。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "耐毒性 氧气瓶",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-work-gloves",
+      "name": "工作手套",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B58:J58。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：0.1/3",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-stab-resistant-gloves",
+      "name": "防刺手套",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B59:J59。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/20",
+      "armor": "2",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-hockey-gloves",
+      "name": "冰球手套",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B60:J60。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/20",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-military-special-gloves",
+      "name": "军用特种手套",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B61:J61。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：现代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "1",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-welding-gloves",
+      "name": "电焊手套",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B62:J62。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：5/20",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-iron-gauntlets",
+      "name": "铁手甲",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B63:J63。覆盖：双手；MOV 惩罚：0；适用对象：拥有五指型手掌的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "2",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-rain-boots",
+      "name": "雨靴",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B64:J64。覆盖：双脚；MOV 惩罚：0；适用对象：拥有站立功能的双腿的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：难以防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：0.5/10",
+      "armor": "1",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-iron-boots",
+      "name": "铁靴",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B65:J65。覆盖：双脚；MOV 惩罚：1；适用对象：拥有站立功能的双腿的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：古代。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "2",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-industrial-safety-boots",
+      "name": "工业防护靴",
+      "category": "防具参考",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B66:J66。覆盖：双脚；MOV 惩罚：1；适用对象：拥有站立功能的双腿的生物；防利器穿刺：×；冷兵器/一般枪械/穿透爆炸参考：正常防护/无法防护/无法防护；常见时代：1920s,现代。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：3/15",
+      "armor": "2",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-pc-riot-shield",
+      "name": "PC防暴盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B67:J67。覆盖：——；MOV 惩罚：1；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：正常防护/难以防护/无法防护；常见时代：现代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡美元参考（原表标题：1920年代 / 现代）：——/40",
+      "armor": "9",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-metal-riot-shield",
+      "name": "金属镇暴盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B68:J68。覆盖：——；MOV 惩罚：1；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/难以防护；常见时代：现代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "13",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-bulletproof-steel-shield",
+      "name": "防弹钢盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B69:J69。覆盖：——；MOV 惩罚：2；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/∞/正常防护；常见时代：现代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "25",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-buckler",
+      "name": "格斗盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B70:J70。覆盖：拳前；MOV 惩罚：0；适用对象：人类、有手的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/难以防护/无法防护；常见时代：古代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "20",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-round-wooden-shield",
+      "name": "圆木盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B71:J71。覆盖：——；MOV 惩罚：1；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/难以防护/无法防护；常见时代：古代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "15",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-kite-shield",
+      "name": "筝形盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B72:J72。覆盖：——；MOV 惩罚：1；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/难以防护/无法防护；常见时代：古代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "15",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-round-iron-shield",
+      "name": "圆铁盾",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B73:J73。覆盖：——；MOV 惩罚：2；适用对象：人类、可以拿起物品的生物；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：古代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "20",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-sword-guard",
+      "name": "剑格、护手",
+      "category": "盾与护手",
+      "kind": "item",
+      "description": "用户人物卡游戏参考，守秘人确认后采用；出处：防具表 载具表!B74:J74。覆盖：——；MOV 惩罚：——；适用对象：剑；防利器穿刺：√；冷兵器/一般枪械/穿透爆炸参考：∞/正常防护/无法防护；常见时代：古代。保护范围及格挡另行判断，未自动应用护甲或 MOV 减值。",
+      "price": "人物卡未列可用价格；守秘人确认",
+      "armor": "20",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-economy-car",
+      "name": "经济车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R2:Z2。表列操作：汽车驾驶；MOV：13；Build：4；乘客护甲：1；乘客数：3或4；可驾驶体格：-1,0,1；可乘坐体格：≤2；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-standard-car",
+      "name": "标准车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R3:Z3。表列操作：汽车驾驶；MOV：14；Build：5；乘客护甲：2；乘客数：4；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-luxury-car",
+      "name": "豪华车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R4:Z4。表列操作：汽车驾驶；MOV：15；Build：6；乘客护甲：2；乘客数：4；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-sports-car",
+      "name": "跑车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R5:Z5。表列操作：汽车驾驶；MOV：16；Build：5；乘客护甲：2；乘客数：1；可驾驶体格：-1,0,1；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-pickup-truck",
+      "name": "敞篷小卡车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R6:Z6。表列操作：汽车驾驶；MOV：14；Build：6；乘客护甲：2；乘客数：2+；可驾驶体格：-1至2；可乘坐体格：≤3/后斗≤4；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-six-ton-truck",
+      "name": "6吨卡车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R7:Z7。表列操作：汽车驾驶；MOV：13；Build：7；乘客护甲：2；乘客数：2+；可驾驶体格：-1至2；可乘坐体格：≤3/后斗≤4；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-semi-trailer",
+      "name": "半拖车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R8:Z8。表列操作：汽车驾驶；MOV：13；Build：9；乘客护甲：2；乘客数：3+；可驾驶体格：-1至2；可乘坐体格：≤3/后斗≤6；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-light-motorcycle",
+      "name": "轻摩托",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R9:Z9。表列操作：汽车驾驶；MOV：13；Build：1；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-heavy-motorcycle",
+      "name": "重摩托",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R10:Z10。表列操作：汽车驾驶；MOV：16；Build：3；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-tank",
+      "name": "坦克",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R11:Z11。表列操作：重型机械 或 专业训练；MOV：11；Build：20；乘客护甲：24；乘客数：4；可驾驶体格：-1,0,1；可乘坐体格：-1至2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-steam-train",
+      "name": "蒸汽列车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R12:Z12。表列操作：重型机械 或 专业训练；MOV：12；Build：12；乘客护甲：1；乘客数：400+；可驾驶体格：-1至3；可乘坐体格：≤3，露天车厢≤4；常见时代：1920s。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-modern-train",
+      "name": "现代列车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R13:Z13。表列操作：重型机械 或 专业训练；MOV：15；Build：14；乘客护甲：2；乘客数：400+；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-horse-rider",
+      "name": "马（有骑手）",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R14:Z14。表列操作：骑乘；MOV：11；Build：4；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：自从人类存在。仅记录参考，不自动改变人物 MOV 或护甲。仅作骑乘资产记录，未创建生物属性或战斗数据。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-four-horse-carriage",
+      "name": "四马马车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R15:Z15。表列操作：骑乘；MOV：10；Build：3；乘客护甲：0；乘客数：6+；可驾驶体格：≤3；可乘坐体格：≤3/后斗≤4；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-bicycle",
+      "name": "自行车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R16:Z16。表列操作：骑乘；MOV：10；Build：0.5；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-rowboat-generic",
+      "name": "划艇",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R17:Z17。表列操作：驾驶：船；MOV：4；Build：2；乘客护甲：0；乘客数：3；可驾驶体格：-2至2；可乘坐体格：≤2；常见时代：远古开始。仅记录参考，不自动改变人物 MOV 或护甲。原表是通用载具，不替代目录中注明结构或座位数的型号。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-hovercraft",
+      "name": "气垫船",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R18:Z18。表列操作：驾驶：船；MOV：12；Build：4；乘客护甲：0；乘客数：22；可驾驶体格：-2至3；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-motorboat",
+      "name": "摩托艇",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R19:Z19。表列操作：驾驶：快艇；MOV：14；Build：3；乘客护甲：0；乘客数：6；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-cruise-ship",
+      "name": "游轮",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R20:Z20。表列操作：驾驶：船；MOV：11；Build：32；乘客护甲：0（甲板上）；乘客数：至少2200；可驾驶体格：-1至2；可乘坐体格：≤4；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-battleship",
+      "name": "战列舰",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R21:Z21。表列操作：驾驶：轮船；MOV：11；Build：65；乘客护甲：0（甲板上）；乘客数：至少1800；可驾驶体格：-1至2；可乘坐体格：≤4；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-aircraft-carrier",
+      "name": "航空母舰",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R22:Z22。表列操作：驾驶：战舰；MOV：11；Build：75；乘客护甲：0（甲板上）；乘客数：至少3200；可驾驶体格：-1至2；可乘坐体格：≤6；常见时代：罕见/现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-submarine",
+      "name": "潜水艇",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R23:Z23。表列操作：驾驶：战舰；MOV：12；Build：24；乘客护甲：0（甲板上）；乘客数：至少120；可驾驶体格：-1至2；可乘坐体格：≤4；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-bus",
+      "name": "公共汽车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R24:Z24。表列操作：汽车驾驶；MOV：12；Build：6；乘客护甲：2；乘客数：80；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-double-decker-bus",
+      "name": "双层公交车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R25:Z25。表列操作：汽车驾驶；MOV：12；Build：7；乘客护甲：2；乘客数：200；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-coach",
+      "name": "大客车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R26:Z26。表列操作：汽车驾驶；MOV：12；Build：6；乘客护甲：2；乘客数：50；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-electric-car",
+      "name": "纯电动汽车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R27:Z27。表列操作：汽车驾驶；MOV：14；Build：5；乘客护甲：2；乘客数：3或4；可驾驶体格：-1,0,1；可乘坐体格：≤2；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-electric-motorcycle",
+      "name": "电动摩托",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R28:Z28。表列操作：汽车驾驶；MOV：11；Build：1；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-atv",
+      "name": "全地形车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R29:Z29。表列操作：汽车驾驶；MOV：14；Build：4；乘客护甲：0；乘客数：2；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-jeep",
+      "name": "吉普车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R30:Z30。表列操作：汽车驾驶；MOV：12；Build：6；乘客护甲：2；乘客数：5；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-self-balancing-scooter",
+      "name": "平衡车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R31:Z31。表列操作：敏捷；MOV：MOV+1；Build：-1；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-skateboard",
+      "name": "滑板",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R32:Z32。表列操作：敏捷；MOV：MOV+2；Build：-1；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-heelys",
+      "name": "暴走鞋",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R33:Z33。表列操作：困难敏捷；MOV：MOV+3；Build：-2；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-roller-skates",
+      "name": "旱冰鞋",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R34:Z34。表列操作：敏捷；MOV：MOV+3；Build：-2；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-ice-skates",
+      "name": "冰刀",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R35:Z35。表列操作：敏捷；MOV：MOV+4；Build：-2；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-donkey",
+      "name": "驴",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R36:Z36。表列操作：骑术；MOV：8；Build：4；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：自从人类存在。仅记录参考，不自动改变人物 MOV 或护甲。仅作骑乘资产记录，未创建生物属性或战斗数据。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-tractor",
+      "name": "拖拉机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R37:Z37。表列操作：汽车驾驶；MOV：MOV+4；Build：-2；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-industrial-vehicle",
+      "name": "工业用车（挖掘机、打桩机等）",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R38:Z38。表列操作：重型机械操作、专业训练；MOV：10；Build：4；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-civil-aircraft",
+      "name": "民用航空",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R39:Z39。表列操作：重型机械 或 专业训练；MOV：225；Build：65；乘客护甲：10；乘客数：300；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-fighter-aircraft",
+      "name": "战斗机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R40:Z40。表列操作：专业训练；MOV：525；Build：45；乘客护甲：15；乘客数：1；可驾驶体格：-1,0,1；可乘坐体格：≤1；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-bomber-aircraft",
+      "name": "轰炸机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R41:Z41。表列操作：专业训练；MOV：225；Build：53；乘客护甲：25；乘客数：2；可驾驶体格：-1,0,1；可乘坐体格：≤1；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-private-aircraft",
+      "name": "私人飞机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R42:Z42。表列操作：重型机械 或 专业训练；MOV：175；Build：35；乘客护甲：7；乘客数：4人以上；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-turbojet-aircraft",
+      "name": "涡轮喷气机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R43:Z43。表列操作：重型机械 或 专业训练；MOV：450；Build：60；乘客护甲：15；乘客数：2；可驾驶体格：-1,0,1；可乘坐体格：≤1；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-cargo-aircraft",
+      "name": "货机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R44:Z44。表列操作：重型机械 或 专业训练；MOV：217；Build：64；乘客护甲：10；乘客数：2；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-supersonic-aircraft",
+      "name": "超音速飞机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R45:Z45。表列操作：专业训练；MOV：979；Build：35；乘客护甲：25；乘客数：1；可驾驶体格：-1,0,1；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-helicopter",
+      "name": "直升机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R46:Z46。表列操作：重型机械 或 专业训练；MOV：50；Build：20；乘客护甲：4；乘客数：8；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-drone",
+      "name": "无人机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R47:Z47。表列操作：智力；MOV：4；Build：-2；乘客护甲：0；乘客数：——；可驾驶体格：——；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。原表 AB39 注明无人机不是乘坐载具，此处作设备参考。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-hot-air-balloon",
+      "name": "热气球",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R48:Z48。表列操作：重型机械 或 专业训练；MOV：上升速度：1.5；Build：6；乘客护甲：0；乘客数：8；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。原表 AB42 注明移动取决于风力；未转换为固定行进速度。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-biplane",
+      "name": "双翼机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R49:Z49。表列操作：重型机械 或 专业训练；MOV：76；Build：20；乘客护甲：2；乘客数：1或2；可驾驶体格：-1,0,1；可乘坐体格：≤1；常见时代：1920s。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-predator-drone",
+      "name": "“掠夺者”无人飞机",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R50:Z50。表列操作：计算机使用 Ω；MOV：6120；Build：35；乘客护甲：——；乘客数：——；可驾驶体格：——；可乘坐体格：——；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-canoe-generic",
+      "name": "独木舟",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R51:Z51。表列操作：驾驶：船；MOV：4；Build：3；乘客护甲：0；乘客数：2；可驾驶体格：-1,0,1；可乘坐体格：-1,0,1；常见时代：古代。仅记录参考，不自动改变人物 MOV 或护甲。原表是通用载具，不替代目录中注明结构或座位数的型号。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-raft",
+      "name": "木筏",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R52:Z52。表列操作：驾驶：船；MOV：2；Build：3；乘客护甲：0；乘客数：4；可驾驶体格：-2至3；可乘坐体格：≤3；常见时代：古代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-modern-sailboat",
+      "name": "现代帆船",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R53:Z53。表列操作：驾驶：帆船；MOV：7；Build：4；乘客护甲：0；乘客数：13；可驾驶体格：-2至3；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-racing-sailboat",
+      "name": "比赛帆船",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R54:Z54。表列操作：驾驶：帆船；MOV：9；Build：3；乘客护甲：0；乘客数：1；可驾驶体格：-1至2；可乘坐体格：——；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-river-ferry",
+      "name": "渡河小船",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R55:Z55。表列操作：驾驶：船；MOV：5；Build：5；乘客护甲：0；乘客数：12；可驾驶体格：-1至2；可乘坐体格：≤2；常见时代：古代至今。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-speedboat",
+      "name": "快艇",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R56:Z56。表列操作：驾驶：快艇；MOV：13；Build：5；乘客护甲：0；乘客数：9；可驾驶体格：-2至2；可乘坐体格：≤2；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-cargo-ship",
+      "name": "货轮",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R57:Z57。表列操作：驾驶：轮船；MOV：8；Build：12；乘客护甲：0（甲板上）；乘客数：15；可驾驶体格：-1至2；可乘坐体格：≤6；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-passenger-ship",
+      "name": "客船",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R58:Z58。表列操作：驾驶：轮船；MOV：10；Build：11；乘客护甲：0（甲板上）；乘客数：600；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-offshore-drilling-platform",
+      "name": "海上移动钻井平台",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R59:Z59。表列操作：重型机械操作；MOV：4；Build：90；乘客护甲：0（甲板上）；乘客数：50左右；可驾驶体格：-1至3；可乘坐体格：≤5；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-metro-train",
+      "name": "地铁",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R60:Z60。表列操作：重型机械操作、专业训练；MOV：30；Build：16；乘客护甲：6；乘客数：1800；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-tram",
+      "name": "有轨电车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R61:Z61。表列操作：重型机械操作、专业训练；MOV：18；Build：8；乘客护甲：4；乘客数：400+；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-overhead-rail-train",
+      "name": "空中轨道列车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R62:Z62。表列操作：重型机械操作、专业训练；MOV：13；Build：6；乘客护甲：2；乘客数：300；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-cable-car",
+      "name": "缆车",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R63:Z63。表列操作：电子学 Ω；MOV：4；Build：4；乘客护甲：2；乘客数：4；可驾驶体格：——；可乘坐体格：≤3；常见时代：1920s,现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-vehicle-high-speed-train",
+      "name": "高速铁路",
+      "category": "载具参考",
+      "kind": "item",
+      "description": "用户人物卡载具参考，数值及时代需守秘人确认；出处：防具表 载具表!R64:Z64。表列操作：重型机械操作、专业训练；MOV：512；Build：35；乘客护甲：3；乘客数：600；可驾驶体格：-1至2；可乘坐体格：≤3；常见时代：现代。仅记录参考，不自动改变人物 MOV 或护甲。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-optical-scope",
+      "name": "光学瞄准镜",
+      "category": "武器附件参考",
+      "kind": "item",
+      "description": "人物卡游戏参考中明确提到的枪械附件；出处：武器列表!F159。安装、适配和射程效果由守秘人判断。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-bipod",
+      "name": "双脚架",
+      "category": "武器附件参考",
+      "kind": "item",
+      "description": "人物卡游戏参考中明确提到的枪械附件；出处：武器列表!J159。安装、适配和射程效果由守秘人判断。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-tripod",
+      "name": "三脚架",
+      "category": "武器附件参考",
+      "kind": "item",
+      "description": "人物卡游戏参考中明确提到的枪械附件；出处：武器列表!J159。安装、适配和射程效果由守秘人判断。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-amanita",
+      "name": "鹅膏菌（毒蘑菇）",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B188:J189。表列游戏效果：1D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-arsenic-compounds",
+      "name": "砷化物（砒霜等）",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B190:J191。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-belladonna",
+      "name": "颠茄",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B192:J193。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-black-widow-venom",
+      "name": "黑寡妇蜘蛛毒",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B194:J195。表列游戏效果：1D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-chloroform",
+      "name": "三氯甲烷（氯仿）",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B196:J197。表列游戏效果：无直接伤害；其他游戏状态由守秘人裁定。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-cobra-venom",
+      "name": "眼镜蛇毒",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B198:J199。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-curare",
+      "name": "箭毒碱",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B200:J201。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-cyanide",
+      "name": "氰化物",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B202:J203。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-rattlesnake-venom",
+      "name": "响尾蛇毒",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B204:J205。表列游戏效果：2D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-flunitrazepam",
+      "name": "氟硝西泮",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B206:J207。表列游戏效果：无直接伤害；其他游戏状态由守秘人裁定。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference"
+    },
+    {
+      "id": "workbook-game-poison-strychnine",
+      "name": "番木鳖碱（马钱子碱、士的宁）",
+      "category": "游戏毒剂参考",
+      "kind": "item",
+      "description": "人物卡游戏毒剂示例；出处：武器列表!B208:J209。表列游戏效果：4D10伤害。生效条件和状态按场景由守秘人裁定；不自动执行伤害。",
+      "price": "人物卡未列价格；守秘人确认",
+      "sourceId": "user-workbook-reference"
+    }
+  ]
+}

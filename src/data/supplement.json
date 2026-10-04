@@ -1,0 +1,665 @@
+{
+  "sources": [
+    {
+      "id": "roll20-weapons-7e",
+      "title": "Roll20 licensed Free Basic Rules: Ammunition & Weapons (CoC7)",
+      "url": "https://roll20.net/compendium/coc/Rules%3AAmmunition%20%26%20Weapons",
+      "note": "授权公开的第7版基础武器表。数值保留原文码（yards）和英尺（feet）；价格仅为1920年代美元参考值。每轮括号值是多发射击上限，须按规则应用罚骰；装弹量和故障值按表逐项核对，不采用Pulp额外HP。已对应公开表44个武器条目；独立攻击专长基础值和维克斯故障值仍有未核实字段，所以覆盖标为部分收录。",
+      "publisher": "Chaosium / Roll20 授权",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "partial"
+      }
+    },
+    {
+      "id": "roll20-equipment-1920s",
+      "title": "Roll20 licensed Free Basic Rules: General Equipment (1920s)",
+      "url": "https://roll20.net/compendium/coc/Rules%3AGeneral%20Equipment",
+      "note": "授权公开的经典1920年代装备表，价格为美元参考值；不能直接用于其他时代、地区或现代价格。中文功能短注由项目撰写，不提供自动检定加值。完整收录仅指本公开页215个有价格的实体物品与车辆行；34个餐饮、住宿、酒吧消费及不动产价格行不属于物品目录，4个无价格小标题不作条目。不是整本规则书的完整装备库。",
+      "publisher": "Chaosium / Roll20 授权",
+      "edition": "CoC 7版 / 1920年代价格",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "complete"
+      }
+    },
+    {
+      "id": "wiki-specialties-7e",
+      "title": "Chaosium RPG Wiki: Science skill specializations (CoC7)",
+      "url": "https://cthulhuwiki.chaosium.com/investigators/step-three-occupation-and-skills.html#science",
+      "note": "官方Wiki明确列举天文学、植物学、密码学、地质学、动物学等科学专长并要求分别购点；1%基础值采用同版官方标准人物卡的Science基础值（sheets-7e）。中文用途与案例由项目撰写。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "partial",
+        "equipment": "not-applicable"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "science-astronomy",
+      "name": "科学（天文学）",
+      "english": "Science (Astronomy)",
+      "base": 1,
+      "category": "知识",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "wiki-specialties-7e",
+      "description": "研究天体位置、运动与观测结果，用时代适用的知识判断天空线索。",
+      "scenarios": [
+        "识别观测记录中的异常天象",
+        "根据星象判断观测时间"
+      ]
+    },
+    {
+      "id": "science-botany",
+      "name": "科学（植物学）",
+      "english": "Science (Botany)",
+      "base": 1,
+      "category": "知识",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "wiki-specialties-7e",
+      "description": "用植物学知识识别和研究植物，结合样本与环境分析线索。",
+      "scenarios": [
+        "识别现场留下的植物碎片",
+        "分析植物样本的生长条件"
+      ]
+    },
+    {
+      "id": "science-cryptography",
+      "name": "科学（密码学）",
+      "english": "Science (Cryptography)",
+      "base": 1,
+      "category": "知识",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "wiki-specialties-7e",
+      "description": "研究信息的编码与解码，分析密文和密码体系；不等同于使用计算机。",
+      "scenarios": [
+        "辨认手写密信的编码方式",
+        "分析密码本与密文的对应关系"
+      ]
+    },
+    {
+      "id": "science-geology",
+      "name": "科学（地质学）",
+      "english": "Science (Geology)",
+      "base": 1,
+      "category": "知识",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "wiki-specialties-7e",
+      "description": "运用地质知识研究岩石、地层与地貌，分析地下或矿物线索。",
+      "scenarios": [
+        "辨认岩石样本",
+        "分析遗址下方的地层构造"
+      ]
+    },
+    {
+      "id": "science-zoology",
+      "name": "科学（动物学）",
+      "english": "Science (Zoology)",
+      "base": 1,
+      "category": "知识",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "wiki-specialties-7e",
+      "description": "用动物学知识研究动物形态、分类与生理，分析相关样本。",
+      "scenarios": [
+        "识别未知动物组织",
+        "比较不同动物的形态特征"
+      ]
+    }
+  ],
+  "occupations": [
+    {
+      "id": "archaeologist",
+      "name": "考古学家",
+      "english": "Archaeologist",
+      "description": "研究遗址和出土物的专业调查员，善于联系田野观察、历史资料与器物证据。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        10,
+        40
+      ],
+      "skills": [
+        "appraise",
+        "archaeology",
+        "history",
+        "language-other",
+        "library-use",
+        "spot-hidden",
+        "mechanical-repair"
+      ],
+      "choiceGroups": [
+        {
+          "name": "导航或科学专长",
+          "count": 1,
+          "options": [
+            "navigate",
+            "science",
+            "science-biology",
+            "science-pharmacy",
+            "science-chemistry",
+            "science-engineering",
+            "science-physics",
+            "science-astronomy",
+            "science-botany",
+            "science-cryptography",
+            "science-geology",
+            "science-zoology"
+          ]
+        }
+      ],
+      "skillNotes": "外语需指定语言；选择科学时记录具体专长，通用科学行可用于目录未预置的专长。",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-basic-7e",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ]
+    },
+    {
+      "id": "cat-burglar",
+      "name": "飞贼",
+      "english": "Cat Burglar",
+      "description": "擅长攀入建筑、处理锁具与隐蔽行动的窃贼，通常依靠灵巧和观察避开阻碍。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        5,
+        40
+      ],
+      "skills": [
+        "appraise",
+        "climb",
+        "listen",
+        "locksmith",
+        "sleight-of-hand",
+        "stealth",
+        "spot-hidden"
+      ],
+      "choiceGroups": [
+        {
+          "name": "维修专长",
+          "count": 1,
+          "options": [
+            "electrical-repair",
+            "mechanical-repair"
+          ]
+        }
+      ],
+      "skillNotes": "电气维修与机械维修二选一，占一个职业技能槽。",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-basic-7e",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ]
+    },
+    {
+      "id": "explorer",
+      "name": "探险家",
+      "english": "Explorer",
+      "description": "前往陌生地区调查与探索的旅行者，结合野外行动、导航和学识处理旅途线索。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "APP",
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        55,
+        80
+      ],
+      "skills": [
+        "history",
+        "jump",
+        "natural-world",
+        "navigate",
+        "language-other",
+        "survival"
+      ],
+      "choiceGroups": [
+        {
+          "name": "攀爬或游泳",
+          "count": 1,
+          "options": [
+            "climb",
+            "swim"
+          ]
+        },
+        {
+          "name": "射击专长（当前目录适配）",
+          "count": 1,
+          "options": [
+            "firearms-handgun",
+            "firearms-rifle"
+          ]
+        }
+      ],
+      "skillNotes": "APP、DEX、STR只选一项计算职业点。外语与生存需指定专长。原来源允许Firearms专长；当前选择组仅支持手枪与步枪/霰弹枪，是目录有限适配，不是原书完整任选目录；其他射击专长需自定义职业记录。",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-basic-7e",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "id": "brass-knuckles",
+      "name": "指虎",
+      "category": "近战",
+      "kind": "weapon",
+      "skillId": "fighting-brawl",
+      "damage": "1D3 + 1 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "斗殴用的拳部金属护具，按该武器表计算伤害。",
+      "price": "1920年代美元参考：$1",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e"
+    },
+    {
+      "id": "blackjack",
+      "name": "短棒（沙袋棍）",
+      "category": "近战",
+      "kind": "weapon",
+      "skillId": "fighting-brawl",
+      "damage": "1D8 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "用于斗殴的短柄打击武器。",
+      "price": "1920年代美元参考：$2",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e"
+    },
+    {
+      "id": "medium-knife",
+      "name": "中型刀具",
+      "category": "近战",
+      "kind": "weapon",
+      "skillId": "fighting-brawl",
+      "damage": "1D4 + 2 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "介于小刀和大型砍刀之间的刀具，按中型刀具条目记录。",
+      "price": "1920年代美元参考：$2",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e"
+    },
+    {
+      "id": "thrown-spear",
+      "name": "投掷矛",
+      "category": "投掷",
+      "kind": "weapon",
+      "skillId": "throw",
+      "damage": "1D8 + 半 DB",
+      "range": "STR / 5 码",
+      "attacks": "1",
+      "description": "按投掷使用矛的条目；射程保留来源中的码，不与近战长矛合并。",
+      "price": "1920年代美元参考：$1",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e"
+    },
+    {
+      "id": "automatic-22-short",
+      "name": ".22 短弹自动手枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-handgun",
+      "damage": "1D6",
+      "range": "10 码",
+      "attacks": "1（至多 3）",
+      "description": "手枪多发射击按规则应用罚骰，装弹量与故障值采用此表条目。",
+      "price": "1920年代美元参考：$25",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "6",
+      "malfunction": "100"
+    },
+    {
+      "id": "derringer-25-single",
+      "name": ".25 单管德林杰手枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-handgun",
+      "damage": "1D6",
+      "range": "3 码",
+      "attacks": "1",
+      "description": "单管、单发的德林杰条目；不与双管型号共享装弹量。",
+      "price": "1920年代美元参考：$12",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "1",
+      "malfunction": "100"
+    },
+    {
+      "id": "revolver-32",
+      "name": ".32 / 7.65 毫米左轮手枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-handgun",
+      "damage": "1D8",
+      "range": "15 码",
+      "attacks": "1（至多 3）",
+      "description": "六发左轮手枪条目；多发射击须应用相应罚骰。",
+      "price": "1920年代美元参考：$15",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "6",
+      "malfunction": "100"
+    },
+    {
+      "id": "luger-p08",
+      "name": "P08 鲁格手枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-handgun",
+      "damage": "1D10",
+      "range": "15 码",
+      "attacks": "1（至多 3）",
+      "description": "P08条目的装弹量与故障值；多发射击须应用相应罚骰。",
+      "price": "1920年代美元参考：$75",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "8",
+      "malfunction": "99"
+    },
+    {
+      "id": "revolver-45",
+      "name": ".45 左轮手枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-handgun",
+      "damage": "1D10 + 2",
+      "range": "15 码",
+      "attacks": "1（至多 3）",
+      "description": "与.45自动手枪分别记录的六发左轮条目。",
+      "price": "1920年代美元参考：$30",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "6",
+      "malfunction": "100"
+    },
+    {
+      "id": "rifle-22-bolt",
+      "name": ".22 栓动步枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "1D6 + 1",
+      "range": "30 码",
+      "attacks": "1",
+      "description": "小口径栓动步枪条目，按步枪/霰弹枪技能使用。",
+      "price": "1920年代美元参考：$13",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "6",
+      "malfunction": "99"
+    },
+    {
+      "id": "carbine-30-lever",
+      "name": ".30 杠杆式卡宾枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "2D6",
+      "range": "50 码",
+      "attacks": "1",
+      "description": "来源中的.30杠杆式卡宾枪条目，不以该数值替代所有杠杆式步枪。",
+      "price": "1920年代美元参考：$19",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "6",
+      "malfunction": "98"
+    },
+    {
+      "id": "martini-henry-45",
+      "name": ".45 马蒂尼—亨利步枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "1D8 + 1D6 + 3",
+      "range": "80 码",
+      "attacks": "每 3 轮 1 次",
+      "description": "来源的单发步枪条目；每三轮才能准确射击一次。",
+      "price": "1920年代美元参考：$20",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "1",
+      "malfunction": "100"
+    },
+    {
+      "id": "lee-enfield-303",
+      "name": ".303 李—恩菲尔德步枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "2D6 + 4",
+      "range": "110 码",
+      "attacks": "1",
+      "description": "按来源中.303李—恩菲尔德条目记录，具体型号仍需结合背景确认。",
+      "price": "1920年代美元参考：$50",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "10",
+      "malfunction": "100"
+    },
+    {
+      "id": "elephant-gun-double",
+      "name": "双管猎象枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "3D6 + 4",
+      "range": "100 码",
+      "attacks": "1 或 2",
+      "description": "双管猎象枪条目，两根枪管可在同一轮射击。",
+      "price": "1920年代美元参考：$400",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "2",
+      "malfunction": "100"
+    },
+    {
+      "id": "shotgun-20-double",
+      "name": "20 号双管霰弹枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "2D6 / 1D6 / 1D3",
+      "range": "10 / 20 / 50 码",
+      "attacks": "1 或 2",
+      "description": "三个伤害值依次对应三个射程；装弹量适用于双管条目。",
+      "price": "1920年代美元参考：$35",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "2",
+      "malfunction": "100"
+    },
+    {
+      "id": "shotgun-16-double",
+      "name": "16 号双管霰弹枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "2D6 + 2 / 1D6 + 1 / 1D4",
+      "range": "10 / 20 / 50 码",
+      "attacks": "1 或 2",
+      "description": "三个伤害值依次对应三个射程；装弹量适用于双管条目。",
+      "price": "1920年代美元参考：$40",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "2",
+      "malfunction": "100"
+    },
+    {
+      "id": "shotgun-12-semi-auto",
+      "name": "12 号半自动霰弹枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "skillId": "firearms-rifle",
+      "damage": "4D6 / 2D6 / 1D6",
+      "range": "10 / 20 / 50 码",
+      "attacks": "1（至多 2）",
+      "description": "五发半自动条目，与泛称12号霰弹枪和双管型号分别记录。",
+      "price": "1920年代美元参考：$45",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "ammo": "5",
+      "malfunction": "100"
+    },
+    {
+      "id": "crowbar",
+      "name": "撬棍",
+      "category": "工具",
+      "kind": "item",
+      "description": "用于撬动、抬起或拆开适合的物体；需要的检定由具体情境决定。",
+      "price": "1920年代美元参考：$2.25",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    },
+    {
+      "id": "pocket-microscope",
+      "name": "袖珍显微镜",
+      "category": "调查",
+      "kind": "item",
+      "description": "便于检查细小样本与表面特征，具体观察能力取决于仪器和操作条件。",
+      "price": "1920年代美元参考：$0.58",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    },
+    {
+      "id": "dictaphone",
+      "name": "口述记录机",
+      "category": "调查",
+      "kind": "item",
+      "description": "时代适用的声音记录器材；使用前确认记录介质和电源条件。",
+      "price": "1920年代美元参考：$39.95",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    },
+    {
+      "id": "handcuffs",
+      "name": "手铐",
+      "category": "调查",
+      "kind": "item",
+      "description": "用于约束的器具；实际控制或挣脱按场景与规则处理，不自动令目标失去行动。",
+      "price": "1920年代美元参考：$3.35",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    },
+    {
+      "id": "clinical-thermometer",
+      "name": "临床体温计",
+      "category": "医疗",
+      "kind": "item",
+      "description": "测量体温的医疗器材，读数可作为判断身体状况的线索。",
+      "price": "1920年代美元参考：$0.69",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    },
+    {
+      "id": "waterproof-match-case",
+      "name": "防水火柴盒",
+      "category": "探索",
+      "kind": "item",
+      "description": "保护火柴免受潮湿影响的携带用品，点火条件仍取决于环境。",
+      "price": "1920年代美元参考：$0.48",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-equipment-1920s"
+    }
+  ],
+  "dataNotes": [
+    "本包是可核实公开资料的增量，不是任何规则书的完整职业、技能或装备目录。",
+    "新增枪械与普通装备依据1920年代核心公开表，仅在core目录展示；不把这些表格误称为Gaslight、Dark Ages或Down Darker Trails专属目录。",
+    "新增职业核对Roll20授权公开的共同职业公式、信用范围与技能条件；来源页面属于Pulp职业章节，本包不引入Pulp属性、额外HP、天赋或幸运机制。",
+    "所有新增科学专长各自分配技能点；基础值使用核心人物卡Science 1%，名称核对Chaosium官方Wiki，不代表列尽每个专业领域。"
+  ]
+}

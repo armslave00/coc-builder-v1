@@ -3,6 +3,7 @@ import type { Character, InventoryItem, RuleData, Ruleset } from '../types';
 import { derive, getSkillTotal } from '../lib/rules';
 import { getItems, getWeapons, getWealthGuidance, inventoryKind, weaponSkillId } from '../lib/guidance';
 import { NumberField } from './NumberField';
+import { availableInEra } from '../lib/catalog';
 
 export function EquipmentEditor({ character, rules, ruleset, update }: {
   character: Character;
@@ -32,12 +33,14 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
       id: crypto.randomUUID(), definitionId: definition.id, name: definition.name, quantity: 1, notes: '',
       kind: definition.kind ?? (definition.damage ? 'weapon' : 'item'), skillId: definition.skillId,
       damage: definition.damage, range: definition.range, attacks: definition.attacks,
+      ammo: definition.ammo, malfunction: definition.malfunction, armor: definition.armor,
     }] });
   };
   const picker = (kind: 'weapon' | 'item') => <label className="equipment-picker">
     <Plus size={17} /><select aria-label={kind === 'weapon' ? '添加武器' : '添加物品'} value="" onChange={event => add(event.target.value)}>
       <option value="">{kind === 'weapon' ? '从资料库添加武器…' : '从资料库添加物品…'}</option>
-      {rules.equipment.filter(item => item.id !== 'unarmed' && (item.kind ?? (item.damage ? 'weapon' : 'item')) === kind)
+      {rules.equipment.filter(item => item.id !== 'unarmed' && availableInEra(item.eras, ruleset.id)
+        && (item.kind ?? (item.damage ? 'weapon' : 'item')) === kind)
         .map(item => <option key={item.id} value={item.id}>{item.name} · {item.price}</option>)}
     </select>
   </label>;
@@ -45,6 +48,10 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
     const stored = character.inventory.find(entry => entry.id === item.id);
     const isWeapon = inventoryKind(item, rules) === 'weapon';
     const skillId = weaponSkillId(item, rules);
+    const definition = rules.equipment.find(entry => entry.id === item.definitionId);
+    const ammo = item.ammo ?? definition?.ammo;
+    const malfunction = item.malfunction ?? definition?.malfunction;
+    const armorValue = item.armor ?? definition?.armor;
     return <div key={item.id} className={`inventory-item ${stored ? '' : 'inherent-attack'}`}>
       <div className="inventory-title">
         {isWeapon ? <Sword size={17} /> : <Shield size={17} />}
@@ -61,13 +68,31 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
       {isWeapon && <div className="weapon-stats">
         <span>技能 {skillLabel(skillId)}</span><span>伤害 {item.damage || '待填写'}</span>
         <span>射程 {item.range || '—'}</span><span>攻击 {item.attacks || '—'}</span>
+        {ammo && <span>装弹量 {ammo}</span>}{malfunction && <span>故障值 {malfunction}</span>}
         {item.damage?.includes('DB') && <span>当前伤害加值 {stats.damageBonus}</span>}
       </div>}
+      {isWeapon && !skillId && definition?.description && <p className="inherent-note">{definition.description}</p>}
+      {armorValue && <p className="inherent-note">装备护甲 {armorValue}；人物防护值请按适用条件填写。</p>}
       {stored ? <>
         <div className="inventory-category"><label>分类<select aria-label={`${stored.name}分类`} value={isWeapon ? 'weapon' : 'item'}
           onChange={event => updateItem(item.id, { kind: event.target.value as 'weapon' | 'item' })}>
           <option value="weapon">武器</option><option value="item">物品</option>
         </select></label>{item.name !== stored.name && <small>保留的手动攻击记录</small>}</div>
+        {!availableInEra(definition?.eras, ruleset.id) && <p className="inherent-note">已保留其他时代的装备，请与守秘人确认适用性。</p>}
+        {isWeapon && <details className="weapon-details"><summary>编辑武器数值</summary><div className="weapon-fields">
+          <label className="field"><span>攻击技能</span><select aria-label={`${stored.name}攻击技能`}
+            value={stored.skillId ?? definition?.skillId ?? ''} onChange={event => updateItem(item.id, { skillId: event.target.value || undefined })}>
+            <option value="" disabled={!!definition?.skillId}>由守秘人确认</option>
+            {rules.skills.filter(skill => availableInEra(skill.eras, ruleset.id) || skill.id === skillId)
+              .map(skill => <option value={skill.id} key={skill.id}>{skillLabel(skill.id)}</option>)}
+          </select></label>
+          {([
+            ['damage', '伤害'], ['range', '射程'], ['attacks', '每轮攻击'], ['ammo', '装弹量'], ['malfunction', '故障值'],
+          ] as const).map(([key, label]) => <label key={key} className="field"><span>{label}</span>
+            <input aria-label={`${stored.name}${label}`} maxLength={100} value={stored[key] ?? definition?.[key] ?? ''}
+              onChange={event => updateItem(item.id, { [key]: event.target.value })} />
+          </label>)}
+        </div></details>}
         <input className="inventory-notes" aria-label={`${stored.name}备注`} maxLength={5000} placeholder="备注、弹药或用途…"
           value={stored.notes} onChange={event => updateItem(item.id, { notes: event.target.value })} />
       </> : <p className="inherent-note">每位调查员都可使用；徒手不是携带物品。</p>}

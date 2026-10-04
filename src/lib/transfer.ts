@@ -1,7 +1,9 @@
 import { ATTRIBUTE_KEYS } from '../types';
-import type { Attributes, Character, CustomContent, EquipmentDefinition, Occupation, RuleData, Ruleset, SkillAllocation, SkillDefinition, SpellDefinition } from '../types';
+import type { Attributes, Character, CustomContent, EquipmentDefinition, Occupation, RuleData, RuleSource, Ruleset, SkillAllocation, SkillDefinition, SourceCoverage, SpellDefinition } from '../types';
 import { derive, getSkillTotal } from './rules';
 import { getAttributeDescription, getBuildDescription, getItems, getWeapons, getWealthGuidance, weaponSkillId } from './guidance';
+import { resolveSkillForEra } from './catalog';
+import { selectCardSkills } from './card-skills';
 
 export const MAX_IMPORT_BYTES = 12 * 1024 * 1024;
 type RecordValue = Record<string, unknown>;
@@ -44,6 +46,11 @@ function optionalString(value: unknown, path: string, max = 1000): string | unde
 function optionalId(value: unknown, path: string): string | undefined {
   return value === undefined ? undefined : id(value, path);
 }
+function optionalBoolean(value: unknown, path: string): boolean | undefined {
+  if (value === undefined) return undefined;
+  if (typeof value !== 'boolean') fail(path, '必须是布尔值');
+  return value;
+}
 function inventoryKind(value: unknown, path: string): 'weapon' | 'item' | undefined {
   if (value === undefined) return undefined;
   if (value !== 'weapon' && value !== 'item') fail(path, '必须是 weapon 或 item');
@@ -58,6 +65,35 @@ function eras(value: unknown, path: string): string[] | undefined {
 function unique<T extends { id: string }>(items: T[], path: string): T[] {
   if (new Set(items.map(item => item.id)).size !== items.length) fail(path, '存在重复标识');
   return items;
+}
+function validateSource(value: unknown, path: string): RuleSource {
+  const row = record(value, path);
+  const url = string(row.url, `${path}.url`, 2000);
+  const kind = row.kind;
+  if (kind !== undefined && (typeof kind !== 'string' || !['core', 'setting', 'rules', 'reference', 'character-sheet', 'original', 'user-reference'].includes(kind))) fail(`${path}.kind`, '来源类型无效');
+  if (url !== '' || (kind !== 'original' && kind !== 'user-reference')) {
+    let parsed: URL;
+    try { parsed = new URL(url); } catch { fail(`${path}.url`, '必须是有效的 HTTP(S) URL'); }
+    if (!['https:', 'http:'].includes(parsed.protocol) || parsed.username || parsed.password) fail(`${path}.url`, '必须是不含认证信息的 HTTP(S) URL');
+  }
+  let coverage: RuleSource['coverage'];
+  if (row.coverage !== undefined) {
+    const entry = record(row.coverage, `${path}.coverage`);
+    const categories = ['occupations', 'skills', 'equipment'] as const;
+    if (Object.keys(entry).some(key => !(categories as readonly string[]).includes(key))) fail(`${path}.coverage`, '仅支持 occupations、skills、equipment');
+    const coverageValue = (key: typeof categories[number]): SourceCoverage => {
+      const value = entry[key];
+      if (value !== 'complete' && value !== 'partial' && value !== 'not-included' && value !== 'not-applicable') fail(`${path}.coverage.${key}`, '覆盖状态无效');
+      return value;
+    };
+    coverage = { occupations: coverageValue('occupations'), skills: coverageValue('skills'), equipment: coverageValue('equipment') };
+  }
+  return {
+    id: id(row.id, `${path}.id`), title: string(row.title, `${path}.title`, 200), url,
+    note: string(row.note, `${path}.note`, 5000), publisher: optionalString(row.publisher, `${path}.publisher`, 200),
+    year: row.year === undefined ? undefined : number(row.year, `${path}.year`, 1800, 2100),
+    edition: optionalString(row.edition, `${path}.edition`, 200), kind: kind as RuleSource['kind'], coverage,
+  };
 }
 function portrait(value: unknown, path: string): string {
   const result = string(value, path, 4 * 1024 * 1024);
@@ -104,6 +140,7 @@ function validateCharacter(value: unknown, path: string): Character {
       notes: string(entry.notes, `${itemPath}.notes`, 5000),
       damage: optionalString(entry.damage, `${itemPath}.damage`, 100), range: optionalString(entry.range, `${itemPath}.range`, 100), attacks: optionalString(entry.attacks, `${itemPath}.attacks`, 100),
       kind: inventoryKind(entry.kind, `${itemPath}.kind`), skillId: optionalId(entry.skillId, `${itemPath}.skillId`),
+      ammo: optionalString(entry.ammo, `${itemPath}.ammo`, 100), malfunction: optionalString(entry.malfunction, `${itemPath}.malfunction`, 100), armor: optionalString(entry.armor, `${itemPath}.armor`, 100),
     };
   }), `${path}.inventory`);
   const createdAt = string(data.createdAt, `${path}.createdAt`, 50);
@@ -126,6 +163,9 @@ function validateCharacter(value: unknown, path: string): Character {
 export function validateCustom(value: unknown): CustomContent {
   const data = record(value, '原创内容');
   const entries = (key: keyof CustomContent) => list(data[key] ?? [], `原创内容.${key}`, 500);
+  const sources = data.sources === undefined ? undefined : unique(list(data.sources, '原创内容.sources', 500).map((value, i) => validateSource(value, `原创来源[${i}]`)), '原创来源');
+  const legacySourceIds = data.legacySourceIds === undefined ? undefined : idList(data.legacySourceIds, '原创内容.legacySourceIds', 500);
+  if (legacySourceIds && new Set(legacySourceIds).size !== legacySourceIds.length) fail('原创内容.legacySourceIds', '存在重复标识');
   const rulesets: Ruleset[] = entries('rulesets').map((value, i) => {
     const path = `原创规则[${i}]`; const row = record(value, path);
     const skillBaseOverrides = row.skillBaseOverrides === undefined ? undefined : Object.fromEntries(Object.entries(record(row.skillBaseOverrides, `${path}.skillBaseOverrides`)).map(([key, value]) => [id(key, `${path}.skillBaseOverrides.${key}`), number(value, `${path}.skillBaseOverrides.${key}`, 0, 99)]));
@@ -140,12 +180,12 @@ export function validateCustom(value: unknown): CustomContent {
         return [id(key, helpPath), { description: string(help.description, `${helpPath}.description`, 2000), scenarios: list(help.scenarios, `${helpPath}.scenarios`, 8).map((entry, j) => string(entry, `${helpPath}.scenarios[${j}]`, 300)) }];
       }));
     }
-    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), era: string(row.era, `${path}.era`, 200), description: string(row.description, `${path}.description`, 5000), sourceId: id(row.sourceId, `${path}.sourceId`), status: string(row.status, `${path}.status`, 200), skillBaseOverrides, skillAliases, skillDescriptions };
+    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), era: string(row.era, `${path}.era`, 200), description: string(row.description, `${path}.description`, 5000), sourceId: id(row.sourceId, `${path}.sourceId`), status: string(row.status, `${path}.status`, 200), skillBaseOverrides, skillAliases, skillDescriptions, notes: row.notes === undefined ? undefined : list(row.notes, `${path}.notes`, 50).map((value, j) => string(value, `${path}.notes[${j}]`, 2000)) };
   });
   const skills: SkillDefinition[] = entries('skills').map((value, i) => {
     const path = `原创技能[${i}]`; const row = record(value, path);
     const base = row.base === 'DEX/2' || row.base === 'EDU' || row.base === 'APP/5' ? row.base : number(row.base, `${path}.base`, 0, 99);
-    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), base, category: string(row.category, `${path}.category`, 200), eras: eras(row.eras, `${path}.eras`), description: optionalString(row.description, `${path}.description`, 2000), scenarios: scenarios(row.scenarios, `${path}.scenarios`) };
+    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), base, category: string(row.category, `${path}.category`, 200), eras: eras(row.eras, `${path}.eras`), description: optionalString(row.description, `${path}.description`, 2000), scenarios: scenarios(row.scenarios, `${path}.scenarios`), sourceId: optionalId(row.sourceId, `${path}.sourceId`), parentId: optionalId(row.parentId, `${path}.parentId`), specialization: optionalBoolean(row.specialization, `${path}.specialization`), note: optionalString(row.note, `${path}.note`, 2000) };
   });
   const occupations: Occupation[] = entries('occupations').map((value, i) => {
     const path = `原创职业[${i}]`; const row = record(value, path); const formula = record(row.formula, `${path}.formula`);
@@ -162,17 +202,17 @@ export function validateCustom(value: unknown): CustomContent {
       const options = idList(group.options, `${groupPath}.options`, 64);
       return { name: string(group.name, `${groupPath}.name`, 200), count: number(group.count, `${groupPath}.count`, 1, options.length), options };
     });
-    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), description: string(row.description, `${path}.description`, 5000), formula: { edu: number(formula.edu, `${path}.formula.edu`, 0, 10), other, factor: formula.factor === undefined ? undefined : number(formula.factor, `${path}.formula.factor`, 0, 10) }, credit: [low, high], skills: idList(row.skills, `${path}.skills`, 64), choiceCount: row.choiceCount === undefined ? undefined : number(row.choiceCount, `${path}.choiceCount`, 0, 32), choiceGroups, skillNotes: optionalString(row.skillNotes, `${path}.skillNotes`, 5000), eras: eras(row.eras, `${path}.eras`), sourceId: id(row.sourceId, `${path}.sourceId`) };
+    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), english: string(row.english, `${path}.english`, 200), description: string(row.description, `${path}.description`, 5000), formula: { edu: number(formula.edu, `${path}.formula.edu`, 0, 10), other, factor: formula.factor === undefined ? undefined : number(formula.factor, `${path}.formula.factor`, 0, 10) }, credit: [low, high], skills: idList(row.skills, `${path}.skills`, 64), choiceCount: row.choiceCount === undefined ? undefined : number(row.choiceCount, `${path}.choiceCount`, 0, 32), choiceGroups, skillNotes: optionalString(row.skillNotes, `${path}.skillNotes`, 5000), eras: eras(row.eras, `${path}.eras`), sourceId: id(row.sourceId, `${path}.sourceId`), version: optionalString(row.version, `${path}.version`, 200), eraNote: optionalString(row.eraNote, `${path}.eraNote`, 5000), verificationSourceIds: row.verificationSourceIds === undefined ? undefined : idList(row.verificationSourceIds, `${path}.verificationSourceIds`, 100) };
   });
   const equipment: EquipmentDefinition[] = entries('equipment').map((value, i) => {
     const path = `原创装备[${i}]`; const row = record(value, path);
-    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), category: string(row.category, `${path}.category`, 200), description: string(row.description, `${path}.description`, 5000), price: string(row.price, `${path}.price`, 200), damage: optionalString(row.damage, `${path}.damage`, 100), range: optionalString(row.range, `${path}.range`, 100), attacks: optionalString(row.attacks, `${path}.attacks`, 100), kind: inventoryKind(row.kind, `${path}.kind`), skillId: optionalId(row.skillId, `${path}.skillId`), sourceId: id(row.sourceId, `${path}.sourceId`) };
+    return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), category: string(row.category, `${path}.category`, 200), description: string(row.description, `${path}.description`, 5000), price: string(row.price, `${path}.price`, 200), damage: optionalString(row.damage, `${path}.damage`, 100), range: optionalString(row.range, `${path}.range`, 100), attacks: optionalString(row.attacks, `${path}.attacks`, 100), kind: inventoryKind(row.kind, `${path}.kind`), skillId: optionalId(row.skillId, `${path}.skillId`), sourceId: id(row.sourceId, `${path}.sourceId`), verificationSourceIds: row.verificationSourceIds === undefined ? undefined : idList(row.verificationSourceIds, `${path}.verificationSourceIds`, 100), eras: eras(row.eras, `${path}.eras`), ammo: optionalString(row.ammo, `${path}.ammo`, 100), malfunction: optionalString(row.malfunction, `${path}.malfunction`, 100), armor: optionalString(row.armor, `${path}.armor`, 100) };
   });
   const spells: SpellDefinition[] = entries('spells').map((value, i) => {
     const path = `原创法术[${i}]`; const row = record(value, path);
     return { id: id(row.id, `${path}.id`), name: string(row.name, `${path}.name`, 200), description: string(row.description, `${path}.description`, 5000), cost: string(row.cost, `${path}.cost`, 500), sourceId: id(row.sourceId, `${path}.sourceId`) };
   });
-  return { rulesets: unique(rulesets, '原创规则'), skills: unique(skills, '原创技能'), occupations: unique(occupations, '原创职业'), equipment: unique(equipment, '原创装备'), spells: unique(spells, '原创法术') };
+  return { rulesets: unique(rulesets, '原创规则'), skills: unique(skills, '原创技能'), occupations: unique(occupations, '原创职业'), equipment: unique(equipment, '原创装备'), spells: unique(spells, '原创法术'), ...(sources === undefined ? {} : { sources }), ...(legacySourceIds === undefined ? {} : { legacySourceIds }) };
 }
 
 export function parseImport(text: string): { characters: Character[]; custom: CustomContent } {
@@ -210,24 +250,30 @@ export function characterHTML(character: Character, rules: RuleData): string {
   const ruleset = rules.rulesets.find(item => item.id === character.rulesetId);
   const values = derive(character, occupation);
   const field = (label: string, value: unknown) => `<div class="field"><span>${escape(label)}</span><strong>${escape(value === null || value === undefined || value === '' ? '—' : value)}</strong></div>`;
-  const eraId = character.rulesetId.startsWith('custom-') ? 'core' : character.rulesetId;
-  const skills = rules.skills.filter(skill => !skill.eras?.length || skill.eras.includes(eraId) || Object.values(character.skills[skill.id] ?? {}).some(n => n > 0)).map(skill => {
+  const skills = selectCardSkills(character, rules).map(definition => {
+    const skill = resolveSkillForEra(definition, rules, ruleset);
     const value = getSkillTotal(skill, character, ruleset);
-    const alias = ruleset?.skillAliases?.[skill.id];
-    const label = alias ? rules.skills.find(target => target.id === alias)?.name ?? alias : skill.name;
-    return `<tr><td>${escape(label)}</td><td>${value}</td><td>${Math.floor(value / 2)}</td><td>${Math.floor(value / 5)}</td></tr>`;
+    return `<tr><td>${escape(skill.name)}</td><td>${value}</td><td>${Math.floor(value / 2)}</td><td>${Math.floor(value / 5)}</td></tr>`;
   });
-  // Repeat table headings for columns, and preserve all era and custom skills.
+  // Repeat column headings while keeping every selected skill in the output.
   const columnSize = Math.ceil(skills.length / 3);
   const skillTables = Array.from({ length: 3 }, (_, column) => `<table><thead><tr><th>技能</th><th>常规</th><th>½</th><th>⅕</th></tr></thead><tbody>${skills.slice(column * columnSize, (column + 1) * columnSize).join('')}</tbody></table>`).join('');
+  const equipmentNotes = (item: Character['inventory'][number]): string => {
+    const definition = rules.equipment.find(row => row.id === item.definitionId);
+    const details = ([['ammo', '装弹量'], ['malfunction', '故障值'], ['armor', '护甲']] as const).flatMap(([key, label]) => {
+      const value = item[key] ?? definition?.[key];
+      return value === undefined || value === '' ? [] : [`${label}：${value}`];
+    });
+    return `${escape(item.notes)}${details.length ? `${item.notes ? '<br>' : ''}<small class="guidance">${escape(details.join(' · '))}</small>` : ''}`;
+  };
   const weaponRows = getWeapons(character, rules).map(item => {
     const skill = rules.skills.find(skill => skill.id === weaponSkillId(item, rules));
     const alias = skill ? ruleset?.skillAliases?.[skill.id] : undefined;
     const label = alias ? rules.skills.find(target => target.id === alias)?.name ?? alias : skill?.name;
     const skillText = skill ? `${label} ${getSkillTotal(skill, character, ruleset)}%` : '—';
-    return `<tr><td>${escape(item.name)}</td><td>${item.quantity}</td><td>${escape(skillText)}</td><td>${escape(item.damage ?? '—')}</td><td>${escape(item.range ?? '—')}</td><td>${escape(item.attacks ?? '—')}</td><td>${escape(item.notes)}</td></tr>`;
+    return `<tr><td>${escape(item.name)}</td><td>${item.quantity}</td><td>${escape(skillText)}</td><td>${escape(item.damage ?? '—')}</td><td>${escape(item.range ?? '—')}</td><td>${escape(item.attacks ?? '—')}</td><td>${equipmentNotes(item)}</td></tr>`;
   }).join('');
-  const itemRows = getItems(character, rules).map(item => `<tr><td>${escape(item.name)}</td><td>${item.quantity}</td><td>${escape(item.notes)}</td></tr>`).join('');
+  const itemRows = getItems(character, rules).map(item => `<tr><td>${escape(item.name)}</td><td>${item.quantity}</td><td>${equipmentNotes(item)}</td></tr>`).join('');
   const creditSkill = rules.skills.find(skill => skill.id === 'credit-rating');
   const credit = creditSkill ? getSkillTotal(creditSkill, character, ruleset) : 0;
   const wealth = getWealthGuidance(credit, rules, ruleset);

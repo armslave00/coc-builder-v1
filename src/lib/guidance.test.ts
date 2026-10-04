@@ -12,20 +12,32 @@ const inventoryItem = (overrides: Partial<InventoryItem> = {}): InventoryItem =>
   id: 'record', definitionId: 'missing-old-definition', name: '旧物品', quantity: 1, notes: '', ...overrides,
 });
 
-test('characteristic guidance covers every allowed value and changes at each agreed boundary', () => {
+test('workbook-adapted characteristic guidance covers each allowed value exactly once', () => {
   for (const key of ATTRIBUTE_KEYS) {
-    for (let value = 1; value <= 99; value++) assert.ok(getAttributeDescription(key, value, RULES));
-    for (const [left, right] of [[24, 25], [44, 45], [64, 65], [84, 85]]) {
-      assert.notEqual(getAttributeDescription(key, left, RULES), getAttributeDescription(key, right, RULES));
+    const bands = RULES.guidance!.attributes[key].bands;
+    for (let value = 1; value <= 99; value++) {
+      assert.equal(bands.filter(band => value >= band.min && value <= band.max).length, 1, `${key}:${value}`);
+      assert.ok(getAttributeDescription(key, value, RULES));
     }
-    for (const [left, right] of [[1, 24], [25, 44], [45, 64], [65, 84], [85, 99]]) {
-      assert.equal(getAttributeDescription(key, left, RULES), getAttributeDescription(key, right, RULES));
-    }
+    for (const band of bands) assert.equal(getAttributeDescription(key, band.min, RULES), getAttributeDescription(key, band.max, RULES));
     assert.equal(getAttributeDescription(key, 0, RULES), '');
     assert.equal(getAttributeDescription(key, 100, RULES), '');
   }
   assert.equal(new Set([-2, -1, 0, 1, 2].map(value => getBuildDescription(value, RULES))).size, 5);
   assert.equal(getBuildDescription(3, RULES), '');
+});
+
+test('attribute reference anchors preserve the workbook distinctions without changing mechanics', () => {
+  assert.match(getAttributeDescription('STR', 50, RULES), /普通人/);
+  assert.match(getAttributeDescription('STR', 99, RULES), /世界级举重/);
+  assert.match(getAttributeDescription('SIZ', 65, RULES), /中等身高/);
+  assert.match(getAttributeDescription('SIZ', 80, RULES), /高大/);
+  assert.match(getAttributeDescription('EDU', 60, RULES), /高中/);
+  assert.match(getAttributeDescription('EDU', 70, RULES), /大学/);
+  assert.match(getAttributeDescription('EDU', 80, RULES), /研究生/);
+  assert.match(getAttributeDescription('EDU', 90, RULES), /博士/);
+  assert.match(getAttributeDescription('EDU', 96, RULES), /世界级权威/);
+  assert.match(getBuildDescription(0, RULES), /比较双方体格/);
 });
 
 test('wealth guidance respects every tier boundary and does not turn historical status into cash', () => {
@@ -40,7 +52,7 @@ test('wealth guidance respects every tier boundary and does not turn historical 
   for (const id of ['gaslight', 'victorian', 'western']) assert.match(getWealthGuidance(50, RULES, profile(id)).description, /历史设定下的原创定性辅助/);
 });
 
-test('era help follows changed meanings and all 69 bundled skills have usable original help', () => {
+test('era help follows changed meanings and all bundled skills have usable original help', () => {
   for (const definition of RULES.skills) {
     const help = getSkillHelp(definition);
     assert.ok(help.description.length > 10, definition.id);
@@ -58,9 +70,9 @@ test('era help follows changed meanings and all 69 bundled skills have usable or
 
 test('split catalogs retain counts, unique IDs and all rule references, including inherited profiles', () => {
   assert.deepEqual(RULES.rulesets.map(item => item.id), ['core', 'gaslight', 'japan', 'victorian', 'dark-ages', 'western']);
-  assert.equal(RULES.skills.length, 69);
-  assert.equal(RULES.occupations.length, 22);
-  assert.equal(RULES.equipment.length, 26);
+  assert.equal(RULES.skills.length, 120);
+  assert.equal(RULES.occupations.length, 191);
+  assert.equal(RULES.equipment.length, 481);
   assert.equal(RULES.spells.length, 8);
   for (const catalog of [RULES.sources, RULES.rulesets, RULES.skills, RULES.occupations, RULES.equipment, RULES.spells]) {
     assert.equal(new Set(catalog.map(item => item.id)).size, catalog.length);

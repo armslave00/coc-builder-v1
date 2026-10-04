@@ -1,0 +1,30 @@
+.library-list article > .library-entry-body { width: auto; flex: 1; min-width: 0; }
+.library-entry-body p + p { margin-top: 7px; }
+.entry-source { display: block; margin-top: 9px; line-height: 1.8; overflow-wrap: anywhere; }
+.entry-source a, .publication-card a { color: #587342; text-underline-offset: 3px; }
+.entry-source svg, .publication-card h3 svg { display: inline; vertical-align: middle; margin-left: 4px; }
+.ruleset-card .entry-source { font-size: 10px; }
+.catalog-era { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 0 8px 12px; font-size: 11px; color: #738460; }
+.catalog-era label { display: flex; align-items: center; gap: 10px; }
+.catalog-era select { max-width: 200px; padding: 6px; border: 1px solid #d3dfc3; background: #f8faef; color: #536d40; font: inherit; }
+.catalog-note { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0; color: #718160; font-size: 12px; line-height: 1.9; }
+.catalog-note svg { flex-shrink: 0; margin-top: 3px; }
+.publication-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.publication-card { padding: 19px; border: 1px solid #dce5cf; background: #f7f9ef; min-width: 0; }
+.publication-meta { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 10px; color: #78896a; line-height: 1.8; }
+.publication-card h3 { margin: 10px 0; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+.publication-card p { font-size: 12px; line-height: 1.9; color: #6e805d; }
+.publication-coverage { display: block; margin-top: 12px; font-size: 11px; line-height: 1.9; color: #536d40; }
+.weapon-details { margin: 12px 0 8px 26px; font-size: 11px; color: #607c4d; }
+.weapon-details summary { cursor: pointer; padding: 5px 0; }
+.weapon-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 12px 0; }
+@media (max-width: 760px) {
+  .publication-grid { grid-template-columns: 1fr; }
+  .publication-card { padding: 16px; }
+  .catalog-era { padding-left: 0; padding-right: 0; flex-wrap: wrap; }
+  .weapon-details { margin-left: 0; }
+  .weapon-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .ruleset-grid.reference-profiles { grid-template-columns: 1fr; }
+}

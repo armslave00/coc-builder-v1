@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Check, ChevronDown, Search, X } from 'lucide-react';
 import type { Occupation, Ruleset, SkillDefinition } from '../types';
+import { availableInEra } from '../lib/catalog';
 import './guidance.css';
 
 interface OccupationPickerProps {
@@ -39,6 +40,10 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
   const skillName = (id: string) => {
     const alias = ruleset?.skillAliases?.[id];
     return alias ? skillsById.get(alias)?.name ?? alias : skillsById.get(id)?.name ?? id;
+  };
+  const availableChoice = (id: string) => {
+    const skill = skillsById.get(ruleset?.skillAliases?.[id] ?? '') ?? skillsById.get(id);
+    return !!skill && (!ruleset || availableInEra(skill.eras, ruleset.id));
   };
   const filtered = occupations.filter(occupation => [
     occupation.name, occupation.english, occupation.description,
@@ -114,7 +119,8 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
           const isExpanded = expanded.includes(occupation.id);
           const isSelected = pendingId === occupation.id;
           const detailsId = `${dialogId}-details-${occupation.id}`;
-          const allSkillIds = [...occupation.skills, ...(occupation.choiceGroups ?? []).flatMap(group => group.options)];
+          const choiceGroups = occupation.choiceGroups?.map(group => ({ ...group, options: group.options.filter(availableChoice) }));
+          const allSkillIds = [...occupation.skills, ...(choiceGroups ?? []).flatMap(group => group.options)];
           const adaptations = [...new Set(allSkillIds)].filter(id => ruleset?.skillAliases?.[id] && skillName(id) !== (skillsById.get(id)?.name ?? id));
           const era = ruleset?.id.startsWith('custom-') ? 'core' : ruleset?.id;
           const unavailable = [...new Set(allSkillIds)].filter(id => {
@@ -144,7 +150,7 @@ export function OccupationPicker({ occupations, skills, ruleset, selectedId, onS
             >{isExpanded ? '收起完整要求' : '查看完整要求'}<ChevronDown size={14} aria-hidden="true" /></button>
             {isExpanded && <div className="occupation-card-details" id={detailsId}>
               <p><strong>职业点数</strong>{pointFormula(occupation)}</p>
-              {(occupation.choiceGroups ?? []).map((group, index) => <p key={`${index}-${group.name}`}><strong>{group.name} · 选 {group.count} 项</strong>{group.options.map(skillName).join('、')}</p>)}
+              {(choiceGroups ?? []).map((group, index) => <p key={`${index}-${group.name}`}><strong>{group.name} · 选 {group.count} 项</strong>{group.options.map(skillName).join('、')}</p>)}
               {(occupation.choiceCount ?? 0) > 0 && <p><strong>额外可选技能</strong>另选 {occupation.choiceCount} 项适合职业或角色经历的技能。</p>}
               {occupation.skillNotes && <p><strong>专长与选择说明</strong>{occupation.skillNotes}</p>}
               {adaptations.length > 0 && <p className="occupation-era-note"><strong>当前时代的技能名称</strong>{adaptations.map(id => `${skillsById.get(id)?.name ?? id} → ${skillName(id)}`).join('；')}</p>}

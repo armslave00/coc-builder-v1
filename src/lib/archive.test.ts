@@ -2,11 +2,12 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import type { Character, CustomContent, RuleData } from '../types';
 import { mergeCustom, validateCharacterReferences } from './archive';
-import { validateCustom } from './transfer';
+import { parseImport, validateCustom } from './transfer';
+import { RULES } from '../data/rules';
 
 const emptyCustom = (): CustomContent => ({ rulesets: [], skills: [], occupations: [], equipment: [], spells: [] });
 const rules: RuleData = {
-  version: '7.0', sources: [],
+  version: '7.0', sources: [{ id: 'core', title: '核心', url: 'https://example.com/core', note: '' }],
   rulesets: [{ id: 'core', name: '经典时代', english: '', era: '1920', description: '', sourceId: 'core', status: '' }],
   occupations: [{ id: 'professor', name: '教授', english: '', description: '', formula: { edu: 4 }, credit: [20, 70], skills: ['spot'], sourceId: 'core' }],
   skills: [
@@ -105,11 +106,133 @@ test('checks custom era skill descriptions and equipment skill references after 
   incoming.equipment.push({ id: 'custom-tool', name: '调查工具', category: '原创', description: '', price: '', sourceId: 'custom', kind: 'weapon', skillId: 'custom-skill' });
   assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /技能说明.*custom-skill.*未找到/);
   incoming.skills.push({ id: 'custom-skill', name: '原创调查', english: '', base: 1, category: '调查' });
-  assert.deepEqual(mergeCustom(emptyCustom(), incoming, rules), incoming);
+  assert.deepEqual(mergeCustom(emptyCustom(), incoming, rules), { ...incoming, legacySourceIds: ['custom'] });
   incoming.equipment[0].skillId = 'missing-skill';
   assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /原创装备.*missing-skill.*未找到/);
   incoming.equipment[0].skillId = 'spot';
   assert.doesNotThrow(() => mergeCustom(emptyCustom(), incoming, rules));
+});
+
+test('merges source catalogs before checking provenance and references across incoming definitions', () => {
+  const incoming = emptyCustom();
+  incoming.sources = [{ id: 'custom-source', title: '扩展资料', url: 'https://example.com/rules', note: '版本锚点', publisher: '作者', year: 2026, edition: '7e', kind: 'original', coverage: { occupations: 'partial', skills: 'complete', equipment: 'partial' } }];
+  incoming.skills.push({ id: 'custom-language', name: '语言', english: '', category: '知识', base: 1, specialization: true, sourceId: 'custom-source' });
+  incoming.skills.push({ id: 'custom-latin', name: '拉丁语', english: '', category: '知识', base: 1, parentId: 'custom-language', sourceId: 'custom-source' });
+  incoming.occupations.push({ ...rules.occupations[0], id: 'custom-scholar', sourceId: 'custom-source', verificationSourceIds: ['custom-source'], skills: ['custom-latin'] });
+  incoming.rulesets.push({ ...rules.rulesets[0], id: 'custom-era', sourceId: 'custom-source' });
+  incoming.equipment.push({ id: 'custom-tool', name: '工具', category: '', description: '', price: '', sourceId: 'custom-source', verificationSourceIds: ['custom-source'], skillId: 'custom-latin' });
+  incoming.spells.push({ ...rules.spells[0], id: 'custom-spell', sourceId: 'custom-source' });
+  const before = JSON.stringify(incoming);
+  const merged = mergeCustom(emptyCustom(), validateCustom(incoming), rules);
+  assert.equal(JSON.stringify(merged), JSON.stringify(validateCustom(incoming)));
+  assert.equal(JSON.stringify(incoming), before);
+  const withDuplicateSource = emptyCustom(); withDuplicateSource.sources = structuredClone(incoming.sources);
+  assert.equal(mergeCustom(merged, withDuplicateSource, rules).sources?.length, 1);
+  const changed = structuredClone(withDuplicateSource); changed.sources![0].edition = '6e';
+  assert.throws(() => mergeCustom(merged, changed, rules), /来源.*custom-source.*冲突/);
+  const scoped = structuredClone(rules); scoped.sources = structuredClone(incoming.sources);
+  assert.deepEqual(mergeCustom(emptyCustom(), withDuplicateSource, scoped).sources, []);
+  const changedBuiltin = structuredClone(withDuplicateSource); changedBuiltin.sources![0].coverage!.skills = 'partial';
+  assert.throws(() => mergeCustom(emptyCustom(), changedBuiltin, scoped), /来源.*custom-source.*冲突/);
+});
+
+test('complete builtin original source copies normalize and deduplicate without an external URL', () => {
+  const original = RULES.sources.find(source => source.id === 'project-original')!;
+  const incoming = validateCustom({ ...emptyCustom(), sources: [structuredClone(original)] });
+  assert.deepEqual(mergeCustom(emptyCustom(), incoming, RULES), { ...emptyCustom(), sources: [] });
+  assert.equal(original.url, '');
+});
+
+test('validates new source references while retaining legacy source labels and original workshop entries', () => {
+  const scoped = structuredClone(rules);
+  const legacy = emptyCustom();
+  legacy.equipment.push({ id: 'old-tool', name: '旧工具', category: '', description: '', price: '', sourceId: 'legacy-book-label' });
+  assert.equal(mergeCustom(emptyCustom(), legacy, scoped).equipment[0].sourceId, 'legacy-book-label');
+  const newFormat = structuredClone(legacy); newFormat.sources = [];
+  assert.throws(() => mergeCustom(emptyCustom(), newFormat, scoped), /来源.*legacy-book-label.*未找到/);
+  assert.doesNotThrow(() => mergeCustom(legacy, { ...emptyCustom(), sources: [] }, scoped));
+  newFormat.equipment[0].sourceId = 'original';
+  assert.doesNotThrow(() => mergeCustom(emptyCustom(), newFormat, scoped));
+  for (const kind of ['rulesets', 'occupations', 'equipment', 'spells', 'skills', 'verification', 'equipment-verification'] as const) {
+    const incoming = { ...emptyCustom(), sources: [] };
+    if (kind === 'rulesets') incoming.rulesets.push({ ...rules.rulesets[0], id: 'custom-era', sourceId: 'missing-source' });
+    if (kind === 'occupations') incoming.occupations.push({ ...rules.occupations[0], id: 'custom-professor', sourceId: 'missing-source' });
+    if (kind === 'equipment') incoming.equipment.push({ ...newFormat.equipment[0], sourceId: 'missing-source' });
+    if (kind === 'spells') incoming.spells.push({ ...rules.spells[0], id: 'custom-spell', sourceId: 'missing-source' });
+    if (kind === 'skills') incoming.skills.push({ ...rules.skills[0], id: 'custom-skill', sourceId: 'missing-source' });
+    if (kind === 'verification') incoming.occupations.push({ ...rules.occupations[0], id: 'custom-professor', verificationSourceIds: ['missing-source'] });
+    if (kind === 'equipment-verification') incoming.equipment.push({ ...newFormat.equipment[0], verificationSourceIds: ['missing-source'] });
+    assert.throws(() => mergeCustom(emptyCustom(), incoming, scoped), /来源.*missing-source.*未找到/);
+  }
+  const newSkillMetadata = emptyCustom(); newSkillMetadata.skills.push({ ...rules.skills[0], id: 'custom-skill', sourceId: 'missing-source' });
+  assert.throws(() => mergeCustom(emptyCustom(), newSkillMetadata, scoped), /来源.*missing-source.*未找到/);
+});
+
+test('legacy source markers preserve mixed archives across export and fresh-device import', () => {
+  const legacy = emptyCustom();
+  legacy.occupations.push({ ...rules.occupations[0], id: 'old-scholar', sourceId: 'legacy-book' });
+  const incoming = { ...emptyCustom(), sources: [{ id: 'new-source', title: '新资料', url: 'https://example.com/new', note: '' }] };
+  incoming.equipment.push({ id: 'new-tool', name: '新工具', category: '', description: '', price: '', sourceId: 'new-source' });
+  const merged = mergeCustom(legacy, incoming, rules);
+  assert.deepEqual(merged.legacySourceIds, ['legacy-book']);
+  const exported = JSON.stringify({ schemaVersion: 1, character: investigator(), custom: merged });
+  const parsed = parseImport(exported);
+  const reimported = mergeCustom(emptyCustom(), parsed.custom, rules);
+  assert.equal(reimported.occupations[0].sourceId, 'legacy-book');
+  assert.equal(reimported.sources?.[0].id, 'new-source');
+  assert.deepEqual(reimported.legacySourceIds, ['legacy-book']);
+  const withProvenance = structuredClone(parsed.custom);
+  withProvenance.sources!.push({ id: 'legacy-book', title: '已核实资料', url: 'https://example.com/verified', note: '' });
+  assert.deepEqual(mergeCustom(emptyCustom(), withProvenance, rules).legacySourceIds, []);
+  const unverifiedSkill = { ...emptyCustom(), sources: [], legacySourceIds: ['legacy-book'] };
+  unverifiedSkill.skills.push({ ...rules.skills[0], id: 'new-skill', sourceId: 'legacy-book' });
+  assert.throws(() => mergeCustom(emptyCustom(), unverifiedSkill, rules), /来源.*legacy-book.*未找到/);
+  const unverifiedReferences = { ...emptyCustom(), sources: [], legacySourceIds: ['legacy-book'] };
+  unverifiedReferences.occupations.push({ ...rules.occupations[0], id: 'new-professor', verificationSourceIds: ['legacy-book'] });
+  assert.throws(() => mergeCustom(emptyCustom(), unverifiedReferences, rules), /校核来源.*legacy-book.*未找到/);
+});
+
+test('rejects missing specialization parents and cyclic parent relationships', () => {
+  const incoming = emptyCustom();
+  incoming.skills.push({ ...rules.skills[0], id: 'custom-skill', parentId: 'missing-parent' });
+  assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /父技能.*missing-parent.*未找到/);
+  incoming.skills[0].parentId = 'custom-skill';
+  assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /父技能.*循环/);
+  incoming.skills[0].parentId = 'custom-parent';
+  incoming.skills.push({ ...rules.skills[0], id: 'custom-parent', parentId: 'custom-skill' });
+  assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /父技能.*循环/);
+  incoming.skills[1].parentId = 'spot';
+  assert.doesNotThrow(() => mergeCustom(emptyCustom(), incoming, rules));
+});
+
+test('legacy builtin copies omit added metadata without replacing canonical source or rule definitions', () => {
+  const scoped = structuredClone(rules);
+  scoped.sources = [{ id: 'core', title: '核心', url: 'https://example.com/core', note: '', publisher: '出版社', year: 2026, edition: '7e', kind: 'core', coverage: { occupations: 'partial', skills: 'partial', equipment: 'partial' } }];
+  Object.assign(scoped.skills[0], { sourceId: 'core', parentId: 'dodge', specialization: false, eras: ['core'], note: '新版数据说明' });
+  Object.assign(scoped.occupations[0], { version: '7e', eraNote: '时代说明', verificationSourceIds: ['core'] });
+  scoped.rulesets[0].notes = ['时代说明'];
+  scoped.equipment.push({ id: 'rifle', name: '步枪', category: '', description: '', price: '', sourceId: 'core', verificationSourceIds: ['core'], eras: ['core'], ammo: '5', malfunction: '100', armor: '—' });
+  const incoming = emptyCustom();
+  incoming.sources = [{ id: 'core', title: '核心', url: 'https://example.com/core', note: '' }];
+  incoming.skills.push(structuredClone(rules.skills[0]));
+  incoming.occupations.push(structuredClone(rules.occupations[0]));
+  incoming.rulesets.push(structuredClone(rules.rulesets[0]));
+  incoming.equipment.push({ id: 'rifle', name: '步枪', category: '', description: '', price: '', sourceId: 'core' });
+  const before = JSON.stringify([incoming, scoped]);
+  assert.deepEqual(mergeCustom(emptyCustom(), validateCustom(incoming), scoped), { ...emptyCustom(), sources: [] });
+  assert.equal(JSON.stringify([incoming, scoped]), before);
+  for (const edit of [
+    (content: CustomContent) => { content.skills[0].sourceId = 'other-source'; },
+    (content: CustomContent) => { content.skills[0].parentId = 'cthulhu-mythos'; },
+    (content: CustomContent) => { content.skills[0].eras = []; },
+    (content: CustomContent) => { content.occupations[0].version = '6e'; },
+    (content: CustomContent) => { content.rulesets[0].notes = []; },
+    (content: CustomContent) => { content.equipment[0].ammo = '6'; },
+    (content: CustomContent) => { content.sources![0].year = 2025; },
+  ]) {
+    const changed = structuredClone(incoming); edit(changed);
+    assert.throws(() => mergeCustom(emptyCustom(), changed, scoped), /冲突/);
+  }
 });
 
 test('inventory permits unavailable legacy definitions but checks every explicit skill reference', () => {

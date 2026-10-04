@@ -3,11 +3,11 @@
     {
       "id": "japan",
       "name": "日本现代",
-      "english": "Modern Japan · 7e Adaptation",
+      "english": "Modern Japan / クトゥルフ2020・2026",
       "era": "1980 年代至现代",
-      "description": "核心第 7 版现代技能与日本场景适配，加入计算机使用和电子学。可参考官方日本题材出版物；此 profile 不声称是日文版独立数值扩展。",
-      "sourceId": "sutra-7e",
-      "status": "setting-adaptation",
+      "description": "关联 KADOKAWA 官方日文第 7 版《クトゥルフ2020》《クトゥルフ2026》。核心现代人物卡提供基础；另收用户工作簿的职业、专长与装备参考，版次未核实。两书完整日版目录、经历包和特征尚未导入。",
+      "sourceId": "japan-2020-7e",
+      "status": "official-setting-adaptation",
       "skillBaseOverrides": {},
       "skillAliases": {}
     }
@@ -48,10 +48,63 @@
   ],
   "sources": [
     {
+      "id": "japan-2020-7e",
+      "title": "新クトゥルフ神話TRPG クトゥルフ2020（2020），日文第 7 版",
+      "url": "https://product.kadokawa.co.jp/p01/product-c/322001000090.html",
+      "note": "KADOKAWA 官方现代日本扩展。公开产品页可核实 80 种以上职业样本、经历包与年少调查员规则；具体职业模板、技能差异及装备目录尚未录入，当前日本技能基础值仍来自核心现代人物卡。",
+      "publisher": "KADOKAWA",
+      "edition": "Call of Cthulhu 7th Edition（日本语新版）",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2020
+    },
+    {
+      "id": "japan-2026-7e",
+      "title": "新クトゥルフ神話TRPG クトゥルフ2026（2026），日文第 7 版",
+      "url": "https://www.kadokawa.co.jp/product/322601000219/",
+      "note": "KADOKAWA 于 2026 年 5 月 29 日出版的现代日本追加设定与选择规则集。公开产品页可核实职业、副业、特征和新武器；这些专属条目与规则尚未录入。",
+      "publisher": "KADOKAWA",
+      "edition": "Call of Cthulhu 7th Edition（日本语新版）",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2026
+    },
+    {
+      "id": "kadokawa-editions",
+      "title": "KADOKAWA 官方：规则书与扩展资料的版次说明",
+      "url": "https://product.kadokawa.co.jp/cthulhu/coc-rule-book/",
+      "note": "官方将新版称为第 7 版、经典版称为旧版或第 6 版，并列明《クトゥルフ2020》属新版、《2010》《2015》属经典版。此页用于核验版次与出版身份，不提供可直接导入的完整数据表。",
+      "publisher": "KADOKAWA",
+      "edition": "第 7 版与经典第 6 版的书目说明",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "not-applicable"
+      }
+    },
+    {
       "id": "sutra-7e",
       "title": "The Sutra of Pale Leaves: Twin Suns Rising (2025), 7th Edition",
       "url": "https://www.chaosium.com/call-of-cthulhu-the-sutra-of-pale-leaves-twin-suns-rising-hardcover/",
-      "note": "官方出版的 1980 年代日本设定。本工具的日本现代 profile 使用核心现代规则；未复制本书专属机制或声称为日文官方版资料。"
+      "note": "Chaosium 出版的 1980 年代日本设定，与 KADOKAWA 的现代日本扩展为不同书目。本工具尚未导入本书专属职业、技能、物品与机制；日本现代选项仍使用核心现代规则。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2025
     }
   ]
 }

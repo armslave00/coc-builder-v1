@@ -1,0 +1,921 @@
+{
+  "sources": [
+    {
+      "id": "user-workbook-reference",
+      "title": "用户提供的人物卡工作簿参考（版次未明）",
+      "url": "",
+      "kind": "user-reference",
+      "publisher": "用户提供的第三方人物卡参考",
+      "edition": "来源版次不明；含原表自定义与可选规则",
+      "note": "文件《空白卡(1)_20260924_090335.xlsx》，核验日期2026-10-04。用户提供的第三方人物卡参考，不能据此认定为官方出版物或确认规则版次。技能基础值来自《人物卡》《分支技能与资产》明示单元格及《附表》的选择公式。艺术与手艺在《分支技能与资产》A1及《人物卡》AE25注明额外添加、试运行；可转移技能优势（B85:B101）、技能上限（B111:B117）、协作检定（L137:L168）及超越100成长（U137:U139）属于另列的可选/解释内容，本补充未启用这些逻辑。core/japan分别对应原卡的1920s/现代资料范围，不代表日本官方规则。工作簿《更新说明》A1列出2018.11.05与模板更新号18.11.1；文件名日期不是规则版次证据。",
+      "coverage": {
+        "occupations": "partial",
+        "skills": "partial",
+        "equipment": "partial"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "workbook-art-fine-art",
+      "name": "艺术 / 工艺（美术）",
+      "english": "Fine Art",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "用绘画和视觉创作表达主题，并辨认相关材料与表现手法。",
+      "scenarios": [
+        "辨认一幅画的制作手法",
+        "完成调查所需的现场素描"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B5/C5。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-forgery",
+      "name": "艺术 / 工艺（伪造）",
+      "english": "Forgery",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "模仿作品或文书的外观特征；具体适用对象由所选专长与守秘人确定。",
+      "scenarios": [
+        "比对可疑文件的笔迹与版式",
+        "为剧情道具制作仿制文书"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B7/C7。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-calligraphy",
+      "name": "艺术 / 工艺（书法）",
+      "english": "Calligraphy",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "掌握书写的笔法、结构与传统，并辨认相关书写特征。",
+      "scenarios": [
+        "识别书法作品的风格",
+        "为一段文字制作书写样本"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B9/C9。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-music-theory",
+      "name": "艺术 / 工艺（乐理）",
+      "english": "Music Theory",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "理解旋律、节奏与乐谱的结构；本项保留原表的乐理专长名称。",
+      "scenarios": [
+        "分析一段异常旋律的构成",
+        "阅读并解释一份乐谱"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B10/C10。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-cooking",
+      "name": "艺术 / 工艺（厨艺）",
+      "english": "Cooking",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "准备食材并完成烹饪，理解食物制作中的基本工序。",
+      "scenarios": [
+        "为调查团队准备一餐饭",
+        "辨认菜肴采用的烹饪方法"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B11/C11。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-tailoring",
+      "name": "艺术 / 工艺（裁缝）",
+      "english": "Tailoring",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "裁剪、缝制与修改衣物，并识别布料和缝制工艺。",
+      "scenarios": [
+        "修补旅行中损坏的衣物",
+        "辨认服装的缝制特点"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B12/C12。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-barbering",
+      "name": "艺术 / 工艺（理发）",
+      "english": "Barbering",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "整理头发与胡须，并运用相关造型和护理手艺。",
+      "scenarios": [
+        "修整角色的发型",
+        "识别一款发型的制作方式"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B13/C13。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-building",
+      "name": "艺术 / 工艺（建筑）",
+      "english": "Building",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表作为艺术与手艺专长记录建筑实践；不替代独立的工程学知识。",
+      "scenarios": [
+        "阅读与手艺相关的建筑图样",
+        "识别建筑施工的工艺特征"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B14/C14。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-dancing",
+      "name": "艺术 / 工艺（舞蹈）",
+      "english": "Dancing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "掌握所选舞蹈的步法、节奏与表演习惯。",
+      "scenarios": [
+        "参加一场舞会",
+        "辨认表演采用的舞蹈形式"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B15/C15。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-brewing",
+      "name": "艺术 / 工艺（酿酒）",
+      "english": "Brewing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "理解酒类制作、发酵和保存的手艺。",
+      "scenarios": [
+        "辨认一批酒的制作特点",
+        "判断酿造过程出现的工艺问题"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B16/C16。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-fishing",
+      "name": "艺术 / 工艺（捕鱼）",
+      "english": "Fishing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用捕鱼的器具、习惯与经验寻找渔获。",
+      "scenarios": [
+        "在当地水域尝试捕鱼",
+        "辨认一组渔具的用途"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B17/C17。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-singing",
+      "name": "艺术 / 工艺（歌唱）",
+      "english": "Singing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用声音、气息与节奏完成歌曲演唱。",
+      "scenarios": [
+        "完成一段演唱",
+        "分析录音中歌唱的表现方式"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B18/C18。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-pottery",
+      "name": "艺术 / 工艺（制陶）",
+      "english": "Pottery",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "制作与修整陶器，并辨认成形和烧制工艺。",
+      "scenarios": [
+        "识别陶片的制作方式",
+        "制作一件简单陶器"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B19/C19。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-sculpting",
+      "name": "艺术 / 工艺（雕塑）",
+      "english": "Sculpting",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "通过雕刻或塑形制作立体作品，并辨认材料处理方式。",
+      "scenarios": [
+        "辨认雕像的加工痕迹",
+        "制作一个立体造型样本"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B20/C20。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-acrobatics",
+      "name": "艺术 / 工艺（杂技）",
+      "english": "Acrobatics",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "完成所选杂技表演中的身体控制与配合动作。",
+      "scenarios": [
+        "进行一段杂技表演",
+        "辨认表演者采用的技巧"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B21/C21。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-feng-shui",
+      "name": "艺术 / 工艺（风水）",
+      "english": "Feng Shui",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表试运行专长记录风水传统及其表达；超自然效果由团内约定。",
+      "scenarios": [
+        "解释传统布局的说法",
+        "辨认图纸中的风水符号"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B22/C22。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-typing",
+      "name": "艺术 / 工艺（打字）",
+      "english": "Typing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "熟练使用所选打字设备并整理文字稿件。",
+      "scenarios": [
+        "誊写一份调查记录",
+        "辨认打字文稿中的排版习惯"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B25/C25。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-shorthand",
+      "name": "艺术 / 工艺（速记）",
+      "english": "Shorthand",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "用所学速记体系快速记录和还原口述内容。",
+      "scenarios": [
+        "记录一段访谈",
+        "还原一份速记笔记"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B26/C26。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-carpentry",
+      "name": "艺术 / 工艺（木匠）",
+      "english": "Carpentry",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "制作、连接和修整木制结构或器具。",
+      "scenarios": [
+        "修补一件木制家具",
+        "辨认木构件的接合工艺"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B27/C27。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-morris-dancing",
+      "name": "艺术 / 工艺（莫里斯舞）",
+      "english": "Morris Dancing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "掌握莫里斯舞的步法和表演传统，按原表作为独立试运行专长。",
+      "scenarios": [
+        "参加民俗舞蹈表演",
+        "辨认莫里斯舞的表演形式"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B28/C28。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-opera-singing",
+      "name": "艺术 / 工艺（歌剧歌唱）",
+      "english": "Opera Singing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用歌剧演唱的发声与表演技巧，按原表独立记录。",
+      "scenarios": [
+        "演唱一段歌剧唱段",
+        "分析歌剧录音的演唱特点"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B29/C29。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-painting-decorating",
+      "name": "艺术 / 工艺（粉刷匠与油漆工）",
+      "english": "Painting and Decorating",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "处理墙面或器物的涂饰，并识别相关材料与施工手艺。",
+      "scenarios": [
+        "修补一处涂饰表面",
+        "辨认涂层的施工痕迹"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B30/C30。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-art-glassblowing",
+      "name": "艺术 / 工艺（吹制玻璃管）",
+      "english": "Glass Tube Blowing",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用玻璃管吹制与加工手艺制作和辨认相关器物。",
+      "scenarios": [
+        "辨认玻璃管的加工痕迹",
+        "制作一个玻璃管件"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》B31/C31。《分支技能与资产》A1及《人物卡》AE25注明艺术与手艺含额外添加的试运行内容；用途按团内约定，不宣称官方专长清单。",
+      "parentId": "art-craft",
+      "specialization": true
+    },
+    {
+      "id": "workbook-science-mathematics",
+      "name": "科学（数学）",
+      "english": "Mathematics",
+      "base": 1,
+      "category": "知识",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用数学概念与方法理解数量关系和抽象问题。",
+      "scenarios": [
+        "分析记录中的数字规律",
+        "解释一段数学推导"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》E7/F7。",
+      "parentId": "science",
+      "specialization": true
+    },
+    {
+      "id": "workbook-science-meteorology",
+      "name": "科学（气象学）",
+      "english": "Meteorology",
+      "base": 1,
+      "category": "知识",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "理解天气观测、气象现象及其变化规律。",
+      "scenarios": [
+        "解释一组天气观测记录",
+        "辨认异常天气现象"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》E15/F15。",
+      "parentId": "science",
+      "specialization": true
+    },
+    {
+      "id": "workbook-science-forensics",
+      "name": "科学（司法科学）",
+      "english": "Forensic Science",
+      "base": 1,
+      "category": "知识",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "运用司法科学知识分析物证并理解检测结果。",
+      "scenarios": [
+        "解读一份物证检验报告",
+        "辨认样本分析方法"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》E16/F16。",
+      "parentId": "science",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-whip",
+      "name": "格斗（鞭子）",
+      "english": "Fighting (Whip)",
+      "base": 5,
+      "category": "战斗",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录使用鞭类武器的战斗专长。",
+      "scenarios": [
+        "进行使用鞭类武器的战斗检定",
+        "判断角色是否熟悉鞭类武器"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H4/I4。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-chainsaw",
+      "name": "格斗（电锯）",
+      "english": "Fighting (Chainsaw)",
+      "base": 10,
+      "category": "战斗",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录电锯武器的战斗专长，具体效果使用装备条目。",
+      "scenarios": [
+        "进行电锯武器的战斗检定",
+        "确认角色采用的电锯战斗专长"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H5/I5。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-axe",
+      "name": "格斗（斧）",
+      "english": "Fighting (Axe)",
+      "base": 15,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录斧类武器的战斗专长。",
+      "scenarios": [
+        "进行斧类武器的攻击检定",
+        "确认角色适用的斧类装备"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H7/I7。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-sword",
+      "name": "格斗（剑）",
+      "english": "Fighting (Sword)",
+      "base": 20,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录剑类武器的战斗专长。",
+      "scenarios": [
+        "进行剑类武器的攻击检定",
+        "确认剑类装备对应的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H8/I8。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-garrote",
+      "name": "格斗（绞具）",
+      "english": "Fighting (Garrote)",
+      "base": 15,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录绞具的战斗专长，效果由战斗规则处理。",
+      "scenarios": [
+        "在剧情战斗中进行绞具检定",
+        "确认绞具装备对应的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H9/I9。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-flail",
+      "name": "格斗（链枷）",
+      "english": "Fighting (Flail)",
+      "base": 10,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录链枷及原表归入此类的武器专长。",
+      "scenarios": [
+        "进行链枷类装备的战斗检定",
+        "确认原表双节棍所对应的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H10/I10。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-fighting-spear",
+      "name": "格斗（矛）",
+      "english": "Fighting (Spear)",
+      "base": 20,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录矛与长枪类武器的近身战斗专长。",
+      "scenarios": [
+        "进行矛类武器的攻击检定",
+        "区分近身攻击与投掷的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H11/I11。现有目录没有格斗总父项，因此不把斗殴设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-firearms-smg",
+      "name": "射击（冲锋枪）",
+      "english": "Firearms (Submachine Gun)",
+      "base": 15,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录冲锋枪的射击专长。",
+      "scenarios": [
+        "进行冲锋枪装备的射击检定",
+        "确认冲锋枪对应的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》K5/L5。现有目录没有射击总父项，因此不把手枪设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-firearms-bow",
+      "name": "射击（弓）",
+      "english": "Firearms (Bow)",
+      "base": 15,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表将弓与弩归入同一射击专长，装备效果分别记录。",
+      "scenarios": [
+        "进行弓箭装备的射击检定",
+        "确认弩装备对应的原表技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》K6/L6。现有目录没有射击总父项，因此不把手枪设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-firearms-flamethrower",
+      "name": "射击（喷射器）",
+      "english": "Firearms (Sprayer)",
+      "base": 10,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表名称记录喷射器专长；原表火焰喷射器使用此技能。",
+      "scenarios": [
+        "进行原表喷射器的战斗检定",
+        "确认火焰喷射器对应的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》K7/L7。现有目录没有射击总父项，因此不把手枪设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-firearms-machine-gun",
+      "name": "射击（机枪）",
+      "english": "Firearms (Machine Gun)",
+      "base": 10,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录机枪的射击专长，装备类型仍单独区分。",
+      "scenarios": [
+        "进行机枪装备的射击检定",
+        "确认自动步枪在原表中的技能归类"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》K8/L8。现有目录没有射击总父项，因此不把手枪设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-firearms-heavy-weapons",
+      "name": "射击（重武器）",
+      "english": "Firearms (Heavy Weapons)",
+      "base": 10,
+      "category": "战斗",
+      "eras": [
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表独立记录重武器专长；不以本项取代单独的炮术技能。",
+      "scenarios": [
+        "进行原表重武器的战斗检定",
+        "区分重武器与炮术装备的技能"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》K10/L10。现有目录没有射击总父项，因此不把手枪设置为本项父技能。",
+      "specialization": true
+    },
+    {
+      "id": "workbook-pilot-aircraft",
+      "name": "驾驶（飞行器）",
+      "english": "Pilot (Aircraft)",
+      "base": 1,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "操控所选飞行器类别；原表注释要求不同飞行器分别记录，名称应进一步注明具体机型或种类。",
+      "scenarios": [
+        "驾驶明确记录的飞行器类别",
+        "进行该飞行器的降落检定"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H15/I15。",
+      "parentId": "pilot",
+      "specialization": true
+    },
+    {
+      "id": "workbook-pilot-boat",
+      "name": "驾驶（船）",
+      "english": "Pilot (Boat)",
+      "base": 1,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "操控所选船舶并应对航行情况，载具种类应另行注明。",
+      "scenarios": [
+        "操控所选船舶航行",
+        "处理船舶航行中的异常"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《分支技能与资产》H16/I16。",
+      "parentId": "pilot",
+      "specialization": true
+    },
+    {
+      "id": "workbook-survival-forest",
+      "name": "生存（森林）",
+      "english": "Survival (Forest)",
+      "base": 10,
+      "category": "行动",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "在森林环境中寻找庇护、资源与安全路线，作为明确记录的环境专长。",
+      "scenarios": [
+        "在森林中寻找宿营点",
+        "应对森林环境中的旅行困难"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》Q37/R37。",
+      "parentId": "survival",
+      "specialization": true
+    },
+    {
+      "id": "workbook-diving",
+      "name": "潜水",
+      "english": "Diving",
+      "base": 1,
+      "category": "行动",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "使用所需潜水装备进行水下活动；本项与游泳分别记录。",
+      "scenarios": [
+        "开展水下搜索",
+        "辨认潜水装备的适用条件"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》P42/R42。"
+    },
+    {
+      "id": "workbook-demolitions",
+      "name": "爆破",
+      "english": "Demolitions",
+      "base": 1,
+      "category": "技术",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "理解爆破作业与其专业资料，剧情操作由守秘人裁定。",
+      "scenarios": [
+        "解读一份爆破作业记录",
+        "分析现场留下的爆破痕迹"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》P43/R43。"
+    },
+    {
+      "id": "workbook-lip-reading",
+      "name": "读唇",
+      "english": "Lip Reading",
+      "base": 1,
+      "category": "社交",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "根据可见口型尝试理解说话内容，效果取决于观察条件与语言理解。",
+      "scenarios": [
+        "隔着玻璃尝试理解对话",
+        "从无声画面辨认口型"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》P44/R44。"
+    },
+    {
+      "id": "workbook-hypnosis",
+      "name": "催眠",
+      "english": "Hypnosis",
+      "base": 1,
+      "category": "社交",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表作为独立专长记录催眠相关活动，其作用范围由团内约定。",
+      "scenarios": [
+        "进行剧情中的催眠尝试",
+        "理解一份催眠访谈记录"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》P45/R45。"
+    },
+    {
+      "id": "workbook-artillery",
+      "name": "炮术",
+      "english": "Artillery",
+      "base": 1,
+      "category": "战斗",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "sourceId": "user-workbook-reference",
+      "description": "按原表记录火炮操作的独立专长，具体武器效果使用装备定义。",
+      "scenarios": [
+        "进行火炮装备的战斗检定",
+        "确认装备在原表中的炮术归类"
+      ],
+      "note": "用户提供的第三方人物卡参考；基础值核对自《人物卡》P46/R46。"
+    }
+  ],
+  "dataNotes": [
+    "本包增加工作簿内有明确名称及基础值的46项技能和专长；与现有技能同义者保留原ID，不覆盖已有数值及官方/公开来源。",
+    "艺术与手艺新增条目明确标为原表试运行参考；科学、驾驶与森林生存使用既有父项ID。格斗/射击总父项未在原目录定义，新增武器专长不错误归入斗殴或手枪。",
+    "未选择的格斗/射击缓存0、自定义空栏、技能等级解释和可选成长规则不会生成新的默认技能。",
+    "新增电锯及重武器仅适用原表明示的现代装备时代；鞭子仅适用原表1920s常见时代。"
+  ]
+}

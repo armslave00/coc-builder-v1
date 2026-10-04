@@ -77,13 +77,31 @@
       "id": "gaslight-7e",
       "title": "Cthulhu by Gaslight: Investigators’ Guide (2024), 7th Edition",
       "url": "https://www.chaosium.com/cthulhu-by-gaslight-investigators-guide-hardcover/",
-      "note": "1880—1890 年代维多利亚设定。技能差异依据官方 2025 年 Gaslight 自动计算人物卡；本工具不复刻完整社会阶层或职业特权规则。"
+      "note": "1880—1890 年代维多利亚设定。技能差异依据官方 2025 年 Gaslight 自动计算人物卡；本工具不复刻完整社会阶层或职业特权规则。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2024
     },
     {
       "id": "gaslight-sheet-7e",
       "title": "Official Cthulhu by Gaslight Investigator Sheet (2025)",
       "url": "https://downloads.chaosium.com/call-of-cthulhu/cha2300-investigator-sheets/CoC7_Investigator_Sheet_Gaslight_autocalc.pdf",
-      "note": "明确列出会计、机械维修、骑术、游泳的基础值差异，以及精神病学、驾驶马车、宗教、安抚技能。"
+      "note": "明确列出会计、机械维修、骑术、游泳的基础值差异，以及精神病学、驾驶马车、宗教、安抚技能。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "character-sheet",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "partial",
+        "equipment": "not-applicable"
+      },
+      "year": 2025
     }
   ]
 }

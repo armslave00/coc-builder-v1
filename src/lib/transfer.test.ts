@@ -67,7 +67,7 @@ test('validates original content, formula attributes and preserves optional rule
   const content: CustomContent = structuredClone(custom);
   content.skills.push({ id: 'custom-calligraphy', name: '书法', english: 'Calligraphy', category: '原创', base: 'APP/5' });
   content.rulesets.push({ id: 'custom-era', name: '原创', english: '', era: '1920', description: '', sourceId: 'custom', status: '原创', skillBaseOverrides: { spot: 10 }, skillAliases: { spot: '观察' } });
-  content.occupations.push({ ...rules.occupations[0], id: 'custom-professor', choiceGroups: [{ name: '学科', count: 1, options: ['custom-calligraphy'] }], skillNotes: '选择一个专长' });
+  content.occupations.push({ ...structuredClone(rules.occupations[0]), id: 'custom-professor', choiceGroups: [{ name: '学科', count: 1, options: ['custom-calligraphy'] }], skillNotes: '选择一个专长' });
   const before = JSON.stringify(content);
   const normalized = validateCustom(content);
   assert.equal(normalized.skills[0].base, 'APP/5'); assert.equal(normalized.rulesets[0].skillBaseOverrides?.spot, 10); assert.equal(normalized.occupations[0].choiceGroups?.[0].count, 1);
@@ -170,6 +170,115 @@ test('original skill help and weapon fields survive normalization with bounded v
   assert.throws(() => validateCustom({ ...content, equipment: [{ ...content.equipment[0], kind: 'armor' }] }), /kind/);
   assert.throws(() => validateCustom({ ...content, equipment: [{ ...content.equipment[0], skillId: '<script>' }] }), /skillId/);
   assert.throws(() => parseImport(JSON.stringify({ schemaVersion: 1, character: investigator(), custom: content }).replace('"custom-research":{', '"__proto__":{')), /不安全/);
+});
+
+test('source provenance, specializations and equipment snapshots survive JSON round trips', () => {
+  const content: CustomContent = structuredClone(custom);
+  content.sources = [{ id: 'custom-source', title: '原创资料', url: 'https://example.com/rules', note: '来源说明', publisher: '作者', year: 2026, edition: '第 7 版', kind: 'original', coverage: { occupations: 'partial', skills: 'complete', equipment: 'not-included' } }];
+  content.rulesets.push({ ...rules.rulesets[0], id: 'custom-era', sourceId: 'custom-source', notes: ['口述与读写独立记录'] });
+  content.skills.push({ id: 'custom-language', name: '语言', english: '', base: 1, category: '知识', sourceId: 'custom-source', specialization: true, note: '按具体语言独立计分' });
+  content.skills.push({ id: 'custom-language-latin', name: '拉丁语', english: '', base: 1, category: '知识', sourceId: 'custom-source', parentId: 'custom-language', specialization: false });
+  content.occupations.push({ ...rules.occupations[0], id: 'custom-scholar', sourceId: 'custom-source', version: '7e', eraNote: '该时代的职业变体', verificationSourceIds: ['custom-source'], eras: ['custom-era'], skills: ['custom-language-latin'] });
+  content.equipment.push({ id: 'custom-rifle', name: '步枪', category: '枪械', description: '', price: '', sourceId: 'custom-source', verificationSourceIds: ['custom-source'], kind: 'weapon', eras: ['custom-era'], ammo: '5 + 1', malfunction: '00 / —', armor: '0' });
+  const character = investigator();
+  character.inventory.push({ id: 'rifle', definitionId: 'custom-rifle', name: '步枪', quantity: 1, notes: '', kind: 'weapon', ammo: '0', malfunction: '99—00', armor: '' });
+  const first = parseImport(JSON.stringify({ schemaVersion: 1, character, custom: content }));
+  const second = parseImport(JSON.stringify({ schemaVersion: 1, characters: first.characters, custom: first.custom }));
+  assert.deepEqual(first, second);
+  assert.deepEqual(JSON.parse(JSON.stringify(first.custom)), content);
+  assert.equal(first.custom.skills[1].specialization, false);
+  assert.deepEqual(JSON.parse(JSON.stringify(first.characters[0].inventory)), character.inventory);
+  assert.equal(first.characters[0].inventory[0].armor, '');
+  assert.equal(validateCustom(custom).sources, undefined);
+  assert.deepEqual(validateCustom({ ...custom, legacySourceIds: ['legacy-book'] }).legacySourceIds, ['legacy-book']);
+  assert.equal(validateCustom(custom).legacySourceIds, undefined);
+});
+
+test('original and user-provided sources may omit links while all supplied URLs remain HTTP(S)', () => {
+  const original = RULES.sources.find(source => source.id === 'project-original')!;
+  assert.equal(original.url, '');
+  const imported = validateCustom({ ...custom, sources: [original] });
+  assert.deepEqual(JSON.parse(JSON.stringify(imported.sources?.[0])), original);
+  const workbook = RULES.sources.find(source => source.id === 'user-workbook-reference')!;
+  assert.equal(workbook.kind, 'user-reference');
+  assert.equal(workbook.url, '');
+  assert.deepEqual(JSON.parse(JSON.stringify(validateCustom({ ...custom, sources: [workbook] }).sources?.[0])), workbook);
+  for (const kind of [undefined, 'core', 'setting', 'rules', 'reference', 'character-sheet']) {
+    assert.throws(() => validateCustom({ ...custom, sources: [{ ...original, kind }] }), /url/);
+  }
+  for (const url of ['javascript:alert(1)', 'data:text/html,source', 'https://user:password@example.com']) {
+    assert.throws(() => validateCustom({ ...custom, sources: [{ ...original, url }] }), /url/);
+    assert.throws(() => validateCustom({ ...custom, sources: [{ ...workbook, url }] }), /url/);
+  }
+});
+
+test('rejects invalid provenance, metadata types and oversized equipment values', () => {
+  const source = { id: 'custom-source', title: '资料', url: 'https://example.com/rules', note: '', coverage: { occupations: 'partial', skills: 'complete', equipment: 'not-applicable' } };
+  for (const change of [
+    { year: 1799 }, { year: 2101 }, { year: 2026.5 }, { year: '2026' },
+    { kind: 'supplement' }, { kind: ['core'] }, { publisher: null }, { edition: 7 },
+    { url: 'javascript:alert(1)' }, { url: 'https://user:password@example.com' },
+    { coverage: { ...source.coverage, skills: 'full' } }, { coverage: { occupations: 'partial' } },
+    { coverage: { ...source.coverage, spells: 'complete' } },
+  ]) assert.throws(() => validateCustom({ ...custom, sources: [{ ...source, ...change }] }), /year|kind|publisher|edition|url|coverage/);
+  for (const year of [1800, 2100]) assert.equal(validateCustom({ ...custom, sources: [{ ...source, year }] }).sources?.[0].year, year);
+  assert.throws(() => validateCustom({ ...custom, sources: [source, source] }), /重复/);
+  assert.throws(() => validateCustom({ ...custom, sources: null }), /sources/);
+  for (const legacySourceIds of [['legacy-book', 'legacy-book'], ['bad id'], Array.from({ length: 501 }, (_, i) => `source-${i}`), null]) {
+    assert.throws(() => validateCustom({ ...custom, legacySourceIds }), /legacySourceIds/);
+  }
+  for (const change of [{ sourceId: '<source>' }, { parentId: 'constructor' }, { specialization: 1 }, { note: 'x'.repeat(2001) }]) {
+    assert.throws(() => validateCustom({ ...custom, skills: [{ ...rules.skills[0], ...change }] }), /sourceId|parentId|specialization|note/);
+  }
+  for (const change of [{ version: 7 }, { eraNote: null }, { verificationSourceIds: ['bad id'] }]) {
+    assert.throws(() => validateCustom({ ...custom, occupations: [{ ...rules.occupations[0], ...change }] }), /version|eraNote|verificationSourceIds/);
+  }
+  assert.throws(() => validateCustom({ ...custom, rulesets: [{ ...rules.rulesets[0], notes: ['x'.repeat(2001)] }] }), /notes/);
+  const equipment = { id: 'custom-rifle', name: '步枪', category: '', description: '', price: '', sourceId: 'original' };
+  assert.throws(() => validateCustom({ ...custom, equipment: [{ ...equipment, verificationSourceIds: ['bad id'] }] }), /verificationSourceIds/);
+  const inventory = { id: 'rifle', definitionId: 'custom-rifle', name: '步枪', quantity: 1, notes: '' };
+  for (const key of ['ammo', 'malfunction', 'armor'] as const) {
+    for (const value of [1, null, 'x'.repeat(101), '\u0001']) {
+      assert.throws(() => validateCustom({ ...custom, equipment: [{ ...equipment, [key]: value }] }), new RegExp(key));
+      assert.throws(() => parseImport(JSON.stringify({ schemaVersion: 1, character: { ...investigator(), inventory: [{ ...inventory, [key]: value }] } })), new RegExp(key));
+    }
+    assert.equal(validateCustom({ ...custom, equipment: [{ ...equipment, [key]: 'x'.repeat(100) }] }).equipment[0][key], 'x'.repeat(100));
+  }
+});
+
+test('HTML exports unallocated custom profile skills and its inherited core skills', () => {
+  const scoped = structuredClone(rules);
+  scoped.skills.push(
+    { id: 'core-only', name: '核心专长', english: '', base: 5, category: '', eras: ['core'] },
+    { id: 'own-custom', name: '设定专长', english: '', base: 10, category: '', eras: ['custom-era'] },
+    { id: 'other-custom', name: '其他设定专长', english: '', base: 10, category: '', eras: ['custom-other'] },
+  );
+  const character = investigator(); character.rulesetId = 'custom-era';
+  const html = characterHTML(character, scoped);
+  assert.match(html, /<td>核心专长<\/td>/);
+  assert.match(html, /<td>设定专长<\/td>/);
+  assert.doesNotMatch(html, /<td>其他设定专长<\/td>/);
+});
+
+test('HTML exports escaped weapon and armor details with snapshot overrides and legacy defaults', () => {
+  const scoped = structuredClone(rules);
+  scoped.equipment.push({ id: 'rifle-definition', name: '步枪', category: '枪械', description: '', price: '', sourceId: 'core', kind: 'weapon', ammo: '5 + 1', malfunction: '100', armor: '—' });
+  scoped.equipment.push({ id: 'vest-definition', name: '背心', category: '防护', description: '', price: '', sourceId: 'core', kind: 'item', armor: '3' });
+  const character = investigator();
+  character.inventory = [
+    { id: 'rifle', definitionId: 'rifle-definition', name: '旧步枪', quantity: 1, notes: '' },
+    { id: 'vest', definitionId: 'vest-definition', name: '背心', quantity: 1, notes: '' },
+    { id: 'unknown', definitionId: 'unavailable-definition', name: '旧武器', quantity: 1, notes: '', kind: 'weapon', ammo: '<script>7</script>', malfunction: '99 & 00', armor: '0' },
+  ];
+  let html = characterHTML(character, scoped);
+  assert.match(html, /装弹量：5 \+ 1 · 故障值：100 · 护甲：—/);
+  assert.match(html, /护甲：3/);
+  assert.match(html, /装弹量：&lt;script&gt;7&lt;\/script&gt; · 故障值：99 &amp; 00 · 护甲：0/);
+  assert.doesNotMatch(html, /<script>/);
+  character.inventory[0].ammo = '0'; character.inventory[0].malfunction = ''; character.inventory[0].armor = '';
+  html = characterHTML(character, scoped);
+  assert.match(html, /装弹量：0/);
+  assert.doesNotMatch(html, /装弹量：5 \+ 1|故障值：100|护甲：—/);
 });
 
 test('HTML separates weapons and items, retains modified unarmed records and escapes new text', () => {

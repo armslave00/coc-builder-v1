@@ -1,0 +1,439 @@
+{
+  "sources": [
+    {
+      "id": "wiki-weapons-7e",
+      "title": "Chaosium RPG Wiki: Ammunition & Weapons — 公开武器表校核",
+      "url": "https://cthulhuwiki.chaosium.com/equipment/weapons.html",
+      "note": "Chaosium 官方免费基础规则武器表，用于交叉核对 Roll20 行文与单位。牛鞭字段可清晰核实；部分机枪行有列错位，维克斯故障值未给出。完整性仅指已核实的公开表条目，不覆盖完整规则书武器库。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "partial"
+      }
+    }
+  ],
+  "equipment": [
+    {
+      "id": "bow-and-arrows",
+      "name": "弓与箭",
+      "category": "远程",
+      "kind": "weapon",
+      "damage": "1D6 + 半 DB",
+      "range": "30 码",
+      "attacks": "1",
+      "description": "使用射击（弓）独立专长；该专长与人物实际技能值由守秘人确认。每次射击使用一支箭。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$7",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "1",
+      "malfunction": "97",
+      "skillId": "workbook-firearms-bow"
+    },
+    {
+      "id": "bullwhip",
+      "name": "牛鞭",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D3 + 半 DB",
+      "range": "10 英尺",
+      "attacks": "1",
+      "description": "使用格斗（鞭）独立专长；该专长与人物实际技能值由守秘人确认。射程保留公开表的英尺单位。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$5",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "skillId": "workbook-fighting-whip"
+    },
+    {
+      "id": "burning-torch",
+      "name": "燃烧火把",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D6 + 燃烧",
+      "range": "接触",
+      "attacks": "1",
+      "description": "使用斗殴；燃烧的后续伤害和可燃条件另按战斗规则处理。",
+      "price": "1920年代美元参考：$0.05",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "fighting-brawl"
+    },
+    {
+      "id": "crossbow",
+      "name": "弩",
+      "category": "远程",
+      "kind": "weapon",
+      "damage": "1D8 + 2",
+      "range": "50 码",
+      "attacks": "每 2 轮 1 次",
+      "description": "使用射击（弓）独立专长；该专长与人物实际技能值由守秘人确认。准确射击间隔为两轮。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$10",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "1",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-bow"
+    },
+    {
+      "id": "garrote",
+      "name": "绞索",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D6 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "使用格斗（绞索）独立专长；该专长与人物实际技能值由守秘人确认。持续约束与挣脱按相应规则处理。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$0.50",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "skillId": "workbook-fighting-garrote"
+    },
+    {
+      "id": "hatchet-sickle",
+      "name": "手斧 / 镰刀",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D6 + 1 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "公开表此条目指定格斗（斧）独立专长；该专长与人物实际技能值由守秘人确认。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$3",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "skillId": "workbook-fighting-axe"
+    },
+    {
+      "id": "nunchaku",
+      "name": "双节棍",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D8 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "description": "使用格斗（连枷）独立专长；该专长与人物实际技能值由守秘人确认。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$1",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "skillId": "workbook-fighting-flail"
+    },
+    {
+      "id": "thrown-rock",
+      "name": "投掷石块",
+      "category": "投掷",
+      "kind": "weapon",
+      "damage": "1D4 + 半 DB",
+      "range": "STR / 5 码",
+      "attacks": "1",
+      "description": "使用投掷；伤害与射程采用公开表的投掷石块条目。",
+      "price": "公开表未列售价（—）",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "throw"
+    },
+    {
+      "id": "shuriken",
+      "name": "手里剑",
+      "category": "投掷",
+      "kind": "weapon",
+      "damage": "1D3 + 半 DB",
+      "range": "STR / 5 码",
+      "attacks": "2",
+      "description": "使用投掷，每件供一次投掷；每轮次数与故障值采用公开表条目。",
+      "price": "1920年代美元参考：$0.50",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "throw",
+      "ammo": "一次使用",
+      "malfunction": "100"
+    },
+    {
+      "id": "melee-spear",
+      "name": "近战长矛 / 骑兵长枪",
+      "category": "近战",
+      "kind": "weapon",
+      "damage": "1D8 + 1",
+      "range": "接触",
+      "attacks": "1",
+      "description": "使用格斗（矛）独立专长，由守秘人确认实际技能值。公开表伤害列为 1D8+1，未标 DB；此值须与所用规则书核对。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$25",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "skillId": "workbook-fighting-spear"
+    },
+    {
+      "id": "moran-air-rifle",
+      "name": "莫兰上校气步枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 1",
+      "range": "20 码",
+      "attacks": "每 3 轮 1 次",
+      "description": "使用步枪 / 霰弹枪技能；压缩空气驱动，准确射击间隔为三轮。",
+      "price": "1920年代美元参考：$200",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "firearms-rifle",
+      "ammo": "1",
+      "malfunction": "88"
+    },
+    {
+      "id": "shotgun-12-double",
+      "name": "12 号双管霰弹枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "4D6 / 2D6 / 1D6",
+      "range": "10 / 20 / 50 码",
+      "attacks": "1 或 2",
+      "description": "使用步枪 / 霰弹枪技能，三个伤害值依次对应三个射程；双管最多同轮射击两次。",
+      "price": "1920年代美元参考：$40",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "firearms-rifle",
+      "ammo": "2",
+      "malfunction": "100"
+    },
+    {
+      "id": "shotgun-12-double-sawed-off",
+      "name": "12 号截短双管霰弹枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "4D6 / 1D6",
+      "range": "5 / 10 码",
+      "attacks": "1 或 2",
+      "description": "使用步枪 / 霰弹枪技能；此截短条目只有两档伤害和射程，按对应位置取值。",
+      "price": "1920年代参考：通常无商业售价（N/A）",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e"
+      ],
+      "skillId": "firearms-rifle",
+      "ammo": "2",
+      "malfunction": "100"
+    },
+    {
+      "id": "bergmann-smg",
+      "name": "伯格曼 MP18.I / MP28.II 冲锋枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "1D10",
+      "range": "20 码",
+      "attacks": "1（至多 2）或全自动",
+      "description": "使用射击（冲锋枪）独立专长，由守秘人确认实际技能值；不同弹匣容量分别记录，自动射击按专门规则处理。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$1,000",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "20 / 30 / 32",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-smg"
+    },
+    {
+      "id": "thompson-smg",
+      "name": "汤普森冲锋枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "1D10 + 2",
+      "range": "20 码",
+      "attacks": "1 或全自动",
+      "description": "使用射击（冲锋枪）独立专长，由守秘人确认实际技能值；弹匣与弹鼓容量采用公开表。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$200 起",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "20 / 30 / 50",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-smg"
+    },
+    {
+      "id": "bar-m1918",
+      "name": "勃朗宁 BAR M1918 自动步枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 4",
+      "range": "90 码",
+      "attacks": "1（至多 2）或全自动",
+      "description": "公开表指定射击（机枪）独立专长，由守秘人确认实际技能值；单发、多发或全自动使用各自射击规则。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$800",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "20",
+      "malfunction": "100",
+      "skillId": "workbook-firearms-machine-gun"
+    },
+    {
+      "id": "browning-m1917a1",
+      "name": ".30 勃朗宁 M1917A1 机枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 4",
+      "range": "150 码",
+      "attacks": "全自动",
+      "description": "使用射击（机枪）独立专长，由守秘人确认实际技能值；全自动攻击次数按自动射击规则处理。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$3,000",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "250",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-machine-gun"
+    },
+    {
+      "id": "bren-gun",
+      "name": "布伦轻机枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 4",
+      "range": "110 码",
+      "attacks": "1 或全自动",
+      "description": "使用射击（机枪）独立专长，由守秘人确认实际技能值。数据保留公开表条目，实际型号是否适用于剧本年代须另行确认。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$3,000",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "30 / 100",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-machine-gun"
+    },
+    {
+      "id": "lewis-mark-i",
+      "name": "马克 I 刘易斯机枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 4",
+      "range": "110 码",
+      "attacks": "全自动",
+      "description": "使用射击（机枪）独立专长，由守秘人确认实际技能值；两种弹盘容量分别记录。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代美元参考：$3,000",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "47 / 97",
+      "malfunction": "96",
+      "skillId": "workbook-firearms-machine-gun"
+    },
+    {
+      "id": "vickers-303",
+      "name": ".303 维克斯机枪",
+      "category": "枪械",
+      "kind": "weapon",
+      "damage": "2D6 + 4",
+      "range": "110 码",
+      "attacks": "全自动",
+      "description": "使用射击（机枪）独立专长，由守秘人确认实际技能值。公开表未给出可确认的故障值，须另行核对。 技能关联采用用户工作簿中的同名专长；伤害、射程、装弹与故障字段仍保留公开表值。",
+      "price": "1920年代参考：通常无商业售价（N/A）",
+      "eras": [
+        "core"
+      ],
+      "sourceId": "roll20-weapons-7e",
+      "verificationSourceIds": [
+        "wiki-weapons-7e",
+        "user-workbook-reference"
+      ],
+      "ammo": "250",
+      "skillId": "workbook-firearms-machine-gun"
+    }
+  ]
+}

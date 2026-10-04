@@ -1,0 +1,182 @@
+{
+  "sources": [
+    {
+      "id": "gaslight-keeper-7e",
+      "title": "Cthulhu by Gaslight: Keepers’ Guide (2025), 7th Edition",
+      "url": "https://www.chaosium.com/cthulhu-by-gaslight-keepers-guide-hardcover/",
+      "note": "Chaosium 官方维多利亚时代守秘人资料。公开产品页可核实新增神秘学技能、典籍、法术与星界战斗规则；相关专属条目尚未录入。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2025
+    },
+    {
+      "id": "pulp-7e",
+      "title": "Pulp Cthulhu (2016), 7th Edition",
+      "url": "https://www.chaosium.com/pulp-cthulhu-hardcover/",
+      "note": "Chaosium 官方通俗冒险规则扩展，以 1930 年代英雄冒险为主要背景，增加生命值、幸运与战斗等规则。本工具尚未导入英雄天赋、专属建卡选项和装备；书目登记不表示规则已支持。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "rules",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2016
+    },
+    {
+      "id": "regency-7e",
+      "title": "Regency Cthulhu: Dark Designs in Jane Austen’s England (2022)",
+      "url": "https://www.chaosium.com/regency-cthulhu-hardcover/",
+      "note": "Chaosium 官方 1811—1820 年英国摄政时代设定。公开产品页可核实专属调查员创建、职业、技能与声望机制；这些目录与机制尚未录入。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2022
+    },
+    {
+      "id": "invictus-guide-7e",
+      "title": "The 7th Edition Guide to Cthulhu Invictus — Golden Goblin Press",
+      "url": "https://goldengoblinpress.com/",
+      "note": "Golden Goblin Press 出版的古罗马第 7 版设定指南。出版社官网确认书目，Chaosium 的授权公告确认该系列许可；独有职业、技能与装备尚未录入，不能以现有核心目录代替本书完整数据。",
+      "publisher": "Golden Goblin Press（Chaosium 授权）",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      }
+    },
+    {
+      "id": "invictus-license",
+      "title": "Chaosium 与 Golden Goblin Press 的 Cthulhu Invictus 授权公告（2016）",
+      "url": "https://www.chaosium.com/blog/chaosium-and-golden-goblin-press-announce-new-licensing-deal-for-call-of-cthulhu/",
+      "note": "Chaosium 公告将古罗马 Invictus 系列授权给 Golden Goblin Press，并明确规划第 7 版指南。此公告核验授权关系，不提供职业、技能或装备数据。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition 授权书目参考",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "not-applicable"
+      },
+      "year": 2016
+    },
+    {
+      "id": "dreamlands-classic",
+      "title": "H.P. Lovecraft’s Dreamlands — 官方旧版资料",
+      "url": "https://www.chaosium.com/h-p-lovecrafts-dreamlands-pdf/",
+      "note": "Chaosium 官方产品页标注第 5 版 Call of Cthulhu，包含幻梦境人物创建、神器、典籍与法术。本项目尚未导入其目录；旧版数值须核对并转换后才可用于第 7 版，不能直接混入原生第 7 版数据。",
+      "publisher": "Chaosium",
+      "edition": "官方产品页标注 5th Edition Call of Cthulhu（旧版）",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      }
+    },
+    {
+      "id": "grand-grimoire-7e",
+      "title": "The Grand Grimoire of Cthulhu Mythos Magic (2017), 7th Edition",
+      "url": "https://www.chaosium.com/the-grand-grimoire-of-cthulhu-mythos-magic-hardcover/",
+      "note": "Chaosium 官方神话魔法资料，公开产品页可核实 550 余种已修订为第 7 版的法术及施法选择规则。本工具尚未导入完整法术与魔法条目；此书不作为普通调查员职业或技能目录的完整性依据。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "rules",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "not-included"
+      },
+      "year": 2017
+    },
+    {
+      "id": "malleus-7e",
+      "title": "Malleus Monstrorum: Cthulhu Mythos Bestiary (2020), 7th Edition",
+      "url": "https://www.chaosium.com/malleus-monstrorum-cthulhu-mythos-bestiary-slipcase-set/",
+      "note": "Chaosium 官方两卷神话生物与神格资料，公开产品页明确第 7 版数据及两卷分工。本工具尚未收录其生物目录；不把生物能力与数值计入调查员职业、技能或装备目录。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-applicable",
+        "skills": "not-applicable",
+        "equipment": "not-applicable"
+      },
+      "year": 2020
+    },
+    {
+      "id": "cults-7e",
+      "title": "Cults of Cthulhu (2021), 7th Edition",
+      "url": "https://www.chaosium.com/cults-of-cthulhu-hardcover/",
+      "note": "Chaosium 官方跨时代邪教资料，涵盖煤气灯时代至现代的邪教历史、组织创建与三个模组。本工具仅登记书目，尚未导入专属规则或条目；不以组织与 NPC 数量代替建卡目录覆盖。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "reference",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2021
+    },
+    {
+      "id": "arkham-7e",
+      "title": "Call of Cthulhu: Arkham (2024), 7th Edition",
+      "url": "https://www.chaosium.com/call-of-cthulhu-arkham-hardcover/",
+      "note": "Chaosium 官方阿卡姆设定资料。公开产品页可核实城市地点、NPC 以及阿卡姆调查员新增规则与技能；专属技能和其他建卡条目尚未录入。",
+      "publisher": "Chaosium",
+      "edition": "Call of Cthulhu 7th Edition",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2024
+    },
+    {
+      "id": "japan-2010-classic",
+      "title": "クトゥルフ神話TRPG クトゥルフ2010（2010），经典第 6 版参考",
+      "url": "https://product.kadokawa.co.jp/p01/product-c/200906000348.html",
+      "note": "KADOKAWA 官方现代日本资料，公开产品页可核实装备、组织、科学设定与选择规则；官方版次说明归为经典第 6 版。本项目尚未导入，旧版职业、技能与装备须先核对转换。",
+      "publisher": "KADOKAWA",
+      "edition": "Call of Cthulhu 6th Edition（日本语经典版）",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2010
+    },
+    {
+      "id": "japan-2015-classic",
+      "title": "クトゥルフ神話TRPG クトゥルフ2015（2015），经典第 6 版参考",
+      "url": "https://www.kadokawa.co.jp/product/301506000920/",
+      "note": "KADOKAWA 官方现代日本资料，公开产品页可核实新增职业、随机特征、神器与枪械；官方版次说明归为经典第 6 版。本项目尚未导入，不直接作为第 7 版原生建卡数值。",
+      "publisher": "KADOKAWA",
+      "edition": "Call of Cthulhu 6th Edition（日本语经典版）",
+      "kind": "setting",
+      "coverage": {
+        "occupations": "not-included",
+        "skills": "not-included",
+        "equipment": "not-included"
+      },
+      "year": 2015
+    }
+  ]
+}
