@@ -45,6 +45,37 @@ test('rejects changed custom definitions and builtin ID collisions while accepti
   assert.throws(() => mergeCustom(emptyCustom(), builtinDuplicate, rules), /spot.*冲突/);
 });
 
+test('legacy builtin duplicates may omit only new metadata and never replace builtin definitions', () => {
+  const scoped = structuredClone(rules);
+  scoped.skills[0].description = '内置简介'; scoped.skills[0].scenarios = ['检查现场'];
+  scoped.rulesets[0].skillDescriptions = { spot: { description: '时代简介', scenarios: ['检查古物'] } };
+  scoped.equipment.push({ id: 'knife', name: '小刀', category: '近战', description: '小型刀具', price: '', sourceId: 'core', damage: '1D4 + DB', kind: 'weapon', skillId: 'spot' });
+  const incoming = emptyCustom();
+  incoming.skills.push({ ...rules.skills[0] });
+  incoming.rulesets.push({ ...rules.rulesets[0] });
+  const { kind: _kind, skillId: _skillId, ...legacyKnife } = scoped.equipment[0];
+  incoming.equipment.push(legacyKnife);
+  const before = JSON.stringify([scoped, incoming]);
+  assert.deepEqual(mergeCustom(emptyCustom(), incoming, scoped), emptyCustom());
+  assert.equal(JSON.stringify([scoped, incoming]), before);
+  for (const edit of [
+    (content: CustomContent) => { content.skills[0].description = '不同简介'; },
+    (content: CustomContent) => { content.skills[0].scenarios = []; },
+    (content: CustomContent) => { content.skills[0].base = 1; },
+    (content: CustomContent) => { content.rulesets[0].skillDescriptions = {}; },
+    (content: CustomContent) => { content.rulesets[0].era = '1890'; },
+    (content: CustomContent) => { content.equipment[0].kind = 'item'; },
+    (content: CustomContent) => { content.equipment[0].skillId = 'dodge'; },
+    (content: CustomContent) => { content.equipment[0].damage = '1D8 + DB'; },
+  ]) {
+    const changed = structuredClone(incoming); edit(changed);
+    assert.throws(() => mergeCustom(emptyCustom(), changed, scoped), /冲突/);
+  }
+  const existing = emptyCustom(); existing.skills.push({ ...scoped.skills[0], id: 'custom-spot' });
+  const olderCustom = emptyCustom(); olderCustom.skills.push({ ...rules.skills[0], id: 'custom-spot' });
+  assert.throws(() => mergeCustom(existing, olderCustom, scoped), /custom-spot.*冲突/);
+});
+
 test('resolves references between incoming custom entries and preserves eras and free alias labels', () => {
   const incoming = emptyCustom();
   incoming.rulesets.push({ ...rules.rulesets[0], id: 'custom-era', skillBaseOverrides: { 'custom-skill': 10 }, skillAliases: { 'custom-skill': '任意别名', spot: 'a-free-display-label' } });
@@ -66,6 +97,29 @@ test('rejects missing skill references in custom occupations, choice groups, ove
   incoming.rulesets[0].skillBaseOverrides = {};
   incoming.rulesets[0].skillAliases = { 'missing-skill': '显示名称' };
   assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /技能别名.*missing-skill.*未找到/);
+});
+
+test('checks custom era skill descriptions and equipment skill references after merging skills', () => {
+  const incoming = emptyCustom();
+  incoming.rulesets.push({ ...rules.rulesets[0], id: 'custom-era', skillDescriptions: { 'custom-skill': { description: '原创说明', scenarios: [] } } });
+  incoming.equipment.push({ id: 'custom-tool', name: '调查工具', category: '原创', description: '', price: '', sourceId: 'custom', kind: 'weapon', skillId: 'custom-skill' });
+  assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /技能说明.*custom-skill.*未找到/);
+  incoming.skills.push({ id: 'custom-skill', name: '原创调查', english: '', base: 1, category: '调查' });
+  assert.deepEqual(mergeCustom(emptyCustom(), incoming, rules), incoming);
+  incoming.equipment[0].skillId = 'missing-skill';
+  assert.throws(() => mergeCustom(emptyCustom(), incoming, rules), /原创装备.*missing-skill.*未找到/);
+  incoming.equipment[0].skillId = 'spot';
+  assert.doesNotThrow(() => mergeCustom(emptyCustom(), incoming, rules));
+});
+
+test('inventory permits unavailable legacy definitions but checks every explicit skill reference', () => {
+  const character = investigator();
+  character.inventory.push({ id: 'legacy-tool', definitionId: 'unavailable-tool', name: '旧工具', quantity: 1, notes: '' });
+  assert.doesNotThrow(() => validateCharacterReferences([character], rules));
+  character.inventory[0].skillId = 'spot';
+  assert.doesNotThrow(() => validateCharacterReferences([character], rules));
+  character.inventory[0].skillId = 'missing-skill';
+  assert.throws(() => validateCharacterReferences([character], rules), /调查员.*装备.*missing-skill.*未找到/);
 });
 
 test('accepts known character references including allocated skills from another era', () => {

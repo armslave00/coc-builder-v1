@@ -1,0 +1,89 @@
+{
+  "rulesets": [
+    {
+      "id": "gaslight",
+      "name": "煤气灯时代",
+      "english": "Cthulhu by Gaslight",
+      "era": "1880—1890 年代",
+      "description": "依据 2024 年 Gaslight 与官方人物卡调整技能基础值，加入驾驶马车、宗教、精神病学与安抚。职业目录沿用核心通用职业，未包含 Gaslight 全部专属职业和阶层特权。",
+      "sourceId": "gaslight-7e",
+      "status": "official-setting-adaptation",
+      "skillBaseOverrides": {
+        "accounting": 10,
+        "mechanical-repair": 20,
+        "ride": 20,
+        "swim": 30
+      },
+      "skillAliases": {
+        "drive-auto": "drive-carriage",
+        "psychoanalysis": "alienism"
+      },
+      "skillDescriptions": {
+        "drive-auto": {
+          "description": "控制挽畜与马车，路线、车况及动物状态影响驾驶。",
+          "scenarios": [
+            "驾车穿过拥挤街道",
+            "稳住受惊的挽马"
+          ]
+        },
+        "psychoanalysis": {
+          "description": "以煤气灯时代的精神医学知识观察与处理心理状况；解释受当时理论与实践限制。",
+          "scenarios": [
+            "查阅维多利亚时期病历",
+            "与当时精神医疗机构沟通"
+          ]
+        }
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "alienism",
+      "name": "精神病学",
+      "english": "Alienism",
+      "base": 1,
+      "category": "医疗",
+      "sourceId": "gaslight-sheet-7e",
+      "eras": [
+        "gaslight",
+        "victorian"
+      ],
+      "description": "以煤气灯时代的精神医学知识观察与处理心理状况；解释受当时理论与实践限制。",
+      "scenarios": [
+        "查阅维多利亚时期病历",
+        "与当时精神医疗机构沟通"
+      ]
+    },
+    {
+      "id": "reassure",
+      "name": "安抚",
+      "english": "Reassure",
+      "base": "APP/5",
+      "category": "社交",
+      "sourceId": "gaslight-sheet-7e",
+      "eras": [
+        "gaslight",
+        "victorian"
+      ],
+      "description": "以适合煤气灯背景的言行缓和他人不安，具体适用条件依时代规则。",
+      "scenarios": [
+        "安抚焦虑的交谈对象",
+        "在紧张场面中建立安全感"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "gaslight-7e",
+      "title": "Cthulhu by Gaslight: Investigators’ Guide (2024), 7th Edition",
+      "url": "https://www.chaosium.com/cthulhu-by-gaslight-investigators-guide-hardcover/",
+      "note": "1880—1890 年代维多利亚设定。技能差异依据官方 2025 年 Gaslight 自动计算人物卡；本工具不复刻完整社会阶层或职业特权规则。"
+    },
+    {
+      "id": "gaslight-sheet-7e",
+      "title": "Official Cthulhu by Gaslight Investigator Sheet (2025)",
+      "url": "https://downloads.chaosium.com/call-of-cthulhu/cha2300-investigator-sheets/CoC7_Investigator_Sheet_Gaslight_autocalc.pdf",
+      "note": "明确列出会计、机械维修、骑术、游泳的基础值差异，以及精神病学、驾驶马车、宗教、安抚技能。"
+    }
+  ]
+}

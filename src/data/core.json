@@ -1,0 +1,2715 @@
+{
+  "version": "7e-2026.10.04",
+  "sources": [
+    {
+      "id": "quickstart-7e",
+      "title": "Call of Cthulhu 7th Edition Quick-Start Rules (2021 revision)",
+      "url": "https://www.chaosium.com/cthulhu-quickstart/",
+      "note": "官方免费快速入门。用于核对检定、属性和核心衍生值；快速建卡的固定数组与正式职业点规则应分别使用。"
+    },
+    {
+      "id": "keeper-7e",
+      "title": "Call of Cthulhu Keeper Rulebook, 7th Edition",
+      "url": "https://www.chaosium.com/call-of-cthulhu-keeper-rulebook-7th-ed-hardcover/",
+      "note": "第 7 版核心规则；职业、武器与法术条目的版本锚点。预置仅保留数值、名称与原创短注，不替代规则书。"
+    },
+    {
+      "id": "investigator-7e",
+      "title": "Call of Cthulhu Investigator Handbook, 7th Edition",
+      "url": "https://www.chaosium.com/call-of-cthulhu-investigator-handbook-pdf/",
+      "note": "第 7 版调查员手册；职业技能点、信用范围和专业技能的版本锚点。"
+    },
+    {
+      "id": "sheets-7e",
+      "title": "Official 7th Edition Investigator Sheets (1920s / Modern)",
+      "url": "https://www.chaosium.com/cthulhu-character-sheets/",
+      "note": "采用官方人物卡的技能基础值与版面字段组织；网页以自制设计实现，不嵌入原版 PDF。"
+    },
+    {
+      "id": "through-ages-7e",
+      "title": "Cthulhu Through the Ages (2014), 7th Edition",
+      "url": "https://www.chaosium.com/cthulhu-through-the-ages-pdf/",
+      "note": "官方跨时代指南。收录 Gaslight；不包含独立的“日本现代”通用建卡规则，也不把 Victorian 与 Gaslight 当作两个不同官方扩展。"
+    },
+    {
+      "id": "wiki-occupations-7e",
+      "title": "Chaosium RPG Wiki: Occupation and Skills",
+      "url": "https://cthulhuwiki.chaosium.com/investigators/step-three-occupation-and-skills.html",
+      "note": "官方公开的八个示例职业与选择条件。"
+    },
+    {
+      "id": "project-original",
+      "title": "本项目原创补充与时代适配",
+      "url": "",
+      "note": "原创说明、现代物品短注及维多利亚风格 profile；明确不是规则书中的独立官方扩展。"
+    },
+    {
+      "id": "roll20-basic-7e",
+      "title": "Call of Cthulhu Free Basic Rules: Determine Occupation (Roll20 licensed compendium)",
+      "url": "https://roll20.net/compendium/coc/Step%20Four%20(Determine%20Occupation)",
+      "note": "授权平台公开的基础职业规则；页面使用 Pulp 语境，所采用的共同职业公式与技能选择仍为第 7 版通用职业。本工具未引入 Pulp 的额外 HP 等机制。"
+    }
+  ],
+  "occupations": [
+    {
+      "id": "antiquarian",
+      "name": "古物研究者",
+      "english": "Antiquarian",
+      "description": "从藏品、文献和遗迹中追寻过去。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        30,
+        70
+      ],
+      "skills": [
+        "appraise",
+        "art-craft",
+        "history",
+        "library-use",
+        "language-other",
+        "spot-hidden"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "skillNotes": "艺术 / 工艺须指定专长；再任选一项技能。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "author",
+      "name": "作家",
+      "english": "Author",
+      "description": "将观察与研究写成故事或评论。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-literature",
+        "history",
+        "library-use",
+        "language-other",
+        "language-own",
+        "psychology"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "自然或神秘知识任选一项",
+          "count": 1,
+          "options": [
+            "natural-world",
+            "occult"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "roll20-basic-7e",
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "dilettante",
+      "name": "业余爱好者",
+      "english": "Dilettante",
+      "description": "依靠家产与社会关系追随个人兴趣。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "APP"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        50,
+        99
+      ],
+      "skills": [
+        "art-craft",
+        "language-other",
+        "ride"
+      ],
+      "choiceCount": 3,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "射击专长任选一项",
+          "count": 1,
+          "options": [
+            "firearms-handgun",
+            "firearms-rifle"
+          ]
+        },
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "roll20-basic-7e",
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "doctor",
+      "name": "医生",
+      "english": "Doctor of Medicine",
+      "description": "研究身体、救治患者，接触被忽视的症状。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        30,
+        80
+      ],
+      "skills": [
+        "first-aid",
+        "language-other",
+        "medicine",
+        "psychology",
+        "science-biology",
+        "science-pharmacy"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "skillNotes": "外语为拉丁语；任选两项学术或个人专长。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "journalist",
+      "name": "记者",
+      "english": "Journalist",
+      "description": "通过采访、摄影和档案追查事件。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-photography",
+        "history",
+        "library-use",
+        "language-own",
+        "psychology"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "roll20-basic-7e",
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "police-detective",
+      "name": "警探",
+      "english": "Police Detective",
+      "description": "在证词、现场和法律之间寻找线索。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        20,
+        50
+      ],
+      "skills": [
+        "law",
+        "listen",
+        "psychology",
+        "spot-hidden"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "表演或乔装任选一项",
+          "count": 1,
+          "options": [
+            "art-acting",
+            "disguise"
+          ]
+        },
+        {
+          "name": "射击专长任选一项",
+          "count": 1,
+          "options": [
+            "firearms-handgun",
+            "firearms-rifle"
+          ]
+        },
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "private-investigator",
+      "name": "私家侦探",
+      "english": "Private Investigator",
+      "description": "用跟踪、询问和资料调查替委托人找答案。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-photography",
+        "disguise",
+        "law",
+        "library-use",
+        "psychology",
+        "spot-hidden"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "roll20-basic-7e",
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "professor",
+      "name": "教授",
+      "english": "Professor",
+      "description": "在大学与专业知识的边界上研究未知。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        20,
+        70
+      ],
+      "skills": [
+        "library-use",
+        "language-other",
+        "language-own",
+        "psychology"
+      ],
+      "choiceCount": 4,
+      "sourceId": "investigator-7e",
+      "skillNotes": "任选四项学术或个人专长。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "verificationSourceIds": [
+        "roll20-basic-7e",
+        "wiki-occupations-7e"
+      ]
+    },
+    {
+      "id": "artist",
+      "name": "艺术家",
+      "english": "Artist",
+      "description": "以作品表达自己的观察与想象。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "POW"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        50
+      ],
+      "skills": [
+        "art-craft",
+        "language-other",
+        "psychology",
+        "spot-hidden"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "背景知识任选一项",
+          "count": 1,
+          "options": [
+            "history",
+            "natural-world"
+          ]
+        },
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "clergy",
+      "name": "神职人员",
+      "english": "Clergy",
+      "description": "主持仪式、管理社群并聆听人们的困扰。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        60
+      ],
+      "skills": [
+        "accounting",
+        "history",
+        "library-use",
+        "listen",
+        "language-other",
+        "psychology"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "criminal",
+      "name": "罪犯",
+      "english": "Criminal",
+      "description": "在城市暗面周旋，熟悉秘密与危险。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        5,
+        65
+      ],
+      "skills": [
+        "psychology",
+        "spot-hidden",
+        "stealth"
+      ],
+      "choiceCount": 0,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        },
+        {
+          "name": "犯罪专长任选四项",
+          "count": 4,
+          "options": [
+            "appraise",
+            "disguise",
+            "fighting-brawl",
+            "firearms-handgun",
+            "firearms-rifle",
+            "locksmith",
+            "mechanical-repair",
+            "sleight-of-hand"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "engineer",
+      "name": "工程师",
+      "english": "Engineer",
+      "description": "设计、维护和研究实际运作的机器。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        30,
+        60
+      ],
+      "skills": [
+        "art-technical-drawing",
+        "electrical-repair",
+        "library-use",
+        "mechanical-repair",
+        "operate-heavy-machinery",
+        "science-engineering",
+        "science-physics"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "skillNotes": "历史 profile 中电气维修需另选一个相关技术专长，并由守秘人确认。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "entertainer",
+      "name": "艺人",
+      "english": "Entertainer",
+      "description": "凭舞台技艺与社交能力谋生。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "APP"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        70
+      ],
+      "skills": [
+        "art-acting",
+        "disguise",
+        "listen",
+        "psychology"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选两项",
+          "count": 2,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "farmer",
+      "name": "农夫",
+      "english": "Farmer",
+      "description": "熟悉土地、天气、工具和动物的习性。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-farming",
+        "drive-auto",
+        "mechanical-repair",
+        "natural-world",
+        "operate-heavy-machinery",
+        "track"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "skillNotes": "煤气灯和维多利亚 profile 将汽车驾驶替换为驾驶马车。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "lawyer",
+      "name": "律师",
+      "english": "Lawyer",
+      "description": "通过文书、制度与辩论维护利益。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        30,
+        80
+      ],
+      "skills": [
+        "accounting",
+        "law",
+        "library-use",
+        "psychology"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选两项",
+          "count": 2,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "librarian",
+      "name": "图书管理员",
+      "english": "Librarian",
+      "description": "整理书目、财务和馆藏，掌握知识的入口。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        35
+      ],
+      "skills": [
+        "accounting",
+        "library-use",
+        "language-other",
+        "language-own"
+      ],
+      "choiceCount": 4,
+      "sourceId": "investigator-7e",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "military-officer",
+      "name": "军官",
+      "english": "Military Officer",
+      "description": "组织人员与物资，判断局势并下达命令。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        20,
+        70
+      ],
+      "skills": [
+        "accounting",
+        "navigate",
+        "psychology"
+      ],
+      "choiceCount": 3,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "射击专长任选一项",
+          "count": 1,
+          "options": [
+            "firearms-handgun",
+            "firearms-rifle"
+          ]
+        },
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "musician",
+      "name": "音乐家",
+      "english": "Musician",
+      "description": "以乐器、声音和演出建立自己的生活。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "POW"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-craft",
+        "listen",
+        "psychology"
+      ],
+      "choiceCount": 4,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "skillNotes": "艺术 / 工艺须指定音乐专长。",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "nurse",
+      "name": "护士",
+      "english": "Nurse",
+      "description": "观察病况、照护患者并提供急救。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "first-aid",
+        "listen",
+        "medicine",
+        "psychology",
+        "science-biology",
+        "spot-hidden",
+        "science-chemistry"
+      ],
+      "choiceCount": 0,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "skillNotes": "科学（生物学）与科学（化学）为两项独立技能。",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ]
+    },
+    {
+      "id": "parapsychologist",
+      "name": "超心理学家",
+      "english": "Parapsychologist",
+      "description": "记录异常经验，尝试以研究方法解释它。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "anthropology",
+        "art-photography",
+        "history",
+        "library-use",
+        "language-other",
+        "occult",
+        "psychology"
+      ],
+      "choiceCount": 1,
+      "sourceId": "investigator-7e",
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "photographer",
+      "name": "摄影师",
+      "english": "Photographer",
+      "description": "通过镜头、暗房与细节讲述现场。",
+      "formula": {
+        "edu": 4
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "art-photography",
+        "psychology",
+        "science-chemistry",
+        "spot-hidden",
+        "stealth"
+      ],
+      "choiceCount": 2,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "交际技能任选一项",
+          "count": 1,
+          "options": [
+            "charm",
+            "fast-talk",
+            "intimidate",
+            "persuade"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。"
+    },
+    {
+      "id": "soldier",
+      "name": "士兵",
+      "english": "Soldier",
+      "description": "接受训练，在危险环境中服从与生存。",
+      "formula": {
+        "edu": 2,
+        "other": [
+          "DEX",
+          "STR"
+        ],
+        "factor": 2
+      },
+      "credit": [
+        9,
+        30
+      ],
+      "skills": [
+        "dodge",
+        "fighting-brawl",
+        "stealth",
+        "survival"
+      ],
+      "choiceCount": 0,
+      "sourceId": "investigator-7e",
+      "choiceGroups": [
+        {
+          "name": "攀爬或游泳任选一项",
+          "count": 1,
+          "options": [
+            "climb",
+            "swim"
+          ]
+        },
+        {
+          "name": "射击专长任选一项",
+          "count": 1,
+          "options": [
+            "firearms-handgun",
+            "firearms-rifle"
+          ]
+        },
+        {
+          "name": "军事辅助技能任选两项",
+          "count": 2,
+          "options": [
+            "first-aid",
+            "mechanical-repair",
+            "language-other"
+          ]
+        }
+      ],
+      "version": "7e-core",
+      "eraNote": "核心第 7 版通用职业的跨时代适配；不适用的固定技能须与守秘人改选时代专长。未复刻各扩展独立职业、地位范围、特权或额外收益。",
+      "skillNotes": "斗殴是本工具默认格斗专长；其他格斗专长可用原创技能补充。",
+      "verificationSourceIds": [
+        "roll20-basic-7e"
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "id": "notebook",
+      "name": "笔记本与铅笔",
+      "category": "调查",
+      "description": "记录线索、地址、证词和草图。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "kind": "item"
+    },
+    {
+      "id": "camera",
+      "name": "照相机",
+      "category": "调查",
+      "description": "摄影设备；型号、胶片与冲洗条件随时代而变。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "magnifying-glass",
+      "name": "放大镜",
+      "category": "调查",
+      "description": "观察文书、工艺与细小痕迹。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "kind": "item"
+    },
+    {
+      "id": "flashlight",
+      "name": "手电筒",
+      "category": "探索",
+      "description": "便携照明，另记电池或燃料。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "oil-lantern",
+      "name": "提灯",
+      "category": "探索",
+      "description": "历史时代的便携照明；注意燃料与火光。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "gaslight",
+        "victorian",
+        "dark-ages",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "rope",
+      "name": "绳索",
+      "category": "探索",
+      "description": "记录长度与用途，攀爬仍由守秘人判定。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "kind": "item"
+    },
+    {
+      "id": "binoculars",
+      "name": "双筒望远镜",
+      "category": "探索",
+      "description": "远距离观察时使用。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "first-aid-kit",
+      "name": "急救箱",
+      "category": "医疗",
+      "description": "绷带、消毒用品与基本医疗工具。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "lock-picks",
+      "name": "开锁工具",
+      "category": "工具",
+      "description": "与锁匠技能配合使用。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "tool-kit",
+      "name": "维修工具箱",
+      "category": "工具",
+      "description": "适用于角色的机械或电气专长。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "map-compass",
+      "name": "地图与罗盘",
+      "category": "探索",
+      "description": "帮助导航并记录行程。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "kind": "item"
+    },
+    {
+      "id": "pocket-watch",
+      "name": "怀表",
+      "category": "日用",
+      "description": "记录时间；也可作为人物的重要物品。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "umbrella",
+      "name": "雨伞",
+      "category": "日用",
+      "description": "日常携带用品，使用方式由守秘人判断。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "travel-case",
+      "name": "旅行箱",
+      "category": "日用",
+      "description": "衣物、文件及随身物品的容器。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "investigator-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "smartphone",
+      "name": "智能手机",
+      "category": "现代",
+      "description": "记录联系资料、照片和离线信息。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "project-original",
+      "eras": [
+        "japan"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "laptop",
+      "name": "笔记本电脑",
+      "category": "现代",
+      "description": "现代资料工作与计算机技能使用的工具。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "project-original",
+      "eras": [
+        "japan"
+      ],
+      "kind": "item"
+    },
+    {
+      "id": "unarmed",
+      "name": "徒手",
+      "category": "近战",
+      "description": "斗殴技能；伤害加伤害加值。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "sheets-7e",
+      "damage": "1D3 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "skillId": "fighting-brawl",
+      "kind": "weapon"
+    },
+    {
+      "id": "small-knife",
+      "name": "小刀",
+      "category": "近战",
+      "description": "斗殴技能；对应小型刀具。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D4 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "skillId": "fighting-brawl",
+      "kind": "weapon"
+    },
+    {
+      "id": "large-knife",
+      "name": "大刀",
+      "category": "近战",
+      "description": "斗殴技能；对应大型刀具。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D8 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "skillId": "fighting-brawl",
+      "kind": "weapon"
+    },
+    {
+      "id": "small-club",
+      "name": "小型棍棒",
+      "category": "近战",
+      "description": "斗殴技能；如警棍。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D6 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "skillId": "fighting-brawl",
+      "kind": "weapon"
+    },
+    {
+      "id": "large-club",
+      "name": "大型棍棒",
+      "category": "近战",
+      "description": "斗殴技能；如棒球棍。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D8 + DB",
+      "range": "接触",
+      "attacks": "1",
+      "skillId": "fighting-brawl",
+      "kind": "weapon"
+    },
+    {
+      "id": "revolver-38",
+      "name": ".38 左轮手枪",
+      "category": "枪械",
+      "description": "手枪技能；故障、装弹量与多发射击罚骰请查武器表。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D10",
+      "range": "15 米",
+      "attacks": "1（至多 3）",
+      "skillId": "firearms-handgun",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "weapon"
+    },
+    {
+      "id": "automatic-32",
+      "name": ".32 自动手枪",
+      "category": "枪械",
+      "description": "手枪技能；具体型号以时代和武器表为准。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D8",
+      "range": "15 米",
+      "attacks": "1（至多 3）",
+      "skillId": "firearms-handgun",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "weapon"
+    },
+    {
+      "id": "automatic-45",
+      "name": ".45 自动手枪",
+      "category": "枪械",
+      "description": "手枪技能；具体型号以时代和武器表为准。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "1D10 + 2",
+      "range": "15 米",
+      "attacks": "1（至多 3）",
+      "skillId": "firearms-handgun",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "kind": "weapon"
+    },
+    {
+      "id": "shotgun-12",
+      "name": "12 号霰弹枪",
+      "category": "枪械",
+      "description": "步枪 / 霰弹枪技能；随射程使用不同伤害。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "4D6 / 2D6 / 1D6",
+      "range": "10 / 20 / 50 米",
+      "attacks": "1（双管可 2）",
+      "skillId": "firearms-rifle",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "kind": "weapon"
+    },
+    {
+      "id": "rifle-30-06",
+      "name": ".30-06 栓动步枪",
+      "category": "枪械",
+      "description": "步枪 / 霰弹枪技能；型号与装弹量另行记录。",
+      "price": "依时代、信用评级与守秘人裁定",
+      "sourceId": "keeper-7e",
+      "damage": "2D6 + 4",
+      "range": "110 米",
+      "attacks": "1",
+      "skillId": "firearms-rifle",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "kind": "weapon"
+    }
+  ],
+  "spells": [
+    {
+      "id": "elder-sign",
+      "name": "旧印 · Elder Sign",
+      "description": "制作对某些神话存在有作用的防护印记；具体对象和制作要求由守秘人确认。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认；通常涉及永久 POW 消耗。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "cloud-memory",
+      "name": "记忆模糊 · Cloud Memory",
+      "description": "影响目标对特定近期事件的记忆；学习与施放需由守秘人批准。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认 MP 与 SAN 消耗。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "dominate",
+      "name": "支配术 · Dominate",
+      "description": "短暂控制目标的行动；不是无条件控制，需满足原版施法限制。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认 MP、SAN 与对抗要求。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "voorish-sign",
+      "name": "沃瑞什之印 · Voorish Sign",
+      "description": "借助神秘手势察觉某些平时不可见的事物。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认 MP 与 SAN 消耗。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "flesh-ward",
+      "name": "肉体防护 · Flesh Ward",
+      "description": "以魔法提高肉体防护；持续时间和防护额度需按原版条目记录。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认可变 MP 与 SAN 消耗。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "summon-bind-dimensional-shambler",
+      "name": "召唤 / 束缚次元蹒跚者",
+      "description": "与次元蹒跚者相关的召唤和束缚仪式；两个效果需分别遵循其条件。",
+      "cost": "依 Keeper Rulebook 第 12 章对应召唤 / 束缚条目确认。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "contact-ghoul",
+      "name": "联系食尸鬼 · Contact Ghoul",
+      "description": "尝试与食尸鬼建立联系；取得联系不代表对方会服从。",
+      "cost": "依 Keeper Rulebook 第 12 章联系类法术条目确认。",
+      "sourceId": "keeper-7e"
+    },
+    {
+      "id": "enchanted-knife",
+      "name": "附魔刀刃 · Enchant Knife",
+      "description": "为仪式用刀刃附魔；制作材料、祭仪与收益依原版条目。",
+      "cost": "依 Keeper Rulebook 第 12 章条目确认永久 POW 等消耗。",
+      "sourceId": "keeper-7e"
+    }
+  ],
+  "dataNotes": [
+    "中文名称为本项目界面译名；如与所持规则书译名不同，以中英文 ID 和所持版本对照。",
+    "标准职业目录为第 7 版通用职业，跨时代可用性是适配；Gaslight 专属职业和阶层收益未完整收录。",
+    "武器条目提供常用数值，不包含射击罚骰、故障值、弹药和完整战斗程序。",
+    "法术为规则书索引与原创短注，未以未经核实的数值代替规则书完整条目。",
+    "装备价格随时代和地区变化，预置不使用虚构统一售价。",
+    "黑暗时代与荒野西部均依据官方公开标准人物卡适配；未声称收录完整扩展机制。Dark Ages 的核心职业技能需要时代专长适配，且社会地位范围暂沿用通用职业参考范围。"
+  ],
+  "skills": [
+    {
+      "id": "accounting",
+      "name": "会计",
+      "english": "Accounting",
+      "base": 5,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "description": "检查收支与账目，寻找资金流向或异常记录。",
+      "scenarios": [
+        "追查账本中的虚报",
+        "核对公司的付款记录"
+      ]
+    },
+    {
+      "id": "anthropology",
+      "name": "人类学",
+      "english": "Anthropology",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "理解人类社会的习俗与组织方式，联系观察到的文化线索。",
+      "scenarios": [
+        "辨认陌生社群的礼仪",
+        "解读仪式中的社会含义"
+      ]
+    },
+    {
+      "id": "appraise",
+      "name": "估价",
+      "english": "Appraise",
+      "base": 5,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "description": "判断物品的品质、真伪与大致价值，具体价格仍受市场影响。",
+      "scenarios": [
+        "检查古董是否赝品",
+        "估计珠宝的价值"
+      ]
+    },
+    {
+      "id": "archaeology",
+      "name": "考古学",
+      "english": "Archaeology",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "研究遗址、器物与出土背景，判断它们所属的历史文化。",
+      "scenarios": [
+        "辨认墓葬年代",
+        "分析遗址中的器物用途"
+      ]
+    },
+    {
+      "id": "art-craft",
+      "name": "艺术与工艺（自定专长）",
+      "english": "Art / Craft",
+      "base": 5,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "specialization": true,
+      "description": "运用所选艺术或工艺专长制作、欣赏或鉴别作品；需要记录具体专长。",
+      "scenarios": [
+        "修复与专长相关的作品",
+        "辨认制作手法"
+      ]
+    },
+    {
+      "id": "charm",
+      "name": "魅惑",
+      "english": "Charm",
+      "base": 15,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "通过亲和力与个人吸引力争取对方好感，效果取决于交往情境。",
+      "scenarios": [
+        "建立初次接触的信任",
+        "请求对方愿意提供帮助"
+      ]
+    },
+    {
+      "id": "climb",
+      "name": "攀爬",
+      "english": "Climb",
+      "base": 20,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "利用抓握、支点和器材攀登或下降，环境会影响难度。",
+      "scenarios": [
+        "攀上围墙",
+        "沿岩壁下降"
+      ]
+    },
+    {
+      "id": "credit-rating",
+      "name": "信用评级",
+      "english": "Credit Rating",
+      "base": 0,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "反映财富、经济信用与生活水平，也影响经济层面的社会往来。",
+      "scenarios": [
+        "判断能够负担的生活方式",
+        "获得与财力相关的接待"
+      ]
+    },
+    {
+      "id": "cthulhu-mythos",
+      "name": "克苏鲁神话",
+      "english": "Cthulhu Mythos",
+      "base": 0,
+      "category": "神秘",
+      "sourceId": "sheets-7e",
+      "note": "创建新调查员时不分配职业点或兴趣点，特殊经历须由守秘人批准。",
+      "description": "联系神话知识辨认非人存在与禁忌线索；这类知识可能改变理智上限。新建角色通常不购点。",
+      "scenarios": [
+        "辨识神话符号",
+        "推测怪异现象的神话关联"
+      ]
+    },
+    {
+      "id": "disguise",
+      "name": "乔装",
+      "english": "Disguise",
+      "base": 5,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "用服饰、化妆、姿态等改变外在身份，近距离审视可能暴露破绽。",
+      "scenarios": [
+        "伪装成工作人员",
+        "隐藏可辨认的外貌特征"
+      ]
+    },
+    {
+      "id": "dodge",
+      "name": "闪避",
+      "english": "Dodge",
+      "base": "DEX/2",
+      "category": "战斗",
+      "sourceId": "sheets-7e",
+      "description": "及时避开针对自己的攻击或危险，具体使用遵循当前战斗规则。",
+      "scenarios": [
+        "闪避近身攻击",
+        "躲开突然落下的物体"
+      ]
+    },
+    {
+      "id": "drive-auto",
+      "name": "汽车驾驶",
+      "english": "Drive Auto",
+      "base": 20,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "description": "操控汽车并应对驾驶中的困难状况，普通驾驶是否检定由情境决定。",
+      "scenarios": [
+        "在湿滑路面控制车辆",
+        "驾车追逐"
+      ]
+    },
+    {
+      "id": "electrical-repair",
+      "name": "电气维修",
+      "english": "Electrical Repair",
+      "base": 10,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "japan",
+        "western"
+      ],
+      "description": "诊断与修理电气装置；电子电路与复杂电子设备可能需要电子学。",
+      "scenarios": [
+        "修理断电线路",
+        "检查发电设备"
+      ]
+    },
+    {
+      "id": "fast-talk",
+      "name": "话术",
+      "english": "Fast Talk",
+      "base": 5,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "利用急促言辞与临场说辞短暂误导对方，持续说服通常需要别的手段。",
+      "scenarios": [
+        "在被盘问时争取时间",
+        "用借口快速通过检查"
+      ]
+    },
+    {
+      "id": "fighting-brawl",
+      "name": "斗殴",
+      "english": "Fighting (Brawl)",
+      "base": 25,
+      "category": "战斗",
+      "sourceId": "sheets-7e",
+      "description": "运用拳脚、擒抱及适用的近身武器进行斗殴，攻击方式仍按战斗规则处理。",
+      "scenarios": [
+        "徒手自卫",
+        "用棍棒进行近身攻击"
+      ]
+    },
+    {
+      "id": "firearms-handgun",
+      "name": "射击（手枪）",
+      "english": "Firearms (Handgun)",
+      "base": 20,
+      "category": "战斗",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "使用手枪类武器射击；距离、掩体和射击方式会影响具体判定。",
+      "scenarios": [
+        "用左轮射击目标",
+        "判断手枪射击是否命中"
+      ]
+    },
+    {
+      "id": "firearms-rifle",
+      "name": "射击（步枪 / 霰弹枪）",
+      "english": "Firearms (Rifle / Shotgun)",
+      "base": 25,
+      "category": "战斗",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "使用步枪或霰弹枪射击；伤害与射程由具体武器决定。",
+      "scenarios": [
+        "使用步枪射击",
+        "使用霰弹枪应对近距离威胁"
+      ]
+    },
+    {
+      "id": "first-aid",
+      "name": "急救",
+      "english": "First Aid",
+      "base": 30,
+      "category": "医疗",
+      "sourceId": "sheets-7e",
+      "description": "立即处理伤口与突发伤情，为后续治疗争取条件。具体恢复与时限遵循医疗规则。",
+      "scenarios": [
+        "包扎刚发生的伤口",
+        "对现场伤者进行紧急处理"
+      ]
+    },
+    {
+      "id": "history",
+      "name": "历史",
+      "english": "History",
+      "base": 5,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "联系历史事件、人物与制度，判断线索的历史背景。",
+      "scenarios": [
+        "辨认旧时代的标志",
+        "查明家族与历史事件的关系"
+      ]
+    },
+    {
+      "id": "intimidate",
+      "name": "恐吓",
+      "english": "Intimidate",
+      "base": 15,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "以威势、威胁或强硬态度迫使对方让步，可能造成敌意或其他后果。",
+      "scenarios": [
+        "逼退犹豫的拦路者",
+        "施压要求交出情报"
+      ]
+    },
+    {
+      "id": "jump",
+      "name": "跳跃",
+      "english": "Jump",
+      "base": 20,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "跨越空隙、障碍或从高处跳下，距离与落脚环境影响难度。",
+      "scenarios": [
+        "跨过裂隙",
+        "跳越障碍"
+      ]
+    },
+    {
+      "id": "language-own",
+      "name": "母语",
+      "english": "Language (Own)",
+      "base": "EDU",
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "description": "使用自己的母语理解表达；特定时代可能把口语和读写分开记录。",
+      "scenarios": [
+        "理解母语中的复杂措辞",
+        "表达清楚的论证"
+      ]
+    },
+    {
+      "id": "language-other",
+      "name": "外语（自定语言）",
+      "english": "Language (Other)",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "specialization": true,
+      "description": "使用所选外语进行理解与交流；每种语言独立记录。",
+      "scenarios": [
+        "翻译外语线索",
+        "与外语使用者交谈"
+      ]
+    },
+    {
+      "id": "law",
+      "name": "法律",
+      "english": "Law",
+      "base": 5,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "理解法律、司法程序与相关惯例，知识适用性取决于地区与时代。",
+      "scenarios": [
+        "判断手续是否合法",
+        "理解调查中的法律风险"
+      ]
+    },
+    {
+      "id": "library-use",
+      "name": "图书馆使用",
+      "english": "Library Use",
+      "base": 20,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "description": "在资料与档案中定位、筛选和关联信息，不限于实体图书馆。",
+      "scenarios": [
+        "查阅旧报纸寻找姓名",
+        "从档案中定位相关记录"
+      ]
+    },
+    {
+      "id": "listen",
+      "name": "聆听",
+      "english": "Listen",
+      "base": 20,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "辨别声音及其方向、内容或异常，背景噪声会妨碍判断。",
+      "scenarios": [
+        "听清隔门对话",
+        "察觉远处的脚步声"
+      ]
+    },
+    {
+      "id": "locksmith",
+      "name": "锁匠",
+      "english": "Locksmith",
+      "base": 1,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "理解、开启或修理适用的锁具，工具与锁的结构影响结果。",
+      "scenarios": [
+        "打开机械锁",
+        "检查锁是否被动过"
+      ]
+    },
+    {
+      "id": "mechanical-repair",
+      "name": "机械维修",
+      "english": "Mechanical Repair",
+      "base": 10,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "description": "诊断与修理机械装置，涉及制造或复杂设计时可能需要其他专长。",
+      "scenarios": [
+        "修理卡住的机构",
+        "检查机械故障来源"
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": "医学",
+      "english": "Medicine",
+      "base": 1,
+      "category": "医疗",
+      "sourceId": "sheets-7e",
+      "description": "诊断疾病和伤情、安排治疗并理解人体状况；具体疗效遵循医疗规则。",
+      "scenarios": [
+        "分析长期病症",
+        "检查伤势与治疗方案"
+      ]
+    },
+    {
+      "id": "natural-world",
+      "name": "博物学",
+      "english": "Natural World",
+      "base": 10,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "description": "凭经验认识动植物、环境与自然现象；深入专业研究可能需要科学专长。",
+      "scenarios": [
+        "辨认当地野生动物",
+        "判断自然环境的异常"
+      ]
+    },
+    {
+      "id": "navigate",
+      "name": "导航",
+      "english": "Navigate",
+      "base": 10,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "根据方位、地标、地图或星象确定位置与路线。",
+      "scenarios": [
+        "在陌生地区寻找路线",
+        "判断船只航向"
+      ]
+    },
+    {
+      "id": "occult",
+      "name": "神秘学",
+      "english": "Occult",
+      "base": 5,
+      "category": "神秘",
+      "sourceId": "sheets-7e",
+      "description": "了解民间神秘传统、传说与仪式；这些知识不等同于真实神话知识。",
+      "scenarios": [
+        "识别民俗仪式",
+        "对照怪谈寻找背景"
+      ]
+    },
+    {
+      "id": "operate-heavy-machinery",
+      "name": "操作重型机械",
+      "english": "Operate Heavy Machinery",
+      "base": 1,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "操控大型机械设备，具体设备与时代决定适用范围。",
+      "scenarios": [
+        "操作起重设备",
+        "控制施工机械"
+      ]
+    },
+    {
+      "id": "persuade",
+      "name": "说服",
+      "english": "Persuade",
+      "base": 10,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "通过理由与持续交流改变对方看法，通常需要对方愿意听取论证。",
+      "scenarios": [
+        "争取证人合作",
+        "说服机构提供访问机会"
+      ]
+    },
+    {
+      "id": "pilot",
+      "name": "驾驶（自定专长）",
+      "english": "Pilot",
+      "base": 1,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "specialization": true,
+      "description": "操控所选航空或航行载具；不同载具专长分别记录。",
+      "scenarios": [
+        "驾驶所选类型的载具",
+        "应对航行中的异常"
+      ]
+    },
+    {
+      "id": "psychology",
+      "name": "心理学",
+      "english": "Psychology",
+      "base": 10,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "description": "从言行与情境推测人的动机、情绪或可信度，不能直接读取思想。",
+      "scenarios": [
+        "判断证人是否隐瞒",
+        "推测交谈对象的动机"
+      ]
+    },
+    {
+      "id": "psychoanalysis",
+      "name": "精神分析",
+      "english": "Psychoanalysis",
+      "base": 1,
+      "category": "医疗",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "core",
+        "japan"
+      ],
+      "description": "通过心理治疗与长期沟通帮助受心理困扰的人，具体效果依理智与治疗规则。",
+      "scenarios": [
+        "进行心理治疗",
+        "理解持续的心理症状"
+      ]
+    },
+    {
+      "id": "ride",
+      "name": "骑术",
+      "english": "Ride",
+      "base": 5,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "控制坐骑并应对骑乘中的困难，适用坐骑和装备依时代而定。",
+      "scenarios": [
+        "控制受惊的马",
+        "骑乘跨越复杂地形"
+      ]
+    },
+    {
+      "id": "science",
+      "name": "科学（自定专长）",
+      "english": "Science",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "specialization": true,
+      "description": "运用所选科学领域的知识与研究方法；每个学科独立记录。",
+      "scenarios": [
+        "分析领域内的证据",
+        "解释专业实验结果"
+      ]
+    },
+    {
+      "id": "sleight-of-hand",
+      "name": "妙手",
+      "english": "Sleight of Hand",
+      "base": 10,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "description": "利用手部动作的速度与隐蔽性进行小范围操作，观察环境影响成败。",
+      "scenarios": [
+        "暗中传递小物件",
+        "表演手法戏法"
+      ]
+    },
+    {
+      "id": "spot-hidden",
+      "name": "侦查",
+      "english": "Spot Hidden",
+      "base": 25,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "从视觉观察中发现被忽略、隐藏或异常的细节。",
+      "scenarios": [
+        "发现隐蔽入口",
+        "找出现场的细小痕迹"
+      ]
+    },
+    {
+      "id": "stealth",
+      "name": "潜行",
+      "english": "Stealth",
+      "base": 20,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "控制声音、动作与遮蔽，降低被察觉的机会。",
+      "scenarios": [
+        "潜入有人看守的区域",
+        "悄悄跟随目标"
+      ]
+    },
+    {
+      "id": "survival",
+      "name": "生存（自定环境）",
+      "english": "Survival",
+      "base": 10,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "specialization": true,
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "在所选环境中寻找食物、庇护与应对危险的方法；环境专长独立记录。",
+      "scenarios": [
+        "在荒野寻找安全宿营点",
+        "应对所选环境的极端天气"
+      ]
+    },
+    {
+      "id": "swim",
+      "name": "游泳",
+      "english": "Swim",
+      "base": 20,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "在水中前进、保持浮力或应对水流，装备与环境会影响难度。",
+      "scenarios": [
+        "游过河流",
+        "在落水后保持行动"
+      ]
+    },
+    {
+      "id": "throw",
+      "name": "投掷",
+      "english": "Throw",
+      "base": 20,
+      "category": "战斗",
+      "sourceId": "sheets-7e",
+      "description": "控制投掷物的方向与距离，具体效果取决于物体和使用方式。",
+      "scenarios": [
+        "投掷石块击中目标",
+        "把绳索抛到可抓握位置"
+      ]
+    },
+    {
+      "id": "track",
+      "name": "追踪",
+      "english": "Track",
+      "base": 10,
+      "category": "行动",
+      "sourceId": "sheets-7e",
+      "description": "根据足迹、扰动与其他痕迹追查移动路线，地面和天气影响可读性。",
+      "scenarios": [
+        "追踪林地中的脚印",
+        "判断痕迹的新旧"
+      ]
+    },
+    {
+      "id": "drive-carriage",
+      "name": "驾驶马车",
+      "english": "Drive Carriage",
+      "base": 20,
+      "category": "技术",
+      "sourceId": "gaslight-sheet-7e",
+      "eras": [
+        "gaslight",
+        "victorian",
+        "dark-ages",
+        "western"
+      ],
+      "description": "控制挽畜与马车，路线、车况及动物状态影响驾驶。",
+      "scenarios": [
+        "驾车穿过拥挤街道",
+        "稳住受惊的挽马"
+      ]
+    },
+    {
+      "id": "religion",
+      "name": "宗教",
+      "english": "Religion",
+      "base": 10,
+      "category": "知识",
+      "sourceId": "gaslight-sheet-7e",
+      "eras": [
+        "gaslight",
+        "victorian",
+        "dark-ages"
+      ],
+      "description": "理解宗教信仰、仪式与组织背景，适用知识取决于具体传统与时代。",
+      "scenarios": [
+        "辨认宗教象征",
+        "理解仪式或教派分歧"
+      ]
+    },
+    {
+      "id": "art-photography",
+      "name": "艺术 / 工艺（摄影）",
+      "english": "Art / Craft (Photography)",
+      "base": 5,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "parentId": "art-craft",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "运用时代适用的摄影器材和冲印方法记录、制作或鉴别影像。",
+      "scenarios": [
+        "拍摄现场证据",
+        "检查照片的制作痕迹"
+      ]
+    },
+    {
+      "id": "art-acting",
+      "name": "艺术 / 工艺（表演）",
+      "english": "Art / Craft (Acting)",
+      "base": 5,
+      "category": "社交",
+      "sourceId": "sheets-7e",
+      "parentId": "art-craft",
+      "description": "用声音、动作与表情塑造角色或完成表演。",
+      "scenarios": [
+        "扮演一个可信身份",
+        "分析表演技巧"
+      ]
+    },
+    {
+      "id": "art-literature",
+      "name": "艺术 / 工艺（文学）",
+      "english": "Art / Craft (Literature)",
+      "base": 5,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "parentId": "art-craft",
+      "description": "创作与评析文学作品，理解文体、修辞与创作手法。",
+      "scenarios": [
+        "分析文章的写作风格",
+        "创作适合目的的文本"
+      ]
+    },
+    {
+      "id": "art-technical-drawing",
+      "name": "艺术 / 工艺（技术制图）",
+      "english": "Art / Craft (Technical Drawing)",
+      "base": 5,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "parentId": "art-craft",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "用技术制图表达结构、尺寸与设计信息，图纸用途受专业领域限制。",
+      "scenarios": [
+        "读懂装置图纸",
+        "绘制结构草图"
+      ]
+    },
+    {
+      "id": "art-farming",
+      "name": "艺术 / 工艺（耕作）",
+      "english": "Art / Craft (Farming)",
+      "base": 5,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "parentId": "art-craft",
+      "description": "运用耕作经验管理作物、土地与农事，条件取决于地域和时代。",
+      "scenarios": [
+        "判断作物的生长问题",
+        "安排耕作与收获"
+      ]
+    },
+    {
+      "id": "science-biology",
+      "name": "科学（生物学）",
+      "english": "Science (Biology)",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "研究生命体与生物过程，用专业方法分析生物证据。",
+      "scenarios": [
+        "分析组织样本",
+        "判断生物现象"
+      ]
+    },
+    {
+      "id": "science-pharmacy",
+      "name": "科学（药学）",
+      "english": "Science (Pharmacy)",
+      "base": 1,
+      "category": "医疗",
+      "sourceId": "sheets-7e",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "理解药物性质、配制与作用；使用和治疗仍须符合情境及医疗规则。",
+      "scenarios": [
+        "辨认药物成分",
+        "检查药剂的配制"
+      ]
+    },
+    {
+      "id": "science-chemistry",
+      "name": "科学（化学）",
+      "english": "Science (Chemistry)",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "分析物质组成、性质与化学变化，实验条件影响能够得出的结论。",
+      "scenarios": [
+        "分析未知液体",
+        "识别化学反应的痕迹"
+      ]
+    },
+    {
+      "id": "science-engineering",
+      "name": "科学（工程学）",
+      "english": "Science (Engineering)",
+      "base": 1,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "运用工程原理分析或设计结构与系统，具体领域可能需要进一步专长。",
+      "scenarios": [
+        "评估结构稳定性",
+        "分析机器设计"
+      ]
+    },
+    {
+      "id": "science-physics",
+      "name": "科学（物理学）",
+      "english": "Science (Physics)",
+      "base": 1,
+      "category": "知识",
+      "sourceId": "sheets-7e",
+      "parentId": "science",
+      "eras": [
+        "core",
+        "gaslight",
+        "japan",
+        "victorian",
+        "western"
+      ],
+      "description": "运用物理原理理解运动、能量与物质现象。",
+      "scenarios": [
+        "解释异常力学现象",
+        "分析仪器测量结果"
+      ]
+    },
+    {
+      "id": "animal-handling",
+      "name": "动物驯养",
+      "english": "Animal Handling",
+      "base": 5,
+      "category": "行动",
+      "eras": [
+        "dark-ages",
+        "western"
+      ],
+      "sourceId": "western-sheet-7e",
+      "description": "观察并引导动物行为，处理范围取决于动物与时代情境。",
+      "scenarios": [
+        "安抚受惊牲畜",
+        "训练或引导工作动物"
+      ]
+    }
+  ],
+  "rulesets": [
+    {
+      "id": "core",
+      "name": "经典 1920s",
+      "english": "Call of Cthulhu 7th Edition",
+      "era": "1920 年代",
+      "description": "第 7 版核心规则与经典调查员技能。使用正式职业点与兴趣点建卡。",
+      "sourceId": "keeper-7e",
+      "status": "official-core",
+      "skillBaseOverrides": {},
+      "skillAliases": {}
+    }
+  ],
+  "guidance": {
+    "attributes": {
+      "STR": {
+        "description": "力量反映肌肉力量与施力能力；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "施力能力很弱，搬运重物通常很吃力。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "力量偏弱，更倾向借助工具或他人协助。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "力量处于常见成人水平，可承担日常体力活动。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "力量较强，搬运和施力时更有优势。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "力量很突出，常给人强健有力的印象。"
+          }
+        ]
+      },
+      "CON": {
+        "description": "体质反映耐力、健康与身体承受能力；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "身体承受能力很弱，容易显得疲惫。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "体质偏弱，持续活动后需要更多休息。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "体质处于常见水平，能应付日常劳累。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "体质较强，持续活动时显得耐久。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "体质很突出，给人精力充沛、恢复力好的印象。"
+          }
+        ]
+      },
+      "SIZ": {
+        "description": "体型综合表示身高、体重与身体规模，不直接换算具体尺寸；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "体型很小，站在人群中显得纤小。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "体型偏小，身形常显得轻巧。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "体型处于常见成人范围。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "体型较大，身形容易引人注意。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "体型很突出，常给人高大或厚重的印象。"
+          }
+        ]
+      },
+      "DEX": {
+        "description": "敏捷反映反应、协调与动作控制；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "动作协调和反应较困难，容易显得笨拙。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "动作偏慢，细致动作可能更需要专注。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "反应与协调处于常见水平。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "动作灵活，反应和协调较为出色。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "身手很突出，动作常显得迅速而精准。"
+          }
+        ]
+      },
+      "APP": {
+        "description": "外貌综合表示吸引力与外在印象，不决定他人的喜爱或人物价值；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "外在形象较难符合周围人的常见审美。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "外在形象较少成为吸引注意的优势。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "外在形象处于常见范围，印象取决于情境。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "外在形象较有吸引力，容易留下良好第一印象。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "外在形象很有吸引力，容易成为众人注意的焦点。"
+          }
+        ]
+      },
+      "INT": {
+        "description": "智力反映理解、推理与解决问题的能力，不等于知识积累；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "理解复杂线索较吃力，可能更依赖具体经验。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "理解与推理偏慢，常需要时间整理线索。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "理解与推理处于常见水平。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "思路敏锐，较容易联系线索与发现规律。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "推理能力很突出，善于快速理解复杂问题。"
+          }
+        ]
+      },
+      "POW": {
+        "description": "意志反映精神力量与内在韧性，不决定人物是否勇敢；分段文字仅供扮演参考。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "精神韧性偏低，内心容易被压力动摇。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "面对压力时常需要支持与缓冲。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "精神力量处于常见水平。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "内在韧性较强，面对压力时较能保持自我。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "精神力量很突出，执念或信念常显得格外坚定。"
+          }
+        ]
+      },
+      "EDU": {
+        "description": "教育反映学习经历与积累的知识，也包括自学；分段文字不等同于具体学历。",
+        "bands": [
+          {
+            "min": 1,
+            "max": 24,
+            "description": "知识积累较少，主要依靠有限的生活经验。"
+          },
+          {
+            "min": 25,
+            "max": 44,
+            "description": "知识面偏窄，在熟悉的领域更有把握。"
+          },
+          {
+            "min": 45,
+            "max": 64,
+            "description": "有常见程度的学习与知识积累。"
+          },
+          {
+            "min": 65,
+            "max": 84,
+            "description": "学习经历较丰富，能够联系较多知识。"
+          },
+          {
+            "min": 85,
+            "max": 99,
+            "description": "知识积累很深厚，常展现广博或精深的学识。"
+          }
+        ]
+      }
+    },
+    "build": [
+      {
+        "value": -2,
+        "description": "身形与力量合计很小，近身对抗时常显得单薄。"
+      },
+      {
+        "value": -1,
+        "description": "身形与力量合计偏小，近身对抗更依赖技巧。"
+      },
+      {
+        "value": 0,
+        "description": "身形与力量合计处于常见范围。"
+      },
+      {
+        "value": 1,
+        "description": "身形与力量合计较大，近身对抗时显得有力。"
+      },
+      {
+        "value": 2,
+        "description": "身形与力量合计很突出，常给人强壮厚重的印象。"
+      }
+    ],
+    "wealth": [
+      {
+        "min": 0,
+        "max": 0,
+        "label": "身无分文",
+        "description": "缺乏稳定的经济来源与保障，基本生活往往需要临时帮助。"
+      },
+      {
+        "min": 1,
+        "max": 9,
+        "label": "贫困",
+        "description": "收入与财产有限，生活拮据，额外开销通常需要仔细权衡。"
+      },
+      {
+        "min": 10,
+        "max": 49,
+        "label": "一般",
+        "description": "有普通程度的收入或财产，可以维持日常生活，较大支出仍需安排。"
+      },
+      {
+        "min": 50,
+        "max": 89,
+        "label": "富裕",
+        "description": "经济条件宽裕，通常能负担较舒适的生活和额外安排。"
+      },
+      {
+        "min": 90,
+        "max": 98,
+        "label": "富豪",
+        "description": "拥有大量财富与经济资源，可以选择奢华生活和高额支出。"
+      },
+      {
+        "min": 99,
+        "max": 99,
+        "label": "巨富",
+        "description": "财富处于极少数人的层次，经济资源与生活选择十分广泛。"
+      }
+    ]
+  },
+  "skillOrder": [
+    "accounting",
+    "anthropology",
+    "appraise",
+    "archaeology",
+    "art-craft",
+    "charm",
+    "climb",
+    "credit-rating",
+    "cthulhu-mythos",
+    "disguise",
+    "dodge",
+    "drive-auto",
+    "electrical-repair",
+    "fast-talk",
+    "fighting-brawl",
+    "firearms-handgun",
+    "firearms-rifle",
+    "first-aid",
+    "history",
+    "intimidate",
+    "jump",
+    "language-own",
+    "language-other",
+    "law",
+    "library-use",
+    "listen",
+    "locksmith",
+    "mechanical-repair",
+    "medicine",
+    "natural-world",
+    "navigate",
+    "occult",
+    "operate-heavy-machinery",
+    "persuade",
+    "pilot",
+    "psychology",
+    "psychoanalysis",
+    "ride",
+    "science",
+    "sleight-of-hand",
+    "spot-hidden",
+    "stealth",
+    "survival",
+    "swim",
+    "throw",
+    "track",
+    "computer-use",
+    "electronics",
+    "alienism",
+    "drive-carriage",
+    "religion",
+    "reassure",
+    "art-photography",
+    "art-acting",
+    "art-literature",
+    "art-technical-drawing",
+    "art-farming",
+    "science-biology",
+    "science-pharmacy",
+    "science-chemistry",
+    "science-engineering",
+    "science-physics",
+    "animal-handling",
+    "own-kingdom",
+    "other-kingdoms",
+    "read-write-language",
+    "gambling",
+    "rope-use",
+    "trap"
+  ],
+  "sourceOrder": [
+    "quickstart-7e",
+    "keeper-7e",
+    "investigator-7e",
+    "sheets-7e",
+    "gaslight-7e",
+    "gaslight-sheet-7e",
+    "through-ages-7e",
+    "sutra-7e",
+    "wiki-occupations-7e",
+    "project-original",
+    "roll20-basic-7e",
+    "dark-ages-3e",
+    "dark-ages-sheet-7e",
+    "western-7e",
+    "western-sheet-7e"
+  ]
+}

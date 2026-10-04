@@ -10,13 +10,23 @@ function definitionJSON(value: unknown): string {
   });
 }
 
-function mergeDefinitions<T extends { id: string; name: string }>(existing: T[], incoming: T[], builtins: T[], label: string): T[] {
+function mergeDefinitions<T extends { id: string; name: string }>(existing: T[], incoming: T[], builtins: T[], label: string, legacyOptionalFields: string[] = []): T[] {
   const known = new Map(builtins.map(item => [item.id, item]));
+  const builtinIds = new Set(known.keys());
   const merged: T[] = [];
   for (const item of [...existing, ...incoming]) {
     const previous = known.get(item.id);
     if (previous) {
-      if (definitionJSON(previous) !== definitionJSON(item)) {
+      // Older duplicates may omit newly introduced metadata. They are discarded,
+      // never used to replace a builtin; all supplied fields still must match.
+      const comparison = { ...item } as Record<string, unknown>;
+      if (builtinIds.has(item.id)) {
+        const builtin = previous as Record<string, unknown>;
+        for (const field of legacyOptionalFields) {
+          if (comparison[field] === undefined) comparison[field] = builtin[field];
+        }
+      }
+      if (definitionJSON(previous) !== definitionJSON(comparison)) {
         throw new Error(`${label}「${item.name}」的标识 ${item.id} 与已有定义冲突，请使用不同标识或相同定义。`);
       }
       continue;
@@ -35,10 +45,10 @@ function requireReference(ids: ReadonlySet<string>, id: string, kind: string, co
 /** Merge complete definitions first so references may point to another item in the incoming file. */
 export function mergeCustom(existing: CustomContent, incoming: CustomContent, builtins: RuleData): CustomContent {
   const merged: CustomContent = {
-    rulesets: mergeDefinitions(existing.rulesets, incoming.rulesets, builtins.rulesets, '原创规则'),
-    skills: mergeDefinitions(existing.skills, incoming.skills, builtins.skills, '原创技能'),
+    rulesets: mergeDefinitions(existing.rulesets, incoming.rulesets, builtins.rulesets, '原创规则', ['skillDescriptions']),
+    skills: mergeDefinitions(existing.skills, incoming.skills, builtins.skills, '原创技能', ['description', 'scenarios']),
     occupations: mergeDefinitions(existing.occupations, incoming.occupations, builtins.occupations, '原创职业'),
-    equipment: mergeDefinitions(existing.equipment, incoming.equipment, builtins.equipment, '原创装备'),
+    equipment: mergeDefinitions(existing.equipment, incoming.equipment, builtins.equipment, '原创装备', ['kind', 'skillId']),
     spells: mergeDefinitions(existing.spells, incoming.spells, builtins.spells, '原创法术'),
   };
   const skillIds = new Set([...builtins.skills, ...merged.skills].map(skill => skill.id));
@@ -54,6 +64,10 @@ export function mergeCustom(existing: CustomContent, incoming: CustomContent, bu
     for (const id of Object.keys(ruleset.skillBaseOverrides ?? {})) requireReference(skillIds, id, '技能', `${context}的基础值覆盖`);
     // Alias keys reference skills; their values are unrestricted display labels.
     for (const id of Object.keys(ruleset.skillAliases ?? {})) requireReference(skillIds, id, '技能', `${context}的技能别名`);
+    for (const id of Object.keys(ruleset.skillDescriptions ?? {})) requireReference(skillIds, id, '技能', `${context}的技能说明`);
+  }
+  for (const equipment of merged.equipment) {
+    if (equipment.skillId !== undefined) requireReference(skillIds, equipment.skillId, '技能', `原创装备「${equipment.name}」`);
   }
   return merged;
 }
@@ -71,6 +85,9 @@ export function validateCharacterReferences(characters: Character[], rules: Rule
     requireReference(occupationIds, character.occupationId, '职业', context);
     for (const id of character.occupationChoices) requireReference(skillIds, id, '技能', `${context}的职业可选项`);
     for (const id of character.spellIds) requireReference(spellIds, id, '法术', context);
+    for (const item of character.inventory) {
+      if (item.skillId !== undefined) requireReference(skillIds, item.skillId, '技能', `${context}的装备「${item.name}」`);
+    }
     const ruleset = rulesets.get(character.rulesetId)!;
     for (const [id, allocation] of Object.entries(character.skills)) {
       requireReference(skillIds, id, '技能', context);

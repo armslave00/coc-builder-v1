@@ -10,3 +10,38 @@
 @media(max-height:850px){.sidebar-note{display:none}.sidebar-bottom{padding-top:14px}.edition-label{margin:22px 0 25px}.sidebar-rule{margin:21px 13px 12px}.character-item{padding-top:11px;padding-bottom:11px}.secondary-nav button{padding-top:10px;padding-bottom:10px}}
 .edition-label{white-space:nowrap;letter-spacing:.65px}
 @media(min-width:1201px){.ruleset-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.occupation-trigger{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:8px 0;border-bottom:1px solid #d7e1c9;text-align:left;font-size:13px;color:#526f40;min-height:36px}
+.occupation-trigger:hover{color:#2d4939;border-color:#8da276}
+.occupation-trigger:focus-visible{outline:2px solid #65805a;outline-offset:3px}
+.attribute-description{font-size:11px;line-height:1.75;color:#5d7350;margin:10px 0 3px;min-height:3.5em}
+.attribute-guidance-note{font-size:10px;line-height:1.7;color:#788868;padding:12px 0 0}
+.build-description{font-size:11px;color:#5d7350;line-height:1.8;padding:0 0 16px}
+.armor-overview{display:flex;align-items:center;gap:7px;border-top:1px solid #dbe4ce;padding:12px 0;font-size:12px;color:#617e4d}
+.armor-overview strong{margin-left:5px;font-family:var(--latin);font-size:16px}
+.armor-overview .text-button{margin-left:auto;font-size:10px;gap:2px}
+.equipment-subsection{margin-top:30px;padding-top:25px;border-top:1px solid #dbe4ce}
+.inventory-title>strong{flex:1;color:#4e6941;font-weight:500;font-size:13px}
+.inherent-attack{background:#f1f5e8;border:1px solid #dbe5cc;border-radius:4px;padding:15px 12px;margin-top:16px}
+.inherent-note{font-size:11px;color:#6d835b;line-height:1.7;padding:6px 0 0 26px}
+.inventory-category{padding:6px 0 2px 26px;display:flex;align-items:center;gap:12px;color:#718762;font-size:10px}
+.inventory-category label{display:flex;align-items:center;gap:8px}
+.inventory-category select{border:1px solid #d8e2cb;border-radius:3px;padding:3px 8px;color:#627d50;background:#f8faf1;font-size:11px}
+.inventory-category small{font-size:10px}
+.weapon-stats{font-size:11px;color:#607c4d;line-height:1.8}
+.armor-fields{display:grid;grid-template-columns:85px minmax(0,1fr);gap:20px}
+.armor-fields textarea{font:inherit;font-size:12px;line-height:1.8;color:#526f40;background:transparent;border:0;border-bottom:1px solid #d7e1c9;padding:8px 0;resize:vertical;min-height:60px;width:100%}
+.guidance-note{font-size:11px;line-height:1.8;color:#75866a;margin-top:10px}
+.wealth-reference{background:#f0f5e5;border:1px solid #dbe5cc;border-left:3px solid #839b6d;padding:16px 18px}
+.wealth-reference>div{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin:9px 0}
+.wealth-reference strong{font-family:var(--serif);font-size:19px;color:#496438}
+.wealth-reference>div>span{font-size:11px;color:#67804f}
+.wealth-reference p{font-size:12px;line-height:1.9;color:#5c724b;margin:8px 0}
+.wealth-reference small{font-size:10px;line-height:1.8;color:#738365}
+.wealth-section .money-grid{margin-top:20px}
+.money-grid .field>small{font-size:10px;color:#6e825c;line-height:1.7;padding-top:8px}
+.money-grid .field input{min-width:0}
+.skill-name{display:inline-flex;align-items:center;gap:4px}
+@media(max-width:1020px){.attribute-description{font-size:10px;min-height:5.25em}}
+@media(max-width:760px){.attribute-description{font-size:11px;min-height:5.25em}.money-grid{grid-template-columns:1fr}.money-grid .field input{font-size:13px}.armor-fields{grid-template-columns:70px minmax(0,1fr);gap:15px}.equipment-subsection{margin-top:25px;padding-top:21px}.weapon-stats{font-size:11px}.build-description{font-size:11px}.inventory-category{padding-left:0}.inherent-attack{padding:14px 10px}.inherent-note{padding-left:0}}
+@media(max-width:480px){.attribute-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.attribute-description{min-height:3.5em}.overview-side{grid-template-columns:1fr}.overview-side .status-panel{grid-row:auto}}

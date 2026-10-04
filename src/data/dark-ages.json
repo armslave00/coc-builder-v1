@@ -1,0 +1,165 @@
+{
+  "rulesets": [
+    {
+      "id": "dark-ages",
+      "name": "黑暗时代",
+      "english": "Cthulhu Dark Ages · 3rd Edition",
+      "era": "约 950—1054 年",
+      "description": "官方 CoC7 黑暗时代第三版的公开标准人物卡适配。调整历史技能基础值，加入动物驯养、王国知识与读写语言，以社会地位、洞察、维修 / 制作替换对应核心标签。职业目录采用核心职业的时代适配，专属职业与宗教理智等完整机制请依扩展书确认。",
+      "sourceId": "dark-ages-3e",
+      "status": "official-sheet-adaptation",
+      "skillBaseOverrides": {
+        "accounting": 10,
+        "jump": 25,
+        "library-use": 5,
+        "listen": 25,
+        "natural-world": 20,
+        "persuade": 15,
+        "sleight-of-hand": 25,
+        "swim": 25,
+        "throw": 25,
+        "religion": 20,
+        "mechanical-repair": 20,
+        "psychology": 5,
+        "animal-handling": 15
+      },
+      "skillAliases": {
+        "credit-rating": "社会地位 · Status",
+        "psychology": "洞察 · Insight",
+        "mechanical-repair": "维修 / 制作 · Repair / Devise",
+        "drive-carriage": "驾驶（马 / 牛）",
+        "pilot": "驾驶船只 · Pilot Boat",
+        "ride": "骑马 · Ride Horse"
+      },
+      "notes": [
+        "母语代表口语；读写语言另行记录为独立技能。",
+        "弓箭、盾牌与护甲的具体规则和数值需依据第三版规则书；本工具不从人物卡的空白武器栏推导基础值。",
+        "核心职业技能中不适用于时代的项须选择相关时代专长；该选择是时代适配，不是扩展原版职业条目的完整复刻。"
+      ],
+      "skillDescriptions": {
+        "credit-rating": {
+          "description": "黑暗时代的社会地位记录角色在社会关系与阶层中的位置；当前范围是工具适配参考，不能直接换算现金或现代信用。",
+          "scenarios": [
+            "判断在领主或社群中的待遇",
+            "理解阶层对往来的影响"
+          ]
+        },
+        "psychology": {
+          "description": "以黑暗时代的洞察观察言行、意图与情绪，不能直接读取思想。",
+          "scenarios": [
+            "判断交谈对象的用意",
+            "察觉对方的犹豫或隐瞒"
+          ]
+        },
+        "mechanical-repair": {
+          "description": "以黑暗时代的维修与制作知识处理适用的工具、器具与简单机构。",
+          "scenarios": [
+            "修复农具或器具",
+            "制作适合当地条件的工具"
+          ]
+        },
+        "drive-carriage": {
+          "description": "在黑暗时代控制马或牛牵引的车辆，地形与牲畜状态影响驾驶。",
+          "scenarios": [
+            "驾驭牛车穿过泥路",
+            "控制马匹牵引的车辆"
+          ]
+        },
+        "pilot": {
+          "description": "在黑暗时代驾驶船只，理解水流、航向与船只操控。",
+          "scenarios": [
+            "在河流中驾驶船只",
+            "应对航行中的急流"
+          ]
+        },
+        "ride": {
+          "description": "在黑暗时代骑乘和控制马匹；不自动替代扩展中的完整骑乘战斗机制。",
+          "scenarios": [
+            "控制受惊的马",
+            "骑马通过复杂地形"
+          ]
+        },
+        "language-own": {
+          "description": "在黑暗时代母语表示口语理解与表达；读写语言独立记录。",
+          "scenarios": [
+            "听懂母语证言",
+            "用母语口头交流"
+          ]
+        },
+        "language-other": {
+          "description": "在黑暗时代外语表示所选语言的口语能力；读写能力另行记录。",
+          "scenarios": [
+            "听懂异国来客的话",
+            "口头翻译外语线索"
+          ]
+        }
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "own-kingdom",
+      "name": "本国知识",
+      "english": "Own Kingdom",
+      "base": 20,
+      "category": "知识",
+      "eras": [
+        "dark-ages"
+      ],
+      "sourceId": "dark-ages-sheet-7e",
+      "description": "了解黑暗时代本国的地理、习俗、势力与社会关系。",
+      "scenarios": [
+        "判断本地领主的影响",
+        "解释家乡习俗"
+      ]
+    },
+    {
+      "id": "other-kingdoms",
+      "name": "其他王国知识（自定王国）",
+      "english": "Other Kingdoms",
+      "base": 10,
+      "category": "知识",
+      "eras": [
+        "dark-ages"
+      ],
+      "sourceId": "dark-ages-sheet-7e",
+      "specialization": true,
+      "description": "了解所选其他王国的地理、文化与势力，每个王国分别记录。",
+      "scenarios": [
+        "辨认异国来客的习俗",
+        "安排跨王国旅途"
+      ]
+    },
+    {
+      "id": "read-write-language",
+      "name": "读写语言（自定语言）",
+      "english": "Read / Write Language",
+      "base": 1,
+      "category": "知识",
+      "eras": [
+        "dark-ages"
+      ],
+      "sourceId": "dark-ages-sheet-7e",
+      "specialization": true,
+      "description": "在黑暗时代读取与书写所选语言；与口语技能分开记录。",
+      "scenarios": [
+        "阅读书信或手稿",
+        "书写所选语言的记录"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "dark-ages-3e",
+      "title": "Cthulhu Dark Ages, 3rd Edition (2020) — for Call of Cthulhu 7th Edition",
+      "url": "https://www.chaosium.com/cthulhu-dark-ages-3rd-edition-hardcover/",
+      "note": "官方出版页明确第三版为 CoC 第 7 版更新，主设定为约 950—1054 年。此工具仅适配公开人物卡，不完整实现宗教理智、口述传统、骑乘战斗和民俗魔法。"
+    },
+    {
+      "id": "dark-ages-sheet-7e",
+      "title": "Official Cthulhu Dark Ages Standard Investigator Sheet (2021)",
+      "url": "https://www.chaosium.com/content/FreePDFs/CoC/Character%20Sheets/V2/CoC7%20PC%20Sheet%20-%20Auto-Fill%20-%20Dark%20Ages%20-%20Standard%20-%20Greyscale.pdf",
+      "note": "官方 40 周年标准卡，非 Pulp 卡。直接核对时代技能及其基础值；社会地位、洞察、维修 / 制作复用目录 ID 并更换时代标签。"
+    }
+  ]
+}

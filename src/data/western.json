@@ -1,0 +1,98 @@
+{
+  "rulesets": [
+    {
+      "id": "western",
+      "name": "荒野西部",
+      "english": "Down Darker Trails",
+      "era": "19 世纪末美国西部",
+      "description": "官方 CoC7 荒野西部扩展的公开标准人物卡适配。博物学基础 20、骑术 15、电气维修 0，加入动物驯养、赌博、绳索使用和陷阱，以驾驶马车代替汽车。核心通用职业可作时代适配；专属职业、快拔与其他扩展机制请依原书确认。",
+      "sourceId": "western-7e",
+      "status": "official-sheet-adaptation",
+      "skillBaseOverrides": {
+        "natural-world": 20,
+        "ride": 15,
+        "electrical-repair": 0
+      },
+      "skillAliases": {
+        "drive-carriage": "驾驶篷车 / 马车 · Drive Wagon / Coach"
+      },
+      "notes": [
+        "采用标准调查员规则，不启用 Pulp 额外 HP、天赋或其他英雄规则。",
+        "不是所有枪械型号都在本时代可用；具体型号和购买条件应依据扩展武器表。"
+      ],
+      "skillDescriptions": {
+        "drive-carriage": {
+          "description": "在荒野西部驾驶篷车或马车，控制挽畜并应对道路与车辆状况。",
+          "scenarios": [
+            "驾驶篷车越过崎岖道路",
+            "稳住受惊的挽马"
+          ]
+        }
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "gambling",
+      "name": "赌博",
+      "english": "Gambling",
+      "base": 10,
+      "category": "社交",
+      "eras": [
+        "western"
+      ],
+      "sourceId": "western-sheet-7e",
+      "description": "了解荒野西部赌博游戏的规则、策略与常见手法，收益仍由场景裁定。",
+      "scenarios": [
+        "参与牌局",
+        "识别赌局中的可疑手法"
+      ]
+    },
+    {
+      "id": "rope-use",
+      "name": "绳索使用",
+      "english": "Rope Use",
+      "base": 5,
+      "category": "技术",
+      "eras": [
+        "western"
+      ],
+      "sourceId": "western-sheet-7e",
+      "description": "运用绳索完成捆绑、结绳及西部场景中的套索操作。",
+      "scenarios": [
+        "使用套索",
+        "打出适合用途的绳结"
+      ]
+    },
+    {
+      "id": "trap",
+      "name": "陷阱",
+      "english": "Trap",
+      "base": 10,
+      "category": "技术",
+      "eras": [
+        "western"
+      ],
+      "sourceId": "western-sheet-7e",
+      "description": "理解、布置或辨认西部场景中的陷阱，具体危险与效果依装置而定。",
+      "scenarios": [
+        "检查可能的捕兽陷阱",
+        "布置适用的陷阱"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "western-7e",
+      "title": "Down Darker Trails (2017) — for Call of Cthulhu 7th Edition",
+      "url": "https://www.chaosium.com/down-darker-trails-hardcover/",
+      "note": "官方荒野西部扩展，适用于 CoC 第 7 版，可另外使用 Pulp。此工具采用标准调查员人物卡，未引入 Pulp 天赋或额外 HP。"
+    },
+    {
+      "id": "western-sheet-7e",
+      "title": "Official Down Darker Trails Classic Investigator Sheet",
+      "url": "https://www.chaosium.com/content/FreePDFs/CoC/Character%20Sheets/Down-Darker-Trails-CLASSIC%20INVESTIGATOR-sheet-FULL%20AUTOCALC.pdf",
+      "note": "出版页提供的官方标准调查员卡。XFA 文件含嵌入人物卡图像，已直接检查图像中的基础值：骑术 15、博物学 20、电气维修 0，并含动物驯养、赌博、绳索使用、陷阱和驾驶马车。"
+    }
+  ]
+}

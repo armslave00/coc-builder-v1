@@ -2,7 +2,7 @@ import type { Character, Archive, CustomContent } from '../types';
 export const emptyCustom = (): CustomContent => ({rulesets:[],skills:[],occupations:[],equipment:[],spells:[]});
 export const blankCharacter = (rulesetId='core'): Character => {
  const now=new Date().toISOString();
- return {id:crypto.randomUUID(),name:'未命名调查员',player:'',occupationId:'professor',rulesetId,age:28,gender:'',birthplace:'',residence:'',portrait:'',attributes:{STR:50,CON:50,SIZ:60,DEX:50,APP:50,INT:60,POW:50,EDU:60},luck:50,current:{hp:null,mp:null,san:null},skills:{},occupationChoices:[],inventory:[],spellIds:[],backstory:{appearance:'',ideology:'',people:'',places:'',possessions:'',traits:'',injuries:'',phobias:'',notes:''},money:{cash:'',assets:'',spending:''},createdAt:now,updatedAt:now};
+ return {id:crypto.randomUUID(),name:'未命名调查员',player:'',occupationId:'professor',rulesetId,age:28,gender:'',birthplace:'',residence:'',portrait:'',attributes:{STR:50,CON:50,SIZ:60,DEX:50,APP:50,INT:60,POW:50,EDU:60},luck:50,current:{hp:null,mp:null,san:null},skills:{},occupationChoices:[],inventory:[],armor:{value:0,notes:''},spellIds:[],backstory:{appearance:'',ideology:'',people:'',places:'',possessions:'',traits:'',injuries:'',phobias:'',notes:''},money:{cash:'',assets:'',spending:''},createdAt:now,updatedAt:now};
 };
 export function createArchive(): Archive {
  const now=new Date().toISOString();

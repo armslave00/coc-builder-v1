@@ -1,0 +1,16 @@
+{
+  "rulesets": [
+    {
+      "id": "victorian",
+      "name": "维多利亚风格",
+      "english": "Victorian · Gaslight Profile",
+      "era": "维多利亚时代",
+      "description": "与煤气灯同一历史规则基础的独立风格选项，侧重古物、学术和社交调查；共享 Gaslight 技能数值，并非另一部独立官方扩展。",
+      "sourceId": "project-original",
+      "status": "original-profile"
+    }
+  ],
+  "skills": [],
+  "extends": "gaslight",
+  "sources": []
+}

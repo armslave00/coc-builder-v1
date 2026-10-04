@@ -9,7 +9,7 @@ This is a static React 19, TypeScript, and Vite application for Call of Cthulhu 
 - `src/styles.css`: shared styles and responsive layouts.
 - `src/types.ts`: character, archive, and rule definitions.
 - `src/lib/`: rule calculations, archive merging, and import/export validation; tests live alongside these modules.
-- `src/data/`: bundled `rules.json` and sample investigators.
+- `src/data/`: shared `core.json`, era profile JSON packs, the `rules.ts` loader, and sample investigators.
 - `public/`: static images and icons.
 - `docs/rules-sources.md`: rule provenance and adaptation boundaries.
 

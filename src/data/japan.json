@@ -1,0 +1,57 @@
+{
+  "rulesets": [
+    {
+      "id": "japan",
+      "name": "日本现代",
+      "english": "Modern Japan · 7e Adaptation",
+      "era": "1980 年代至现代",
+      "description": "核心第 7 版现代技能与日本场景适配，加入计算机使用和电子学。可参考官方日本题材出版物；此 profile 不声称是日文版独立数值扩展。",
+      "sourceId": "sutra-7e",
+      "status": "setting-adaptation",
+      "skillBaseOverrides": {},
+      "skillAliases": {}
+    }
+  ],
+  "skills": [
+    {
+      "id": "computer-use",
+      "name": "计算机使用",
+      "english": "Computer Use",
+      "base": 5,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "japan"
+      ],
+      "description": "操作计算机并处理数字信息，访问条件与具体任务决定是否能够尝试。",
+      "scenarios": [
+        "检索电子资料",
+        "恢复或分析数字文件"
+      ]
+    },
+    {
+      "id": "electronics",
+      "name": "电子学",
+      "english": "Electronics",
+      "base": 1,
+      "category": "技术",
+      "sourceId": "sheets-7e",
+      "eras": [
+        "japan"
+      ],
+      "description": "理解、诊断与制作电子电路或电子设备，与普通电气维修有不同侧重。",
+      "scenarios": [
+        "检查电子传感器",
+        "修理复杂电子电路"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "sutra-7e",
+      "title": "The Sutra of Pale Leaves: Twin Suns Rising (2025), 7th Edition",
+      "url": "https://www.chaosium.com/call-of-cthulhu-the-sutra-of-pale-leaves-twin-suns-rising-hardcover/",
+      "note": "官方出版的 1980 年代日本设定。本工具的日本现代 profile 使用核心现代规则；未复制本书专属机制或声称为日文官方版资料。"
+    }
+  ]
+}
