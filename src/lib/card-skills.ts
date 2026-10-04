@@ -1,9 +1,24 @@
 import type { Character, RuleData, SkillDefinition } from '../types';
-import { availableInEra, occupationChoicesForEra } from './catalog';
+import { availableInContext, occupationChoicesForEra } from './catalog';
 import { weaponSkillId } from './guidance';
+import { rulesForExtensions } from './extensions';
+
+/** Available editor rows plus saved allocations; use real era aliases only once for new choices. */
+export function skillsForCharacter(character: Character, rules: RuleData): SkillDefinition[] {
+  const profile = rules.rulesets.find(item => item.id === character.rulesetId);
+  return rules.skills.filter(skill => {
+    const allocation = character.skills[skill.id];
+    if (allocation && Object.values(allocation).some(value => value > 0)) return true;
+    if (!availableInContext(skill, character.rulesetId, character.enabledExtensionIds)) return false;
+    const alias = profile?.skillAliases?.[skill.id];
+    return !alias || !rules.skills.some(target => target.id === alias
+      && availableInContext(target, character.rulesetId, character.enabledExtensionIds));
+  });
+}
 
 /** Select printable skills without changing saved allocations or choices. */
 export function selectCardSkills(character: Character, rules: RuleData): SkillDefinition[] {
+  rules = rulesForExtensions(rules, character.enabledExtensionIds, character.rulesetId);
   const profile = rules.rulesets.find(item => item.id === character.rulesetId);
   const skillIds = new Set(rules.skills.map(skill => skill.id));
   const mappedId = (id: string): string => {
@@ -18,7 +33,7 @@ export function selectCardSkills(character: Character, rules: RuleData): SkillDe
   } : undefined;
   const careerIds = new Set([
     ...(occupation?.skills ?? []),
-    ...occupationChoicesForEra(occupation, character.occupationChoices.map(mappedId), rules, character.rulesetId),
+    ...occupationChoicesForEra(occupation, character.occupationChoices.map(mappedId), rules, character.rulesetId, character.enabledExtensionIds),
   ]);
   const recordedIds = new Set(Object.entries(character.skills)
     .filter(([, allocation]) => allocation.occupation > 0 || allocation.personal > 0 || allocation.growth > 0)
@@ -29,7 +44,8 @@ export function selectCardSkills(character: Character, rules: RuleData): SkillDe
   }
 
   // Legacy child definitions already identify a specialty through parentId.
+  const visibleIds = new Set(skillsForCharacter(character, rules).map(skill => skill.id));
   return rules.skills.filter(skill => recordedIds.has(skill.id)
-    || (availableInEra(skill.eras, character.rulesetId)
+    || (visibleIds.has(skill.id)
       && (!(skill.specialization || skill.parentId) || careerIds.has(skill.id))));
 }

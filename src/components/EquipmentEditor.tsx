@@ -3,7 +3,8 @@ import type { Character, InventoryItem, RuleData, Ruleset } from '../types';
 import { derive, getSkillTotal } from '../lib/rules';
 import { getItems, getWeapons, getWealthGuidance, inventoryKind, weaponSkillId } from '../lib/guidance';
 import { NumberField } from './NumberField';
-import { availableInEra } from '../lib/catalog';
+import { availableInContext, availableInEra } from '../lib/catalog';
+import { availableWithExtensions } from '../lib/extensions';
 
 export function EquipmentEditor({ character, rules, ruleset, update }: {
   character: Character;
@@ -16,6 +17,13 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
   const wealth = getWealthGuidance(creditValue, rules, ruleset);
   const armor = character.armor ?? { value: 0, notes: '' };
   const stats = derive(character);
+  const enabledExtensionIds = character.enabledExtensionIds ?? [];
+  const selectableSkill = (skill: RuleData['skills'][number]) => {
+    if (!availableInContext(skill, ruleset.id, enabledExtensionIds)) return false;
+    const aliasId = ruleset.skillAliases?.[skill.id];
+    const alias = aliasId && aliasId !== skill.id ? rules.skills.find(entry => entry.id === aliasId) : undefined;
+    return !alias || !availableInContext(alias, ruleset.id, enabledExtensionIds);
+  };
   const updateItem = (id: string, patch: Partial<InventoryItem>) => update({
     inventory: character.inventory.map(item => item.id === id ? { ...item, ...patch } : item),
   });
@@ -28,7 +36,7 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
   };
   const add = (id: string) => {
     const definition = rules.equipment.find(item => item.id === id);
-    if (!definition || definition.id === 'unarmed') return;
+    if (!definition || definition.id === 'unarmed' || !availableInContext(definition, ruleset.id, enabledExtensionIds)) return;
     update({ inventory: [...character.inventory, {
       id: crypto.randomUUID(), definitionId: definition.id, name: definition.name, quantity: 1, notes: '',
       kind: definition.kind ?? (definition.damage ? 'weapon' : 'item'), skillId: definition.skillId,
@@ -39,7 +47,7 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
   const picker = (kind: 'weapon' | 'item') => <label className="equipment-picker">
     <Plus size={17} /><select aria-label={kind === 'weapon' ? '添加武器' : '添加物品'} value="" onChange={event => add(event.target.value)}>
       <option value="">{kind === 'weapon' ? '从资料库添加武器…' : '从资料库添加物品…'}</option>
-      {rules.equipment.filter(item => item.id !== 'unarmed' && availableInEra(item.eras, ruleset.id)
+      {rules.equipment.filter(item => item.id !== 'unarmed' && availableInContext(item, ruleset.id, enabledExtensionIds)
         && (item.kind ?? (item.damage ? 'weapon' : 'item')) === kind)
         .map(item => <option key={item.id} value={item.id}>{item.name} · {item.price}</option>)}
     </select>
@@ -49,6 +57,7 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
     const isWeapon = inventoryKind(item, rules) === 'weapon';
     const skillId = weaponSkillId(item, rules);
     const definition = rules.equipment.find(entry => entry.id === item.definitionId);
+    const currentSkillId = stored?.skillId ?? definition?.skillId;
     const ammo = item.ammo ?? definition?.ammo;
     const malfunction = item.malfunction ?? definition?.malfunction;
     const armorValue = item.armor ?? definition?.armor;
@@ -79,12 +88,20 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
           <option value="weapon">武器</option><option value="item">物品</option>
         </select></label>{item.name !== stored.name && <small>保留的手动攻击记录</small>}</div>
         {!availableInEra(definition?.eras, ruleset.id) && <p className="inherent-note">已保留其他时代的装备，请与守秘人确认适用性。</p>}
+        {definition && !availableWithExtensions(definition, enabledExtensionIds) && <p className="inherent-note">Excel 参考扩展包未启用；已保存的装备记录仍保留。</p>}
         {isWeapon && <details className="weapon-details"><summary>编辑武器数值</summary><div className="weapon-fields">
           <label className="field"><span>攻击技能</span><select aria-label={`${stored.name}攻击技能`}
-            value={stored.skillId ?? definition?.skillId ?? ''} onChange={event => updateItem(item.id, { skillId: event.target.value || undefined })}>
+            value={currentSkillId ?? ''} onChange={event => {
+              const nextId = event.target.value;
+              const skill = rules.skills.find(entry => entry.id === nextId);
+              if (!nextId || skill && selectableSkill(skill)) updateItem(item.id, { skillId: nextId || undefined });
+            }}>
             <option value="" disabled={!!definition?.skillId}>由守秘人确认</option>
-            {rules.skills.filter(skill => availableInEra(skill.eras, ruleset.id) || skill.id === skillId)
-              .map(skill => <option value={skill.id} key={skill.id}>{skillLabel(skill.id)}</option>)}
+            {rules.skills.filter(skill => selectableSkill(skill) || skill.id === currentSkillId)
+              .map(skill => <option value={skill.id} key={skill.id} disabled={!selectableSkill(skill)}>
+                {skillLabel(skill.id)}{!selectableSkill(skill) && '（已保留，当前不可选）'}
+              </option>)}
+            {currentSkillId && !rules.skills.some(skill => skill.id === currentSkillId) && <option value={currentSkillId} disabled>{currentSkillId}（已保留，资料未载入）</option>}
           </select></label>
           {([
             ['damage', '伤害'], ['range', '射程'], ['attacks', '每轮攻击'], ['ammo', '装弹量'], ['malfunction', '故障值'],
@@ -139,8 +156,9 @@ export function EquipmentEditor({ character, rules, ruleset, update }: {
       <div className="section-title"><div className="section-name"><Sparkles size={18} /><h2>神话法术</h2><span>MYTHOS SPELLS</span></div></div>
       <p className="section-description">新建调查员通常不拥有法术。请与守秘人确认后记录。</p>
       <label className="equipment-picker"><Plus size={17} /><select aria-label="添加法术" value="" onChange={event => {
-        if (event.target.value && !character.spellIds.includes(event.target.value)) update({ spellIds: [...character.spellIds, event.target.value] });
-      }}><option value="">选择已习得的法术…</option>{rules.spells.filter(spell => !character.spellIds.includes(spell.id))
+        const spell = rules.spells.find(entry => entry.id === event.target.value);
+        if (spell && availableInContext(spell, ruleset.id, enabledExtensionIds) && !character.spellIds.includes(spell.id)) update({ spellIds: [...character.spellIds, spell.id] });
+      }}><option value="">选择已习得的法术…</option>{rules.spells.filter(spell => availableInContext(spell, ruleset.id, enabledExtensionIds) && !character.spellIds.includes(spell.id))
         .map(spell => <option key={spell.id} value={spell.id}>{spell.name}</option>)}</select></label>
       {character.spellIds.map(id => {
         const spell = rules.spells.find(entry => entry.id === id);
