@@ -29,9 +29,11 @@
 
 ## 验证
 
-Node.js 22 下 43 项测试与生产构建通过。
+Node.js 22 下 `npm run check` 通过：57 项测试（含 14 项 Chromium 实际 PDF 回归）与生产构建全部通过。
 
 覆盖说明区间、时代语义、规则分包引用与冲突、徒手去重、库存未知定义、旧存档、新字段校验及导出转义。手动检查桌面和手机的职业确认/取消、新建流程、技能说明悬停/聚焦/点击、护甲与财产持久化、换职业及时代保留技能数据。
+
+合入 master 的 PDF 分页门禁；六种时代、四份样例、手机打印及已填写护甲说明均保持两页，长技能与背景内容可自然增页。打印通过收紧空白容纳新增说明，保留技能数字字号与全部内容，并目检实际 PDF。
 
 验收截图：[职业卡片](screenshots/occupation-picker-desktop.png)、[属性说明](screenshots/attributes-desktop.png)、[手机装备与财富](screenshots/equipment-mobile.png)。
 

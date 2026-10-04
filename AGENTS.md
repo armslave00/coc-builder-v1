@@ -21,8 +21,11 @@ Use Node.js 22, as specified in `.nvmrc`.
 
 - `npm ci`: install dependencies from the lockfile.
 - `npm run dev`: start the local Vite server at `127.0.0.1:5173` by default.
-- `npm test`: run `src/lib/*.test.ts` using `tsx` and Node's test runner.
+- `npx playwright install chromium`: install the browser before the first PDF regression run.
+- `npm test`: run library tests and Chromium PDF regression checks using `tsx` and Node's test runner.
+- `npm run test:pdf`: run only the PDF pagination regression checks.
 - `npm run build`: run TypeScript checking and generate `dist/`.
+- `npm run check`: run all tests and the production build.
 - `npm run preview`: serve the production build locally.
 
 The GitHub Pages workflow runs tests and builds before deployment. Preserve Vite's relative asset base (`./`) for subdirectory hosting.
