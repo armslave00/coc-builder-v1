@@ -12,10 +12,21 @@ npm run dev
 ```
 
 ```sh
+npx playwright install chromium
 npm test
 npm run build
 npm run preview
 ```
+
+PDF 分页回归检查使用 Chromium 实际生成 A4 PDF，验证第一页包含完整技能和页脚、普通角色共两页，以及长背景、大量装备和原创技能增页时不丢失内容。首次运行需安装测试浏览器：
+
+```sh
+npx playwright install chromium
+npm run test:pdf
+npm run check
+```
+
+`npm test` 包含单元测试和 PDF 回归检查；`npm run test:pdf` 可单独检查分页；`npm run check` 运行全部测试和生产构建。Linux 环境需要中文字体，例如 `fonts-noto-cjk`。生成的检查文件位于 `test-results/pdf/`，不提交到 Git。
 
 `dist/` 是可直接上传到静态 CDN 的完整产物，已配置相对资源路径，兼容 GitHub Pages 项目子目录。开发默认地址为 `http://127.0.0.1:5173/`。
 
@@ -25,7 +36,7 @@ npm run preview
 2. 在 Settings → Pages → Build and deployment 中选择 **GitHub Actions**。
 3. 推送到 `master` 或手动运行项目内的 **Deploy to GitHub Pages** 工作流。
 
-工作流运行单元测试与生产构建，然后部署 `dist/`。若使用其他分支，请修改 `.github/workflows/deploy.yml` 的分支名。Cloudflare Pages、Netlify 等平台的构建命令为 `npm run build`、输出目录为 `dist`。没有服务端环境变量。
+PR 会运行 **Regression gate**；部署也必须先通过相同门禁（单元测试、实际 PDF 分页检查和生产构建）。失败会阻止部署，检查生成的 PDF 会保留为 Actions 附件 7 天。若需阻止失败的 PR 合并，可在仓库分支保护中将 **Tests, PDF pagination and build** 设为必需状态检查。若使用其他分支，请修改 `.github/workflows/deploy.yml` 的分支名。Cloudflare Pages、Netlify 等平台的构建命令为 `npm run build`、输出目录为 `dist`。没有服务端环境变量。
 
 ## 功能
 
